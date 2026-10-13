@@ -1,0 +1,68 @@
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.6",
+  "serialNumber": "urn:uuid:0f7417d1-ebfc-4ec5-ab4e-36c751d440a9",
+  "version": 1,
+  "metadata": {
+    "timestamp": "2026-10-12T17:42:40.959147Z",
+    "tools": [
+      {
+        "vendor": "CBOM Scanner",
+        "name": "cbom-scanner",
+        "version": "0.1.0"
+      }
+    ],
+    "component": {
+      "type": "application",
+      "name": "Scanned Project",
+      "bom-ref": "root-app"
+    }
+  },
+  "components": [
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-8a0b4003",
+      "name": "RSA",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "pke",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "example.py",
+            "line": 42,
+            "additionalContext": "key = RSA.generate(2048)"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Shor's algorithm breaks RSA"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    }
+  ]
+}
