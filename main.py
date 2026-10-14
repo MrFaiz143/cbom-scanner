@@ -1,12 +1,11 @@
 """
-CBOM Scanner - Main Entry Point (v0.4.2)
+CBOM Scanner - Main Entry Point (v0.5.0)
 Yeh script scanner ko chalata hai aur saari reports generate karta hai.
 
-v0.4.2 Changes:
-- Certificate details display in reports
-- Expiry status in findings
-- Public key algorithm detection
-- Certificate signature algorithm detection
+v0.5.0 Changes:
+- Multi-Host Scanning added
+- Single Host + Multi-Host menu
+- Combined report for multiple hosts
 """
 
 import os
@@ -26,7 +25,7 @@ def print_banner():
     """Tool ka banner print karo."""
     print("""
     ╔══════════════════════════════════════════════════════╗
-    ║           CBOM SCANNER v0.4.2                        ║
+    ║           CBOM SCANNER v0.5.0                        ║
     ║   Cryptographic Bill of Materials Generator          ║
     ║   Aligned with India NQM Roadmap 2027-2028           ║
     ╚══════════════════════════════════════════════════════╝
@@ -97,23 +96,31 @@ def do_network_scan():
     print("[NOTE] Sirf un servers ko scan karo jinki aapko permission hai.")
     print()
     
+    print("Scan Mode Chuno:")
+    print("  1. Single Host Scan")
+    print("  2. Multi-Host Scan (file se)")
+    print()
+    
+    mode = input("Enter choice (1/2, default=1): ").strip()
+    
+    if mode == "2":
+        do_multi_host_scan()
+        return
+    
+    # Single host scan
     host = input("Enter hostname or IP (e.g., google.com): ").strip()
     
     if not host:
         print("[ERROR] Host empty hai.")
         return
     
+    # Ports option
     print("\n" + "-" * 60)
     print("PORTS OPTION")
     print("-" * 60)
     print("  1. Default (5 common ports: 443, 22, 8443, 993, 995)")
-    print("     → Fast scan (10-30 seconds)")
-    print()
     print("  2. Top 1000 ports (full network scan)")
-    print("     → Slow scan (5-15 minutes)")
-    print("     → Sab services detect hongi (LDAP, MySQL, MSSQL, etc.)")
-    print()
-    print("  3. Custom ports (aap khud ports daalo)")
+    print("  3. Custom ports")
     print("-" * 60)
     
     port_choice = input("Enter choice (1/2/3, default=1): ").strip()
@@ -121,25 +128,21 @@ def do_network_scan():
     if port_choice == "2":
         ports = TOP_1000_PORTS
         print(f"\n[INFO] Using Top 1000 ports ({len(ports)} total)")
-        print("[WARN] Yeh scan mein 5-15 minute lag sakte hain. Please wait...")
-        print("[INFO] Aap Ctrl+C dabakar kabhi bhi rok sakte ho.\n")
-    
+        print("[WARN] Yeh scan mein 5-15 minute lag sakte hain.\n")
     elif port_choice == "3":
         ports_input = input("Enter ports (comma-separated, e.g., 443,22,8080): ").strip()
         try:
             ports = [int(p.strip()) for p in ports_input.split(',')]
             print(f"\n[INFO] Using {len(ports)} custom ports: {ports}")
         except ValueError:
-            print("[ERROR] Invalid ports. Default 5 ports use kar rahe hain.")
+            print("[ERROR] Invalid ports. Default use kar rahe hain.")
             ports = [443, 22, 8443, 993, 995]
-    
     else:
         ports = [443, 22, 8443, 993, 995]
         print(f"\n[INFO] Using default ports: {ports}")
     
     print()
     results = scan_host(host, ports=ports)
-    
     print_network_report(results)
     
     reports_dir = get_reports_dir()
@@ -155,6 +158,139 @@ def do_network_scan():
     print(f"[OK] Network text report saved: {txt_path}")
     
     print(f"\n[OK] Saari reports saved in: {reports_dir}")
+
+
+def do_multi_host_scan():
+    """Multi-host scanning ka poora process."""
+    print("\n" + "-" * 60)
+    print("MULTI-HOST SCAN")
+    print("-" * 60)
+    print("[NOTE] File mein ek line pe ek host daalo.")
+    print("[NOTE] Comment lines (# se shuru) skip hongi.")
+    print()
+    
+    file_path = input("Enter hosts file path (default: hosts.txt): ").strip().strip('"')
+    
+    if not file_path:
+        file_path = "hosts.txt"
+    
+    if not os.path.exists(file_path):
+        print(f"[ERROR] File nahi mili: {file_path}")
+        print("[INFO] hosts.txt file banao aur usme ek line pe ek host daalo.")
+        return
+    
+    # File se hosts padho
+    with open(file_path, 'r', encoding='utf-8') as f:
+        hosts = []
+        for line in f:
+            line = line.strip()
+            if line and not line.startswith('#'):
+                hosts.append(line)
+    
+    if not hosts:
+        print("[ERROR] File khali hai.")
+        return
+    
+    print(f"\n[INFO] Total hosts: {len(hosts)}")
+    print(f"[INFO] Hosts: {', '.join(hosts[:5])}")
+    if len(hosts) > 5:
+        print(f"       ... aur {len(hosts) - 5} more")
+    
+    # Ports option
+    print("\nPorts option:")
+    print("  1. Default (5 common ports)")
+    print("  2. Top 1000 ports")
+    print("  3. Custom ports")
+    
+    port_choice = input("Enter choice (1/2/3, default=1): ").strip()
+    
+    if port_choice == "2":
+        ports = TOP_1000_PORTS
+        print(f"\n[INFO] Using Top 1000 ports ({len(ports)} total)")
+        print("[WARN] Har host ke liye 5-15 minute lag sakte hain.\n")
+    elif port_choice == "3":
+        ports_input = input("Enter ports (comma-separated): ").strip()
+        try:
+            ports = [int(p.strip()) for p in ports_input.split(',')]
+            print(f"\n[INFO] Using {len(ports)} custom ports")
+        except ValueError:
+            print("[ERROR] Invalid ports. Default use kar rahe hain.")
+            ports = [443, 22, 8443, 993, 995]
+    else:
+        ports = [443, 22, 8443, 993, 995]
+        print(f"\n[INFO] Using default ports: {ports}")
+    
+    # Har host scan karo
+    all_results = []
+    
+    print(f"\n{'=' * 60}")
+    print(f"MULTI-HOST SCAN START")
+    print(f"{'=' * 60}")
+    
+    for i, host in enumerate(hosts, 1):
+        print(f"\n[{i}/{len(hosts)}] Scanning: {host}")
+        print("-" * 60)
+        
+        try:
+            result = scan_host(host, ports=ports)
+            all_results.append(result)
+        except KeyboardInterrupt:
+            print("\n[INFO] User ne scan rok diya.")
+            break
+        except Exception as e:
+            print(f"[ERROR] {host}: {e}")
+            all_results.append({
+                'host': host,
+                'status': 'error',
+                'error': str(e)[:100],
+                'open_ports': [],
+                'services': []
+            })
+    
+    # Combined report
+    print(f"\n{'=' * 60}")
+    print("MULTI-HOST SCAN COMPLETE")
+    print(f"{'=' * 60}")
+    
+    total_findings = 0
+    for result in all_results:
+        host = result.get('host', 'unknown')
+        services = result.get('services', [])
+        findings = sum(len(s.get('findings', [])) for s in services)
+        total_findings += findings
+        
+        status = '✅' if services else '⚠️'
+        open_ports = result.get('open_ports', [])
+        print(f"  {status} {host:40s} | Ports: {len(open_ports)} | Findings: {findings}")
+    
+    print(f"\n{'=' * 60}")
+    print(f"TOTAL HOSTS: {len(all_results)}")
+    print(f"TOTAL FINDINGS: {total_findings}")
+    print(f"{'=' * 60}")
+    
+    # Save combined report
+    reports_dir = get_reports_dir()
+    timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
+    
+    combined = {
+        'scan_time': datetime.now().isoformat(),
+        'total_hosts': len(all_results),
+        'total_findings': total_findings,
+        'hosts': all_results
+    }
+    
+    combined_json = os.path.join(reports_dir, f'multi_host_scan_{timestamp}.json')
+    with open(combined_json, 'w', encoding='utf-8') as f:
+        json.dump(combined, f, indent=2)
+    print(f"\n[OK] Combined JSON saved: {combined_json}")
+    
+    # Text report
+    combined_txt = os.path.join(reports_dir, f'multi_host_scan_{timestamp}.txt')
+    save_multi_host_text_report(combined, combined_txt)
+    print(f"[OK] Combined text report saved: {combined_txt}")
+    
+    print(f"\n[OK] Multi-host scan complete!")
+    print(f"[OK] Saari reports saved in: {reports_dir}")
 
 
 def print_network_report(results):
@@ -197,7 +333,6 @@ def print_network_report(results):
             cipher_name = cipher[0] if isinstance(cipher, tuple) else str(cipher)
             print(f"   Cipher Suite: {cipher_name}")
         
-        # Certificate details
         cert = service.get('certificate')
         if cert and isinstance(cert, dict):
             print(f"\n   📜 CERTIFICATE DETAILS:")
@@ -345,6 +480,77 @@ def save_network_text_report(results, output_path):
         return True
     except Exception as e:
         print(f"[ERROR] Cannot save text report: {e}")
+        return False
+
+
+def save_multi_host_text_report(combined, output_path):
+    """Multi-host scan results ko text file mein save karo."""
+    try:
+        with open(output_path, 'w', encoding='utf-8') as f:
+            f.write("=" * 70 + "\n")
+            f.write("MULTI-HOST NETWORK SCAN REPORT\n")
+            f.write("=" * 70 + "\n")
+            f.write(f"Scan Time: {combined.get('scan_time')}\n")
+            f.write(f"Total Hosts: {combined.get('total_hosts')}\n")
+            f.write(f"Total Findings: {combined.get('total_findings')}\n")
+            f.write("=" * 70 + "\n\n")
+            
+            # Summary
+            f.write("SUMMARY:\n")
+            f.write("-" * 70 + "\n")
+            for host_result in combined.get('hosts', []):
+                host = host_result.get('host', 'unknown')
+                open_ports = host_result.get('open_ports', [])
+                services = host_result.get('services', [])
+                findings = sum(len(s.get('findings', [])) for s in services)
+                f.write(f"  {host:40s} | Ports: {len(open_ports)} | Findings: {findings}\n")
+            
+            f.write("\n\n")
+            
+            # Detailed per host
+            for host_result in combined.get('hosts', []):
+                f.write("\n" + "=" * 70 + "\n")
+                f.write(f"HOST: {host_result.get('host')}\n")
+                f.write("=" * 70 + "\n")
+                f.write(f"Open Ports: {host_result.get('open_ports', [])}\n\n")
+                
+                for service in host_result.get('services', []):
+                    f.write("-" * 70 + "\n")
+                    f.write(f"{service['protocol']} on {service['target']}\n")
+                    f.write("-" * 70 + "\n")
+                    f.write(f"  Status: {service['status']}\n")
+                    
+                    if service.get('tls_version'):
+                        f.write(f"  TLS Version: {service['tls_version']}\n")
+                    if service.get('cipher_suite'):
+                        f.write(f"  Cipher Suite: {service['cipher_suite']}\n")
+                    
+                    cert = service.get('certificate')
+                    if cert and isinstance(cert, dict):
+                        f.write(f"\n  CERTIFICATE DETAILS:\n")
+                        if 'error' in cert:
+                            f.write(f"    Error: {cert['error']}\n")
+                        elif 'note' in cert:
+                            f.write(f"    Note: {cert['note']}\n")
+                        else:
+                            f.write(f"    Subject: {cert.get('subject')}\n")
+                            f.write(f"    Issuer: {cert.get('issuer')}\n")
+                            f.write(f"    Valid Until: {cert.get('not_after')}\n")
+                            f.write(f"    Expiry Status: {cert.get('expiry_status')}\n")
+                            f.write(f"    Public Key: {cert.get('public_key')}\n")
+                            f.write(f"    SAN: {cert.get('subject_alt_names')}\n")
+                    
+                    findings = service.get('findings', [])
+                    if findings:
+                        f.write(f"\n  Findings ({len(findings)}):\n")
+                        for finding in findings:
+                            f.write(f"    [{finding['risk']}] {finding['algorithm']}\n")
+                            f.write(f"      Reason: {finding['reason']}\n")
+                            f.write(f"      Context: {finding['context']}\n\n")
+        
+        return True
+    except Exception as e:
+        print(f"[ERROR] Cannot save multi-host text report: {e}")
         return False
 
 

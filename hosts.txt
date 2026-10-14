@@ -1,0 +1,17 @@
+# Indian Conglomerates
+ril.com
+jsw.in
+adityabirla.com
+
+# Indian Banks
+hdfcbank.com
+
+# Global Tech
+microsoft.com
+apple.com
+meta.com
+claude.ai
+
+# Indian Stock Exchanges
+bseindia.com
+nseindia.com
