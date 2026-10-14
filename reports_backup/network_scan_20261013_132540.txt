@@ -1,0 +1,36 @@
+======================================================================
+NETWORK SCAN REPORT
+======================================================================
+Host: 13.75.6.248
+Scan Time: 2026-10-13T13:24:59.726587
+Services Found: 1
+======================================================================
+
+
+TLS on 13.75.6.248:443
+  Status: success
+  TLS Version: TLSv1.2
+  Cipher Suite: ('ECDHE-RSA-AES256-GCM-SHA384', 'TLSv1.2', 256)
+
+  Findings (4):
+    [HIGH] RSA
+      Reason: Shor's algorithm breaks RSA
+      Context: Cipher suite: ECDHE-RSA-AES256-GCM-SHA384
+      Source: TLS cipher suite
+
+    [HIGH] ECDH
+      Reason: Shor's algorithm breaks ECDH
+      Context: Cipher suite: ECDHE-RSA-AES256-GCM-SHA384
+      Source: TLS cipher suite
+
+    [HIGH] DHE
+      Reason: Shor's algorithm breaks Diffie-Hellman
+      Context: Cipher suite: ECDHE-RSA-AES256-GCM-SHA384
+      Source: TLS cipher suite
+
+    [HIGH] DH
+      Reason: Shor's algorithm breaks Diffie-Hellman
+      Context: Cipher suite: ECDHE-RSA-AES256-GCM-SHA384
+      Source: TLS cipher suite
+
+----------------------------------------------------------------------

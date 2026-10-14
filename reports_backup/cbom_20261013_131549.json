@@ -1,0 +1,923 @@
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.6",
+  "serialNumber": "urn:uuid:c2d8febc-6b6e-49a1-86c9-745123e90b70",
+  "version": 1,
+  "metadata": {
+    "timestamp": "2026-10-13T13:15:49.466857Z",
+    "tools": [
+      {
+        "vendor": "CBOM Scanner",
+        "name": "cbom-scanner",
+        "version": "0.1.0"
+      }
+    ],
+    "component": {
+      "type": "application",
+      "name": "Scanned Project",
+      "bom-ref": "root-app"
+    }
+  },
+  "components": [
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-5f0078ed",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "C:\\Program Files\\Python312\\Lib\\antigravity.py",
+            "line": 15,
+            "additionalContext": "h = hashlib.md5(datedow, usedforsecurity=False).hexdigest()"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-d4c93dac",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "C:\\Program Files\\Python312\\Lib\\hashlib.py",
+            "line": 43,
+            "additionalContext": ">>> m = hashlib.md5()"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-3453c103",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "C:\\Program Files\\Python312\\Lib\\poplib.py",
+            "line": 346,
+            "additionalContext": "digest = hashlib.md5(digest).hexdigest()"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-5981511c",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "C:\\Program Files\\Python312\\Lib\\uuid.py",
+            "line": 716,
+            "additionalContext": "from hashlib import md5"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-53108b52",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "C:\\Program Files\\Python312\\Lib\\site-packages\\pip\\_vendor\\distlib\\database.py",
+            "line": 513,
+            "additionalContext": "hasher = hashlib.md5"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-23d059cf",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "C:\\Program Files\\Python312\\Lib\\site-packages\\pip\\_vendor\\distlib\\index.py",
+            "line": 269,
+            "additionalContext": "md5_digest = hashlib.md5(file_data).hexdigest()"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-a792f1fa",
+      "name": "SHA-1",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "C:\\Program Files\\Python312\\Lib\\site-packages\\pip\\_vendor\\requests\\auth.py",
+            "line": 156,
+            "additionalContext": "return hashlib.sha1(x).hexdigest()"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "MEDIUM"
+        },
+        {
+          "name": "reason",
+          "value": "Collision attacks, deprecated"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-33a5c7d2",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "C:\\Program Files\\Python312\\Lib\\site-packages\\pip\\_vendor\\requests\\auth.py",
+            "line": 148,
+            "additionalContext": "return hashlib.md5(x).hexdigest()"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-2ee1bece",
+      "name": "SHA-1",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "C:\\Program Files\\Python312\\Lib\\urllib\\request.py",
+            "line": 1139,
+            "additionalContext": "dig = hashlib.sha1(b).hexdigest()"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "MEDIUM"
+        },
+        {
+          "name": "reason",
+          "value": "Collision attacks, deprecated"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-27932170",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "C:\\Program Files\\Python312\\Lib\\urllib\\request.py",
+            "line": 1207,
+            "additionalContext": "H = lambda x: hashlib.md5(x.encode(\"ascii\")).hexdigest()"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-9c13eeb8",
+      "name": "RSA",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "pke",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "C:\\Program Files (x86)\\iVMS-4200 Site\\Nginx\\html\\WebCfgPackage\\Packages\\01\\020\\doc\\thirdLib\\forge.worker.js",
+            "line": 13,
+            "additionalContext": "var keypair = forge.rsa.generateKeyPair({"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Shor's algorithm breaks RSA"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-14e68671",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "C:\\Users\\Admin\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\antigravity.py",
+            "line": 15,
+            "additionalContext": "h = hashlib.md5(datedow, usedforsecurity=False).hexdigest()"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-8ae441d6",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "C:\\Users\\Admin\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\hashlib.py",
+            "line": 43,
+            "additionalContext": ">>> m = hashlib.md5()"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-9a819b94",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "C:\\Users\\Admin\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\poplib.py",
+            "line": 346,
+            "additionalContext": "digest = hashlib.md5(digest).hexdigest()"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-c9b73ad5",
+      "name": "SHA-1",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "C:\\Users\\Admin\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\uuid.py",
+            "line": 786,
+            "additionalContext": "h = hashlib.sha1(namespace.bytes + name, usedforsecurity=False)"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "MEDIUM"
+        },
+        {
+          "name": "reason",
+          "value": "Collision attacks, deprecated"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-f8d54bf6",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "C:\\Users\\Admin\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\uuid.py",
+            "line": 768,
+            "additionalContext": "h = hashlib.md5(namespace.bytes + name, usedforsecurity=False)"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-6ee3cb82",
+      "name": "SHA-1",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "C:\\Users\\Admin\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pip\\_vendor\\requests\\auth.py",
+            "line": 187,
+            "additionalContext": "return hashlib.sha1(x, usedforsecurity=False).hexdigest()"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "MEDIUM"
+        },
+        {
+          "name": "reason",
+          "value": "Collision attacks, deprecated"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-f520523c",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "C:\\Users\\Admin\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pip\\_vendor\\requests\\auth.py",
+            "line": 179,
+            "additionalContext": "return hashlib.md5(x, usedforsecurity=False).hexdigest()"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-99dceaee",
+      "name": "SHA-1",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "C:\\Users\\Admin\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\urllib\\request.py",
+            "line": 1113,
+            "additionalContext": "dig = hashlib.sha1(b).hexdigest()"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "MEDIUM"
+        },
+        {
+          "name": "reason",
+          "value": "Collision attacks, deprecated"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-547fe9ae",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "C:\\Users\\Admin\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\urllib\\request.py",
+            "line": 1182,
+            "additionalContext": "H = lambda x: hashlib.md5(x.encode(\"ascii\")).hexdigest()"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    }
+  ]
+}

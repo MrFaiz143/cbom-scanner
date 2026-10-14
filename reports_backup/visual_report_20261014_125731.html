@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CBOM Scanner - Visual Report</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #0d1117;
+            color: #c9d1d9;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .container { max-width: 1400px; margin: 0 auto; }
+        header {
+            text-align: center;
+            padding: 30px 0;
+            border-bottom: 1px solid #30363d;
+            margin-bottom: 30px;
+        }
+        header h1 {
+            font-size: 2.5em;
+            color: #58a6ff;
+            margin-bottom: 10px;
+        }
+        header p { color: #8b949e; }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        .stat-card {
+            background: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+        }
+        .stat-card .value {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #58a6ff;
+        }
+        .stat-card .label {
+            color: #8b949e;
+            font-size: 0.9em;
+            margin-top: 5px;
+        }
+        .chart-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        .chart-card {
+            background: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 8px;
+            padding: 20px;
+        }
+        .chart-card h3 {
+            color: #58a6ff;
+            margin-bottom: 15px;
+            font-size: 1.1em;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #161b22;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #30363d;
+        }
+        th {
+            background: #21262d;
+            color: #58a6ff;
+            font-weight: 600;
+            font-size: 0.9em;
+            text-transform: uppercase;
+        }
+        tr:hover { background: #1c2128; }
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            color: #8b949e;
+            font-size: 0.9em;
+            border-top: 1px solid #30363d;
+            margin-top: 40px;
+        }
+        footer a { color: #58a6ff; text-decoration: none; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🔐 CBOM Scanner</h1>
+            <p>Post-Quantum Cryptography Readiness Report</p>
+            <p>Generated: 2026-10-14 12:57:31</p>
+        </header>
+        
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="value">10</div>
+                <div class="label">Total Hosts</div>
+            </div>
+            <div class="stat-card">
+                <div class="value">17</div>
+                <div class="label">Total Findings</div>
+            </div>
+            <div class="stat-card">
+                <div class="value">10</div>
+                <div class="label">Hosts with Findings</div>
+            </div>
+            <div class="stat-card">
+                <div class="value">5</div>
+                <div class="label">Unique Algorithms</div>
+            </div>
+        </div>
+        
+        <div class="chart-grid">
+            <div class="chart-card">
+                <h3>📊 TLS Version Distribution</h3>
+                <canvas id="tlsChart"></canvas>
+            </div>
+            <div class="chart-card">
+                <h3>🔐 Quantum-Vulnerable Algorithms</h3>
+                <canvas id="algoChart"></canvas>
+            </div>
+            <div class="chart-card">
+                <h3>🏢 Certificate Issuers</h3>
+                <canvas id="issuerChart"></canvas>
+            </div>
+            <div class="chart-card">
+                <h3>🔑 Public Key Types</h3>
+                <canvas id="pubkeyChart"></canvas>
+            </div>
+        </div>
+        
+        <h2 style="color: #58a6ff; margin-bottom: 20px;">📋 Host Details</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Host</th>
+                    <th>TLS</th>
+                    <th>Cipher Suite</th>
+                    <th>Issuer</th>
+                    <th>Expiry</th>
+                    <th>Public Key</th>
+                    <th>Findings</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+        <tr>
+            <td>jsw.in</td>
+            <td>TLSv1.2</td>
+            <td>ECDHE-RSA-AES256-GCM-SHA384...</td>
+            <td>GeoTrust TLS RSA CA G1</td>
+            <td>✅ VALID</td>
+            <td>RSA-2048</td>
+            <td>🔴 3</td>
+        </tr>
+        
+        <tr>
+            <td>adityabirla.com</td>
+            <td>TLSv1.2</td>
+            <td>ECDHE-RSA-AES256-GCM-SHA384...</td>
+            <td>Sectigo Public Server Authentication CA OV R36</td>
+            <td>✅ VALID</td>
+            <td>RSA-2048</td>
+            <td>🔴 3</td>
+        </tr>
+        
+        <tr>
+            <td>hdfcbank.com</td>
+            <td>TLSv1.3</td>
+            <td>TLS_AES_256_GCM_SHA384...</td>
+            <td>GeoTrust TLS RSA CA G1</td>
+            <td>✅ VALID</td>
+            <td>RSA-2048</td>
+            <td>🔴 2</td>
+        </tr>
+        
+        <tr>
+            <td>meta.com</td>
+            <td>TLSv1.3</td>
+            <td>TLS_CHACHA20_POLY1305_SHA256...</td>
+            <td>DigiCert Global G2 TLS RSA SHA256 2020 CA1</td>
+            <td>⚠️ EXPIRING_SOON</td>
+            <td>RSA-2048</td>
+            <td>🔴 2</td>
+        </tr>
+        
+        <tr>
+            <td>claude.ai</td>
+            <td>TLSv1.3</td>
+            <td>TLS_AES_256_GCM_SHA384...</td>
+            <td>YE2</td>
+            <td>✅ VALID</td>
+            <td>EC-256</td>
+            <td>🔴 2</td>
+        </tr>
+        
+        <tr>
+            <td>ril.com</td>
+            <td>TLSv1.3</td>
+            <td>TLS_AES_128_GCM_SHA256...</td>
+            <td>GoDaddy TLS Intermediate CA DV - R1v1</td>
+            <td>✅ VALID</td>
+            <td>RSA-2048</td>
+            <td>🔴 1</td>
+        </tr>
+        
+        <tr>
+            <td>microsoft.com</td>
+            <td>TLSv1.3</td>
+            <td>TLS_AES_256_GCM_SHA384...</td>
+            <td>Microsoft TLS G2 RSA CA OCSP 04</td>
+            <td>✅ VALID</td>
+            <td>RSA-2048</td>
+            <td>🔴 1</td>
+        </tr>
+        
+        <tr>
+            <td>apple.com</td>
+            <td>TLSv1.3</td>
+            <td>TLS_AES_256_GCM_SHA384...</td>
+            <td>Apple Public EV Server ECC CA 1 - G1</td>
+            <td>✅ VALID</td>
+            <td>EC-256</td>
+            <td>🔴 1</td>
+        </tr>
+        
+        <tr>
+            <td>bseindia.com</td>
+            <td>TLSv1.3</td>
+            <td>TLS_AES_256_GCM_SHA384...</td>
+            <td>DigiCert Global G3 TLS ECC SHA384 2020 CA1</td>
+            <td>✅ VALID</td>
+            <td>EC-256</td>
+            <td>🔴 1</td>
+        </tr>
+        
+        <tr>
+            <td>nseindia.com</td>
+            <td>TLSv1.3</td>
+            <td>TLS_AES_256_GCM_SHA384...</td>
+            <td>DigiCert Global G3 TLS ECC SHA384 2020 CA1</td>
+            <td>✅ VALID</td>
+            <td>EC-256</td>
+            <td>🔴 1</td>
+        </tr>
+        
+            </tbody>
+        </table>
+        
+        <footer>
+            <p>Generated by <a href="https://github.com/MrFaiz143/cbom-scanner">CBOM Scanner</a> v0.5.0</p>
+            <p>Aligned with India NQM Roadmap 2027-2028</p>
+        </footer>
+    </div>
+    
+    <script>
+        // TLS Version Chart
+        new Chart(document.getElementById('tlsChart'), {
+            type: 'doughnut',
+            data: {
+                labels: ["TLSv1.3", "TLSv1.2"],
+                datasets: [{
+                    data: [10, 2],
+                    backgroundColor: ['#58a6ff', '#f0883e', '#3fb950', '#f85149', '#a371f7']
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: { position: 'bottom', labels: { color: '#c9d1d9' } }
+                }
+            }
+        });
+        
+        // Algorithm Chart
+        new Chart(document.getElementById('algoChart'), {
+            type: 'bar',
+            data: {
+                labels: ["RSA", "ECDH", "DH", "ECDSA", "Certificate-ExpiringSoon"],
+                datasets: [{
+                    label: 'Occurrences',
+                    data: [7, 2, 2, 5, 1],
+                    backgroundColor: '#f85149'
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: { display: false }
+                },
+                scales: {
+                    y: { ticks: { color: '#c9d1d9' }, grid: { color: '#30363d' } },
+                    x: { ticks: { color: '#c9d1d9' }, grid: { color: '#30363d' } }
+                }
+            }
+        });
+        
+        // Issuer Chart
+        new Chart(document.getElementById('issuerChart'), {
+            type: 'bar',
+            data: {
+                labels: ["GoDaddy TLS Intermediate CA DV - R1v1", "GeoTrust TLS RSA CA G1", "Sectigo Public Server Authentication CA OV R36", "Microsoft TLS G2 RSA CA OCSP 04", "Apple Public EV Server ECC CA 1 - G1", "DigiCert Global G2 TLS RSA SHA256 2020 CA1", "YE2", "DigiCert Global G3 TLS ECC SHA384 2020 CA1"],
+                datasets: [{
+                    label: 'Certificates',
+                    data: [1, 3, 1, 1, 1, 1, 2, 2],
+                    backgroundColor: '#3fb950'
+                }]
+            },
+            options: {
+                indexAxis: 'y',
+                responsive: true,
+                plugins: { legend: { display: false } },
+                scales: {
+                    y: { ticks: { color: '#c9d1d9' }, grid: { color: '#30363d' } },
+                    x: { ticks: { color: '#c9d1d9' }, grid: { color: '#30363d' } }
+                }
+            }
+        });
+        
+        // Public Key Chart
+        new Chart(document.getElementById('pubkeyChart'), {
+            type: 'pie',
+            data: {
+                labels: ["RSA-2048", "EC-256"],
+                datasets: [{
+                    data: [7, 5],
+                    backgroundColor: ['#58a6ff', '#f0883e', '#3fb950', '#f85149']
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: { position: 'bottom', labels: { color: '#c9d1d9' } }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

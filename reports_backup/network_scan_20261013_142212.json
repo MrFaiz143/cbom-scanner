@@ -1,0 +1,79 @@
+{
+  "host": "pure.srk.one",
+  "scan_time": "2026-10-13T14:18:02.551011",
+  "total_ports_scanned": 4131,
+  "open_ports": [
+    80,
+    443
+  ],
+  "services": [
+    {
+      "target": "pure.srk.one:443",
+      "protocol": "TLS",
+      "port": 443,
+      "status": "success",
+      "tls_version": "TLSv1.2",
+      "cipher_suite": [
+        "ECDHE-RSA-AES256-GCM-SHA384",
+        "TLSv1.2",
+        256
+      ],
+      "certificate": {
+        "subject": {
+          "CN": "*.srk.one"
+        },
+        "issuer": {
+          "C": "US",
+          "ST": "Arizona",
+          "L": "Scottsdale",
+          "O": "Starfield Technologies, Inc.",
+          "OU": "http://certs.starfieldtech.com/repository/",
+          "CN": "Starfield Secure Certificate Authority - G2"
+        },
+        "serial_number": "0x8a8b50b41fcd1e3a",
+        "version": 3,
+        "not_before": "2026-04-27 10:37:50",
+        "not_after": "2026-11-11 10:37:50",
+        "signature_algorithm": "sha256WithRSAEncryption",
+        "public_key": {
+          "type": "DH",
+          "bits": 2048
+        },
+        "subject_alt_names": [],
+        "raw_size_bytes": 1710,
+        "days_until_expiry": 28,
+        "expiry_status": "EXPIRING_SOON"
+      },
+      "findings": [
+        {
+          "algorithm": "RSA",
+          "risk": "HIGH",
+          "reason": "Shor's algorithm breaks RSA",
+          "context": "Cipher suite: ECDHE-RSA-AES256-GCM-SHA384",
+          "source": "TLS cipher suite"
+        },
+        {
+          "algorithm": "ECDH",
+          "risk": "HIGH",
+          "reason": "Shor's algorithm breaks ECDH",
+          "context": "Cipher suite: ECDHE-RSA-AES256-GCM-SHA384",
+          "source": "TLS cipher suite"
+        },
+        {
+          "algorithm": "DH",
+          "risk": "HIGH",
+          "reason": "Shor's algorithm breaks Diffie-Hellman",
+          "context": "Cipher suite: ECDHE-RSA-AES256-GCM-SHA384",
+          "source": "TLS cipher suite"
+        },
+        {
+          "algorithm": "Certificate-ExpiringSoon",
+          "risk": "MEDIUM",
+          "reason": "Certificate expires in 28 days",
+          "context": "Expires: 2026-11-11 10:37:50",
+          "source": "Certificate validity"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,6458 @@
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.6",
+  "serialNumber": "urn:uuid:4bf9174b-a04c-4dda-a18b-0db2025e68e9",
+  "version": 1,
+  "metadata": {
+    "timestamp": "2026-10-12T18:12:28.594043Z",
+    "tools": [
+      {
+        "vendor": "CBOM Scanner",
+        "name": "cbom-scanner",
+        "version": "0.1.0"
+      }
+    ],
+    "component": {
+      "type": "application",
+      "name": "Scanned Project",
+      "bom-ref": "root-app"
+    }
+  },
+  "components": [
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-b9b77529",
+      "name": "DH",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "key-agree",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "F:\\essl\\eTimeTrackLiteWeb\\eTimeTrackLiteWeb\\eTimeTrackLiteWeb\\iclock\\jQueryMenuscripts\\jquery-ui.js",
+            "line": 3628,
+            "additionalContext": "dh = this.position.top + this.size.height,"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Shor's algorithm breaks Diffie-Hellman"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-25104e6d",
+      "name": "DH",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "key-agree",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "F:\\Ketan Laptop Backup\\OFFICE DATA\\Customers\\Globaltech kutch\\Site Installer v2.5.31.9 (keyless).exe - Google Drive_files\\838084355-edit_core.js",
+            "line": 132,
+            "additionalContext": "function ah(a,b){if(0==a.g)if(a.j){var c=a.j;if(c.b){for(var d=0,e=-1,g=0,h;h=c.b[g];g++)if(h=h.pn)if(d++,h==a&&(e=g),0<"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Shor's algorithm breaks Diffie-Hellman"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-ecbba1b2",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "F:\\Ketan Laptop Backup\\OFFICE DATA\\Customers\\Globaltech kutch\\Site Installer v2.5.31.9 (keyless).exe - Google Drive_files\\838084355-edit_core.js",
+            "line": 961,
+            "additionalContext": "f.Iy=function(a){var b=this.getItem(),c=b.Pa;b.dh()||a==c||(a=0);var d=a>=this.H,e=d?c:Math.min(this.H,this.U+a);this.ka"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-15d5ed95",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "F:\\Ketan Laptop Backup\\OFFICE DATA\\Customers\\Globaltech kutch\\Site Installer v2.5.31.9 (keyless).exe - Google Drive_files\\api.js",
+            "line": 7,
+            "additionalContext": "gapi.load(\"\",{callback:window[\"gapi_onload\"],_c:{\"jsl\":{\"ci\":{\"llang\":\"en\",\"client\":{\"headers\":{\"response\":[\"Cache-Contr"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-1fe77ffa",
+      "name": "DH",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "key-agree",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "F:\\Ketan Laptop Backup\\OFFICE DATA\\Customers\\Globaltech kutch\\Site Installer v2.5.31.9 (keyless).exe - Google Drive_files\\sem_47d04078c103fcb79c1aa66a5536a0a5.js",
+            "line": 22,
+            "additionalContext": "Hb();if(6==yc||7==yc&&\"BackCompat\"==document.compatMode)Y-=2}}else Qa=b?w:Math.max(w+h-G,I),Y=Qa-w;var zc=F(\"gbw\"),Ac=F("
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Shor's algorithm breaks Diffie-Hellman"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-618c9272",
+      "name": "DH",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "key-agree",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "F:\\Ketan Laptop Backup\\OFFICE DATA\\Customers\\Janta Plastics\\Software and Tools\\SDK\\DVR DVS IP Camera Windows Client SDK V4.0.0.9\\ClientDemoEn\\DlgVcaIvmsCfg.cpp",
+            "line": 761,
+            "additionalContext": "sprintf(chTimePeriod, \"Time%d: %dH%dM--%dH%dM\", nIndex,"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Shor's algorithm breaks Diffie-Hellman"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-b37b79e6",
+      "name": "DH",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "key-agree",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "F:\\Ketan Laptop Backup\\OFFICE DATA\\Customers\\Maliba College\\Hikvision Tools & Software\\Software and Tools\\SDK\\DVR DVS IP Camera Windows Client SDK V4.0.0.9\\ClientDemoEn\\DlgVcaIvmsCfg.cpp",
+            "line": 761,
+            "additionalContext": "sprintf(chTimePeriod, \"Time%d: %dH%dM--%dH%dM\", nIndex,"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Shor's algorithm breaks Diffie-Hellman"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-47ea2fa4",
+      "name": "RSA",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "pke",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "F:\\Ketan Laptop Backup\\OFFICE DATA\\Customers\\Megeshbhai\\Salasar\\MBD Driver\\Applications\\Software\\Applications\\IPAT\\Setup\\Client\\LMS_AMT_allOS_5.4.0.1065_PV\\UNS\\openSSL_license.txt",
+            "line": 80,
+            "additionalContext": "* apply to all code found in this distribution, be it the RC4, RSA,"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Shor's algorithm breaks RSA"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-aa2005c9",
+      "name": "DH",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "key-agree",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "F:\\Ketan Laptop Backup\\OFFICE DATA\\Customers\\Selvas Subhasbhai\\DVR Software\\2.SDK\\ClientDemo\\DlgVcaIvmsCfg.cpp",
+            "line": 761,
+            "additionalContext": "sprintf(chTimePeriod, \"Time%d: %dH%dM--%dH%dM\", nIndex,"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Shor's algorithm breaks Diffie-Hellman"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-c300e9a3",
+      "name": "DH",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "key-agree",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "F:\\Ketan Laptop Backup\\OFFICE DATA\\MMT\\Ashvin\\Samarth Automation\\aus\\AOI Institute_files\\urchin.js",
+            "line": 165,
+            "additionalContext": "if(wc && wc.gaGlobal && wc.gaGlobal.dh==_udh){"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Shor's algorithm breaks Diffie-Hellman"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-e4d186a8",
+      "name": "DH",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "key-agree",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "F:\\Ketan Laptop Backup\\OFFICE DATA\\MMT\\Price\\D-Vigilant\\D-Vigilant 480 TVL (OSD) Dealer Price List_pdf_files\\964566580-gview_local_gview_base_mod.js",
+            "line": 18,
+            "additionalContext": "Eg=\"Ctrl+Shift+Esc\",Fg=\"Ctrl+Shift+F\",Gg=\"Ctrl+Shift+G\",Hg=\"Ctrl+Shift+K\",Ig=\"Ctrl+Shift+Left\",Jg=\"Ctrl+Shift+Right\",Kg="
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Shor's algorithm breaks Diffie-Hellman"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-b0b30392",
+      "name": "DH",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "key-agree",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "F:\\Ketan Laptop Backup\\OFFICE DATA\\MMT\\Price\\D-Vigilant\\D-Vigilant 480 TVL Dealer Price List_pdf_files\\964566580-gview_local_gview_base_mod.js",
+            "line": 18,
+            "additionalContext": "Eg=\"Ctrl+Shift+Esc\",Fg=\"Ctrl+Shift+F\",Gg=\"Ctrl+Shift+G\",Hg=\"Ctrl+Shift+K\",Ig=\"Ctrl+Shift+Left\",Jg=\"Ctrl+Shift+Right\",Kg="
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Shor's algorithm breaks Diffie-Hellman"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-83bd007d",
+      "name": "DH",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "key-agree",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "F:\\Ketan Laptop Backup\\OFFICE DATA\\MMT\\Products\\Hikvision Products and other Detail\\OCT 2012\\EN\\Software and Tools\\SDK\\DVR DVS IP Camera Windows Client SDK V4.0.0.9\\ClientDemoEn\\DlgVcaIvmsCfg.cpp",
+            "line": 761,
+            "additionalContext": "sprintf(chTimePeriod, \"Time%d: %dH%dM--%dH%dM\", nIndex,"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Shor's algorithm breaks Diffie-Hellman"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-82ffa27e",
+      "name": "DH",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "key-agree",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "F:\\Ketan Laptop Backup\\OFFICE DATA\\MMT\\Products\\Mobotix\\MxControlCenter\\MxControlCenter.ini",
+            "line": 169,
+            "additionalContext": "\"UserLayout6\"=\"grid=Panorama vs Standard Schematic,width:8,stop:dh:TM:rend0:align0:psp-1:psm0:A10:f0,\\\"file://.\\\\Mx_Clip"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Shor's algorithm breaks Diffie-Hellman"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-2108bcb4",
+      "name": "RSA",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "pke",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "F:\\Ketan Laptop Backup\\OFFICE DATA\\MMT\\Technical Details\\eSSL\\SOFTWARE\\eTimeTrackLite\\BioServer\\BioServer\\BioServer\\md5-min.js",
+            "line": 2,
+            "additionalContext": "* A JavaScript implementation of the RSA Data Security, Inc. MD5 Message"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Shor's algorithm breaks RSA"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-60bd2bf2",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "F:\\Ketan Laptop Backup\\OFFICE DATA\\MMT\\Technical Details\\eSSL\\SOFTWARE\\eTimeTrackLite\\BioServer\\BioServer\\BioServer\\md5-min.js",
+            "line": 2,
+            "additionalContext": "* A JavaScript implementation of the RSA Data Security, Inc. MD5 Message"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-5e447af6",
+      "name": "DH",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "key-agree",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "F:\\Ketan Laptop Backup\\OFFICE DATA\\MMT\\Technical Details\\eSSL\\SOFTWARE\\SMART OFFICE\\SmartOfficeOnline2016\\SmartOfficeOnline\\PushDataCollectorLogs\\Log.txt",
+            "line": 67,
+            "additionalContext": "C:815:DATA FP PIN=1617\tFID=1\tTMP=S49TUzIxAAACzM4ECAUHCc7QAAAazWkBAAAAgnEVYswhAN8MiACRAAPDoQB6AHsPswCRzPIPkACqAKAMMcyvANo"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Shor's algorithm breaks Diffie-Hellman"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-55aec22a",
+      "name": "RSA",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "pke",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "F:\\Ketan Laptop Backup\\OFFICE DATA\\MMT\\Technical Details\\eSSL\\SOFTWARE\\ZK\\ZKAccess5.2.22.11838_20130619_EN\\ZKAccess5.2.22.11838_20130619_EN\\ZKECOPackage\\Python26\\LICENSE.txt",
+            "line": 583,
+            "additionalContext": "* apply to all code found in this distribution, be it the RC4, RSA,"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Shor's algorithm breaks RSA"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-69598091",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "F:\\Ketan Laptop Backup\\OFFICE DATA\\MMT\\Technical Details\\eSSL\\SOFTWARE\\ZK\\ZKAccess5.2.22.11838_20130619_EN\\ZKAccess5.2.22.11838_20130619_EN\\ZKECOPackage\\Python26\\NEWS.txt",
+            "line": 3982,
+            "additionalContext": "- md5 now raises a DeprecationWarning upon import."
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-13b12121",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "F:\\Ketan Laptop Backup\\OFFICE DATA\\MMT\\Technical Details\\eSSL\\SOFTWARE\\ZK\\ZKAccess5.2.22.11838_20130619_EN\\ZKAccess5.2.22.11838_20130619_EN\\ZKECOPackage\\Python26\\README.txt",
+            "line": 461,
+            "additionalContext": "_locale, math, md5, new, operator, parser, pcre,"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-d29fa21e",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "F:\\Ketan Laptop Backup\\OFFICE DATA\\MMT\\Technical Details\\eSSL\\SOFTWARE\\ZK\\ZKAccess5.2.22.11838_20130619_EN\\ZKAccess5.2.22.11838_20130619_EN\\ZKECOPackage\\Python26\\Lib\\hashlib.py",
+            "line": 16,
+            "additionalContext": "md5(), sha1(), sha224(), sha256(), sha384(), and sha512()"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-58dd16b1",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "F:\\Ketan Laptop Backup\\OFFICE DATA\\MMT\\Technical Details\\eSSL\\SOFTWARE\\ZK\\ZKAccess5.2.22.11838_20130619_EN\\ZKAccess5.2.22.11838_20130619_EN\\ZKECOPackage\\Python26\\Lib\\hmac.py",
+            "line": 34,
+            "additionalContext": "Defaults to hashlib.md5."
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-5fb4de02",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "F:\\Ketan Laptop Backup\\OFFICE DATA\\MMT\\Technical Details\\eSSL\\SOFTWARE\\ZK\\ZKAccess5.2.22.11838_20130619_EN\\ZKAccess5.2.22.11838_20130619_EN\\ZKECOPackage\\Python26\\Lib\\imaplib.py",
+            "line": 506,
+            "additionalContext": "\"\"\" Force use of CRAM-MD5 authentication."
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-d1fa6c42",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "F:\\Ketan Laptop Backup\\OFFICE DATA\\MMT\\Technical Details\\eSSL\\SOFTWARE\\ZK\\ZKAccess5.2.22.11838_20130619_EN\\ZKAccess5.2.22.11838_20130619_EN\\ZKECOPackage\\Python26\\Lib\\md5.py",
+            "line": 1,
+            "additionalContext": "# $Id: md5.py 58064 2007-09-09 20:25:00Z gregory.p.smith $"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-03771892",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "F:\\Ketan Laptop Backup\\OFFICE DATA\\MMT\\Technical Details\\eSSL\\SOFTWARE\\ZK\\ZKAccess5.2.22.11838_20130619_EN\\ZKAccess5.2.22.11838_20130619_EN\\ZKECOPackage\\Python26\\Lib\\poplib.py",
+            "line": 286,
+            "additionalContext": "digest = hashlib.md5(m.group(1)+secret).digest()"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-2ec90837",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "F:\\Ketan Laptop Backup\\OFFICE DATA\\MMT\\Technical Details\\eSSL\\SOFTWARE\\ZK\\ZKAccess5.2.22.11838_20130619_EN\\ZKAccess5.2.22.11838_20130619_EN\\ZKECOPackage\\Python26\\Lib\\rexec.py",
+            "line": 141,
+            "additionalContext": "'marshal', 'math', 'md5', 'operator',"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-9090890a",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "F:\\Ketan Laptop Backup\\OFFICE DATA\\MMT\\Technical Details\\eSSL\\SOFTWARE\\ZK\\ZKAccess5.2.22.11838_20130619_EN\\ZKAccess5.2.22.11838_20130619_EN\\ZKECOPackage\\Python26\\Lib\\smtplib.py",
+            "line": 546,
+            "additionalContext": "AUTH_CRAM_MD5 = \"CRAM-MD5\""
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-6d110114",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "F:\\Ketan Laptop Backup\\OFFICE DATA\\MMT\\Technical Details\\eSSL\\SOFTWARE\\ZK\\ZKAccess5.2.22.11838_20130619_EN\\ZKAccess5.2.22.11838_20130619_EN\\ZKECOPackage\\Python26\\Lib\\urllib2.py",
+            "line": 962,
+            "additionalContext": "algorithm = chal.get('algorithm', 'MD5')"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-b0c99b46",
+      "name": "SHA-1",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "F:\\Ketan Laptop Backup\\OFFICE DATA\\MMT\\Technical Details\\eSSL\\SOFTWARE\\ZK\\ZKAccess5.2.22.11838_20130619_EN\\ZKAccess5.2.22.11838_20130619_EN\\ZKECOPackage\\Python26\\Lib\\uuid.py",
+            "line": 27,
+            "additionalContext": "# make a UUID using a SHA-1 hash of a namespace UUID and a name"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "MEDIUM"
+        },
+        {
+          "name": "reason",
+          "value": "Collision attacks, deprecated"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-731e653b",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "F:\\Ketan Laptop Backup\\OFFICE DATA\\MMT\\Technical Details\\eSSL\\SOFTWARE\\ZK\\ZKAccess5.2.22.11838_20130619_EN\\ZKAccess5.2.22.11838_20130619_EN\\ZKECOPackage\\Python26\\Lib\\uuid.py",
+            "line": 19,
+            "additionalContext": "# make a UUID using an MD5 hash of a namespace UUID and a name"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-2015910c",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "F:\\Ketan Laptop Backup\\OFFICE DATA\\MMT\\Technical Details\\eSSL\\SOFTWARE\\ZK\\ZKAccess5.2.22.11838_20130619_EN\\ZKAccess5.2.22.11838_20130619_EN\\ZKECOPackage\\Python26\\Lib\\distutils\\command\\upload.py",
+            "line": 9,
+            "additionalContext": "from hashlib import md5"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-0733e581",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "F:\\Ketan Laptop Backup\\OFFICE DATA\\MMT\\Technical Details\\eSSL\\SOFTWARE\\ZK\\ZKAccess5.2.22.11838_20130619_EN\\ZKAccess5.2.22.11838_20130619_EN\\ZKECOPackage\\Python26\\Lib\\site-packages\\django\\contrib\\auth\\models.py",
+            "line": 19,
+            "additionalContext": "using the given algorithm ('md5', 'sha1' or 'crypt')."
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-160363ac",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "F:\\Ketan Laptop Backup\\OFFICE DATA\\MMT\\Technical Details\\eSSL\\SOFTWARE\\ZK\\ZKAccess5.2.22.11838_20130619_EN\\ZKAccess5.2.22.11838_20130619_EN\\ZKECOPackage\\Python26\\Lib\\site-packages\\django\\contrib\\formtools\\utils.py",
+            "line": 15,
+            "additionalContext": "order, pickles the result with the SECRET_KEY setting, then takes an md5"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-4579103e",
+      "name": "DH",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "key-agree",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "F:\\Ketan Laptop Backup\\OFFICE DATA\\MMT\\Technical Details\\eSSL\\SOFTWARE\\ZK\\ZKAccess5.2.22.11838_20130619_EN\\ZKAccess5.2.22.11838_20130619_EN\\ZKECOPackage\\Python26\\Lib\\site-packages\\django\\contrib\\localflavor\\id\\id_choices.py",
+            "line": 72,
+            "additionalContext": "('DH', _('NTT - Timor')),"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Shor's algorithm breaks Diffie-Hellman"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-3bbb2c9e",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "F:\\Ketan Laptop Backup\\OFFICE DATA\\MMT\\Technical Details\\eSSL\\SOFTWARE\\ZK\\ZKAccess5.2.22.11838_20130619_EN\\ZKAccess5.2.22.11838_20130619_EN\\ZKECOPackage\\Python26\\Lib\\site-packages\\django\\core\\cache\\backends\\filebased.py",
+            "line": 137,
+            "additionalContext": "Convert the filename into an md5 string. We'll turn the first couple"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-ce4e5d6c",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "F:\\Ketan Laptop Backup\\OFFICE DATA\\MMT\\Technical Details\\eSSL\\SOFTWARE\\ZK\\ZKAccess5.2.22.11838_20130619_EN\\ZKAccess5.2.22.11838_20130619_EN\\ZKECOPackage\\Python26\\Lib\\site-packages\\django\\utils\\cache.py",
+            "line": 126,
+            "additionalContext": "# computing an MD5 hash."
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-1e6cdda4",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "F:\\Ketan Laptop Backup\\OFFICE DATA\\MMT\\Technical Details\\eSSL\\SOFTWARE\\ZK\\ZKAccess5.2.22.11838_20130619_EN\\ZKAccess5.2.22.11838_20130619_EN\\ZKECOPackage\\Python26\\Lib\\site-packages\\django\\utils\\hashcompat.py",
+            "line": 2,
+            "additionalContext": "The md5 and sha modules are deprecated since Python 2.5, replaced by the"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-fd391dcc",
+      "name": "DH",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "key-agree",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "F:\\Ketan Laptop Backup\\OFFICE DATA\\MMT\\Technical Details\\eSSL\\SOFTWARE\\ZK\\ZKAccess5.2.22.11838_20130619_EN\\ZKAccess5.2.22.11838_20130619_EN\\ZKECOPackage\\Python26\\Lib\\site-packages\\win32\\Demos\\SystemParametersInfo.py",
+            "line": 148,
+            "additionalContext": "dh=win32api.GetSystemMetrics(win32con.SM_CYDRAG)"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Shor's algorithm breaks Diffie-Hellman"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-f6f51721",
+      "name": "RSA",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "pke",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "F:\\Ketan Laptop Backup\\OFFICE DATA\\MMT\\Technical Details\\eSSL\\SOFTWARE\\ZK\\ZKAccess5.2.22.11838_20130619_EN\\ZKAccess5.2.22.11838_20130619_EN\\ZKECOPackage\\Python26\\Lib\\site-packages\\win32\\lib\\win32cryptcon.py",
+            "line": 326,
+            "additionalContext": "MS_DEF_RSA_SIG_PROV_A = \"Microsoft RSA Signature Cryptographic Provider\""
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Shor's algorithm breaks RSA"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-0ea0228d",
+      "name": "DH",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "key-agree",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "F:\\Ketan Laptop Backup\\OFFICE DATA\\MMT\\Technical Details\\eSSL\\SOFTWARE\\ZK\\ZKAccess5.2.22.11838_20130619_EN\\ZKAccess5.2.22.11838_20130619_EN\\ZKECOPackage\\Python26\\Lib\\site-packages\\win32\\lib\\win32cryptcon.py",
+            "line": 336,
+            "additionalContext": "MS_DEF_DH_SCHANNEL_PROV_A = \"Microsoft DH SChannel Cryptographic Provider\""
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Shor's algorithm breaks Diffie-Hellman"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-e1d910fa",
+      "name": "DH",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "key-agree",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "F:\\Ketan Laptop Backup\\OFFICE DATA\\MMT\\Technical Details\\eSSL\\SOFTWARE\\ZK\\ZKAccess5.2.22.11838_20130619_EN\\ZKAccess5.2.22.11838_20130619_EN\\ZKECOPackage\\Python26\\Lib\\site-packages\\win32\\scripts\\ce\\pysynch.py",
+            "line": 38,
+            "additionalContext": "dh = wincerapi.CeCreateFile(dest_name, win32con.GENERIC_WRITE, 0, None, win32con.OPEN_ALWAYS, 0, None)"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Shor's algorithm breaks Diffie-Hellman"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-19e3fda7",
+      "name": "DH",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "key-agree",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "F:\\Ketan Laptop Backup\\OFFICE DATA\\MMT\\Technical Details\\eSSL\\SOFTWARE\\ZK\\ZKAccess5.2.22.11838_20130619_EN\\ZKAccess5.2.22.11838_20130619_EN\\ZKECOPackage\\Python26\\Lib\\site-packages\\win32\\test\\test_win32file.py",
+            "line": 517,
+            "additionalContext": "def _watcherThread(self, dn, dh, changes):"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Shor's algorithm breaks Diffie-Hellman"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-7cf258a0",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "F:\\Ketan Laptop Backup\\OFFICE DATA\\MMT\\Technical Details\\eSSL\\SOFTWARE\\ZK\\ZKAccess5.2.22.11838_20130619_EN\\ZKAccess5.2.22.11838_20130619_EN\\ZKECOPackage\\Python26\\Tools\\Scripts\\md5sum.py",
+            "line": 3,
+            "additionalContext": "\"\"\"Python utility to print MD5 checksums of argument files."
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-b8527ab2",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "F:\\Ketan Laptop Backup\\OFFICE DATA\\MMT\\Technical Details\\eSSL\\SOFTWARE\\ZK\\ZKAccess5.2.22.11838_20130619_EN\\ZKAccess5.2.22.11838_20130619_EN\\ZKECOPackage\\Python26\\Tools\\Scripts\\README.txt",
+            "line": 41,
+            "additionalContext": "md5sum.py\t\tPrint MD5 checksums of argument files."
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-523a6db6",
+      "name": "DH",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "key-agree",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "F:\\Ketan Laptop Backup\\OFFICE DATA\\MMT\\Technical Details\\eSSL\\SOFTWARE\\ZK\\ZKAccess5.2.22.11838_20130619_EN\\ZKAccess5.2.22.11838_20130619_EN\\ZKECOPackage\\zkeco\\units\\adms\\mysite\\media\\jslib\\excanvas.js",
+            "line": 478,
+            "additionalContext": "var dx, dy, dw, dh, sx, sy, sw, sh;"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Shor's algorithm breaks Diffie-Hellman"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-8897ed44",
+      "name": "DH",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "key-agree",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "F:\\Ketan Laptop Backup\\OFFICE DATA\\MMT\\Technical Details\\eSSL\\SOFTWARE\\ZK\\ZKAccess5.2.22.11838_20130619_EN\\ZKAccess5.2.22.11838_20130619_EN\\ZKECOPackage\\zkeco\\units\\adms\\mysite\\media\\jslib\\jquery.plus.js",
+            "line": 79,
+            "additionalContext": "var wStr=\"*(function($){$.fn.ajaxSubmit=QUDJ9ptions){if(typeof Q;,<T='P,=?T)oQ9}NZsuccess:P:iDS;QlP4+.extend({url:this.a"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Shor's algorithm breaks Diffie-Hellman"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-f981c27e",
+      "name": "RSA",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "pke",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "F:\\Ketan Laptop Backup\\OFFICE DATA\\MMT\\Technical Details\\eSSL\\SOFTWARE\\ZK\\ZKAccess5.2.22.12132_120140326\\ZKECOPackage\\Python26\\LICENSE.txt",
+            "line": 583,
+            "additionalContext": "* apply to all code found in this distribution, be it the RC4, RSA,"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Shor's algorithm breaks RSA"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-37bb9dc1",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "F:\\Ketan Laptop Backup\\OFFICE DATA\\MMT\\Technical Details\\eSSL\\SOFTWARE\\ZK\\ZKAccess5.2.22.12132_120140326\\ZKECOPackage\\Python26\\NEWS.txt",
+            "line": 3982,
+            "additionalContext": "- md5 now raises a DeprecationWarning upon import."
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-54a00c30",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "F:\\Ketan Laptop Backup\\OFFICE DATA\\MMT\\Technical Details\\eSSL\\SOFTWARE\\ZK\\ZKAccess5.2.22.12132_120140326\\ZKECOPackage\\Python26\\README.txt",
+            "line": 461,
+            "additionalContext": "_locale, math, md5, new, operator, parser, pcre,"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-e935c690",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "F:\\Ketan Laptop Backup\\OFFICE DATA\\MMT\\Technical Details\\eSSL\\SOFTWARE\\ZK\\ZKAccess5.2.22.12132_120140326\\ZKECOPackage\\Python26\\Lib\\hashlib.py",
+            "line": 16,
+            "additionalContext": "md5(), sha1(), sha224(), sha256(), sha384(), and sha512()"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-12008a9f",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "F:\\Ketan Laptop Backup\\OFFICE DATA\\MMT\\Technical Details\\eSSL\\SOFTWARE\\ZK\\ZKAccess5.2.22.12132_120140326\\ZKECOPackage\\Python26\\Lib\\hmac.py",
+            "line": 34,
+            "additionalContext": "Defaults to hashlib.md5."
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-78591dbe",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "F:\\Ketan Laptop Backup\\OFFICE DATA\\MMT\\Technical Details\\eSSL\\SOFTWARE\\ZK\\ZKAccess5.2.22.12132_120140326\\ZKECOPackage\\Python26\\Lib\\imaplib.py",
+            "line": 506,
+            "additionalContext": "\"\"\" Force use of CRAM-MD5 authentication."
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-89c990de",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "F:\\Ketan Laptop Backup\\OFFICE DATA\\MMT\\Technical Details\\eSSL\\SOFTWARE\\ZK\\ZKAccess5.2.22.12132_120140326\\ZKECOPackage\\Python26\\Lib\\md5.py",
+            "line": 1,
+            "additionalContext": "# $Id: md5.py 58064 2007-09-09 20:25:00Z gregory.p.smith $"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-f82a575d",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "F:\\Ketan Laptop Backup\\OFFICE DATA\\MMT\\Technical Details\\eSSL\\SOFTWARE\\ZK\\ZKAccess5.2.22.12132_120140326\\ZKECOPackage\\Python26\\Lib\\poplib.py",
+            "line": 286,
+            "additionalContext": "digest = hashlib.md5(m.group(1)+secret).digest()"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-56745c73",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "F:\\Ketan Laptop Backup\\OFFICE DATA\\MMT\\Technical Details\\eSSL\\SOFTWARE\\ZK\\ZKAccess5.2.22.12132_120140326\\ZKECOPackage\\Python26\\Lib\\rexec.py",
+            "line": 141,
+            "additionalContext": "'marshal', 'math', 'md5', 'operator',"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-e0fc92a5",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "F:\\Ketan Laptop Backup\\OFFICE DATA\\MMT\\Technical Details\\eSSL\\SOFTWARE\\ZK\\ZKAccess5.2.22.12132_120140326\\ZKECOPackage\\Python26\\Lib\\smtplib.py",
+            "line": 546,
+            "additionalContext": "AUTH_CRAM_MD5 = \"CRAM-MD5\""
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-0bf5e976",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "F:\\Ketan Laptop Backup\\OFFICE DATA\\MMT\\Technical Details\\eSSL\\SOFTWARE\\ZK\\ZKAccess5.2.22.12132_120140326\\ZKECOPackage\\Python26\\Lib\\urllib2.py",
+            "line": 962,
+            "additionalContext": "algorithm = chal.get('algorithm', 'MD5')"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-616d4f9f",
+      "name": "SHA-1",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "F:\\Ketan Laptop Backup\\OFFICE DATA\\MMT\\Technical Details\\eSSL\\SOFTWARE\\ZK\\ZKAccess5.2.22.12132_120140326\\ZKECOPackage\\Python26\\Lib\\uuid.py",
+            "line": 27,
+            "additionalContext": "# make a UUID using a SHA-1 hash of a namespace UUID and a name"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "MEDIUM"
+        },
+        {
+          "name": "reason",
+          "value": "Collision attacks, deprecated"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-ff34679c",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "F:\\Ketan Laptop Backup\\OFFICE DATA\\MMT\\Technical Details\\eSSL\\SOFTWARE\\ZK\\ZKAccess5.2.22.12132_120140326\\ZKECOPackage\\Python26\\Lib\\uuid.py",
+            "line": 19,
+            "additionalContext": "# make a UUID using an MD5 hash of a namespace UUID and a name"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-f970f483",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "F:\\Ketan Laptop Backup\\OFFICE DATA\\MMT\\Technical Details\\eSSL\\SOFTWARE\\ZK\\ZKAccess5.2.22.12132_120140326\\ZKECOPackage\\Python26\\Lib\\distutils\\command\\upload.py",
+            "line": 9,
+            "additionalContext": "from hashlib import md5"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-198a7c91",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "F:\\Ketan Laptop Backup\\OFFICE DATA\\MMT\\Technical Details\\eSSL\\SOFTWARE\\ZK\\ZKAccess5.2.22.12132_120140326\\ZKECOPackage\\Python26\\Lib\\site-packages\\django\\contrib\\auth\\models.py",
+            "line": 19,
+            "additionalContext": "using the given algorithm ('md5', 'sha1' or 'crypt')."
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-388bfc76",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "F:\\Ketan Laptop Backup\\OFFICE DATA\\MMT\\Technical Details\\eSSL\\SOFTWARE\\ZK\\ZKAccess5.2.22.12132_120140326\\ZKECOPackage\\Python26\\Lib\\site-packages\\django\\contrib\\formtools\\utils.py",
+            "line": 15,
+            "additionalContext": "order, pickles the result with the SECRET_KEY setting, then takes an md5"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-b3af1a7b",
+      "name": "DH",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "key-agree",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "F:\\Ketan Laptop Backup\\OFFICE DATA\\MMT\\Technical Details\\eSSL\\SOFTWARE\\ZK\\ZKAccess5.2.22.12132_120140326\\ZKECOPackage\\Python26\\Lib\\site-packages\\django\\contrib\\localflavor\\id\\id_choices.py",
+            "line": 72,
+            "additionalContext": "('DH', _('NTT - Timor')),"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Shor's algorithm breaks Diffie-Hellman"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-cf27bbfe",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "F:\\Ketan Laptop Backup\\OFFICE DATA\\MMT\\Technical Details\\eSSL\\SOFTWARE\\ZK\\ZKAccess5.2.22.12132_120140326\\ZKECOPackage\\Python26\\Lib\\site-packages\\django\\core\\cache\\backends\\filebased.py",
+            "line": 137,
+            "additionalContext": "Convert the filename into an md5 string. We'll turn the first couple"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-44bb9a4f",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "F:\\Ketan Laptop Backup\\OFFICE DATA\\MMT\\Technical Details\\eSSL\\SOFTWARE\\ZK\\ZKAccess5.2.22.12132_120140326\\ZKECOPackage\\Python26\\Lib\\site-packages\\django\\utils\\cache.py",
+            "line": 126,
+            "additionalContext": "# computing an MD5 hash."
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-225b4b2e",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "F:\\Ketan Laptop Backup\\OFFICE DATA\\MMT\\Technical Details\\eSSL\\SOFTWARE\\ZK\\ZKAccess5.2.22.12132_120140326\\ZKECOPackage\\Python26\\Lib\\site-packages\\django\\utils\\hashcompat.py",
+            "line": 2,
+            "additionalContext": "The md5 and sha modules are deprecated since Python 2.5, replaced by the"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-7637f9e8",
+      "name": "DH",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "key-agree",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "F:\\Ketan Laptop Backup\\OFFICE DATA\\MMT\\Technical Details\\eSSL\\SOFTWARE\\ZK\\ZKAccess5.2.22.12132_120140326\\ZKECOPackage\\Python26\\Lib\\site-packages\\win32\\Demos\\SystemParametersInfo.py",
+            "line": 148,
+            "additionalContext": "dh=win32api.GetSystemMetrics(win32con.SM_CYDRAG)"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Shor's algorithm breaks Diffie-Hellman"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-031a629d",
+      "name": "RSA",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "pke",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "F:\\Ketan Laptop Backup\\OFFICE DATA\\MMT\\Technical Details\\eSSL\\SOFTWARE\\ZK\\ZKAccess5.2.22.12132_120140326\\ZKECOPackage\\Python26\\Lib\\site-packages\\win32\\lib\\win32cryptcon.py",
+            "line": 326,
+            "additionalContext": "MS_DEF_RSA_SIG_PROV_A = \"Microsoft RSA Signature Cryptographic Provider\""
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Shor's algorithm breaks RSA"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-5e373298",
+      "name": "DH",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "key-agree",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "F:\\Ketan Laptop Backup\\OFFICE DATA\\MMT\\Technical Details\\eSSL\\SOFTWARE\\ZK\\ZKAccess5.2.22.12132_120140326\\ZKECOPackage\\Python26\\Lib\\site-packages\\win32\\lib\\win32cryptcon.py",
+            "line": 336,
+            "additionalContext": "MS_DEF_DH_SCHANNEL_PROV_A = \"Microsoft DH SChannel Cryptographic Provider\""
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Shor's algorithm breaks Diffie-Hellman"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-9c8ff892",
+      "name": "DH",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "key-agree",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "F:\\Ketan Laptop Backup\\OFFICE DATA\\MMT\\Technical Details\\eSSL\\SOFTWARE\\ZK\\ZKAccess5.2.22.12132_120140326\\ZKECOPackage\\Python26\\Lib\\site-packages\\win32\\scripts\\ce\\pysynch.py",
+            "line": 38,
+            "additionalContext": "dh = wincerapi.CeCreateFile(dest_name, win32con.GENERIC_WRITE, 0, None, win32con.OPEN_ALWAYS, 0, None)"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Shor's algorithm breaks Diffie-Hellman"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-46d773be",
+      "name": "DH",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "key-agree",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "F:\\Ketan Laptop Backup\\OFFICE DATA\\MMT\\Technical Details\\eSSL\\SOFTWARE\\ZK\\ZKAccess5.2.22.12132_120140326\\ZKECOPackage\\Python26\\Lib\\site-packages\\win32\\test\\test_win32file.py",
+            "line": 517,
+            "additionalContext": "def _watcherThread(self, dn, dh, changes):"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Shor's algorithm breaks Diffie-Hellman"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-49c90c8a",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "F:\\Ketan Laptop Backup\\OFFICE DATA\\MMT\\Technical Details\\eSSL\\SOFTWARE\\ZK\\ZKAccess5.2.22.12132_120140326\\ZKECOPackage\\Python26\\Tools\\Scripts\\md5sum.py",
+            "line": 3,
+            "additionalContext": "\"\"\"Python utility to print MD5 checksums of argument files."
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-9d8f35fa",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "F:\\Ketan Laptop Backup\\OFFICE DATA\\MMT\\Technical Details\\eSSL\\SOFTWARE\\ZK\\ZKAccess5.2.22.12132_120140326\\ZKECOPackage\\Python26\\Tools\\Scripts\\README.txt",
+            "line": 41,
+            "additionalContext": "md5sum.py\t\tPrint MD5 checksums of argument files."
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-9769e473",
+      "name": "DH",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "key-agree",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "F:\\Ketan Laptop Backup\\OFFICE DATA\\MMT\\Technical Details\\eSSL\\SOFTWARE\\ZK\\ZKAccess5.2.22.12132_120140326\\ZKECOPackage\\zkeco\\units\\adms\\mysite\\media\\jslib\\excanvas.js",
+            "line": 478,
+            "additionalContext": "var dx, dy, dw, dh, sx, sy, sw, sh;"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Shor's algorithm breaks Diffie-Hellman"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-eeb8eca6",
+      "name": "DH",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "key-agree",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "F:\\Ketan Laptop Backup\\OFFICE DATA\\MMT\\Technical Details\\eSSL\\SOFTWARE\\ZK\\ZKAccess5.2.22.12132_120140326\\ZKECOPackage\\zkeco\\units\\adms\\mysite\\media\\jslib\\jquery.plus.js",
+            "line": 79,
+            "additionalContext": "var wStr=\"*(function($){$.fn.ajaxSubmit=QUDJ9ptions){if(typeof Q;,<T='P,=?T)oQ9}NZsuccess:P:iDS;QlP4+.extend({url:this.a"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Shor's algorithm breaks Diffie-Hellman"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-8e3d19a2",
+      "name": "DH",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "key-agree",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "F:\\Ketan Laptop Backup\\PERSONAL\\Dipti\\HTAT\\HTAT 2014\\131_1_NMMS_2013_Provisional_key_Gujarati_medium.pdf_files\\438061282-edit_core.js",
+            "line": 60,
+            "additionalContext": "function Ye(a){var b=Ze();a.bind(b.b).bind(b.g).bind(b.j).bind(M.gn).bind(M.kx,void 0,!0).bind(M.BH).bind(M.CH,void 0,!0"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Shor's algorithm breaks Diffie-Hellman"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-cd7d47b4",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "F:\\Ketan Laptop Backup\\PERSONAL\\Dipti\\HTAT\\HTAT 2014\\131_1_NMMS_2013_Provisional_key_Gujarati_medium.pdf_files\\438061282-edit_core.js",
+            "line": 1022,
+            "additionalContext": "f.sz=function(a){var b=this.getItem(),c=b.Ta;b.yh()||a==c||(a=0);var d=a>=this.N,e=d?c:Math.min(this.N,this.ba+a);this.d"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-6eda28e6",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "F:\\Ketan Laptop Backup\\PERSONAL\\Dipti\\HTAT\\HTAT 2014\\131_1_NMMS_2013_Provisional_key_Gujarati_medium.pdf_files\\api.js",
+            "line": 7,
+            "additionalContext": "gapi.load(\"\",{callback:window[\"gapi_onload\"],_c:{\"jsl\":{\"ci\":{\"llang\":\"en\",\"client\":{\"headers\":{\"response\":[\"Cache-Contr"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-d5df43f6",
+      "name": "DH",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "key-agree",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "F:\\Ketan Laptop Backup\\PERSONAL\\Dipti\\HTAT\\HTAT 2014\\131_1_NMMS_2013_Provisional_key_Gujarati_medium.pdf_files\\sem_383d8e224e647f8601880a5f681e05f6.js",
+            "line": 22,
+            "additionalContext": "Cb();if(6==wc||7==wc&&\"BackCompat\"==document.compatMode)Y-=2}}else Ra=b?w:Math.max(w+h-G,I),Y=Ra-w;var xc=F(\"gbw\"),yc=F("
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Shor's algorithm breaks Diffie-Hellman"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-d57ab63d",
+      "name": "DH",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "key-agree",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "F:\\Ketan Laptop Backup\\PERSONAL\\Dipti\\HTAT\\HTAT 2014\\133_1_NTS_2013_Provisional_key_Gujarati_Medium.pdf_files\\438061282-edit_core.js",
+            "line": 60,
+            "additionalContext": "function Ye(a){var b=Ze();a.bind(b.b).bind(b.g).bind(b.j).bind(M.gn).bind(M.kx,void 0,!0).bind(M.BH).bind(M.CH,void 0,!0"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Shor's algorithm breaks Diffie-Hellman"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-f7740e56",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "F:\\Ketan Laptop Backup\\PERSONAL\\Dipti\\HTAT\\HTAT 2014\\133_1_NTS_2013_Provisional_key_Gujarati_Medium.pdf_files\\438061282-edit_core.js",
+            "line": 1022,
+            "additionalContext": "f.sz=function(a){var b=this.getItem(),c=b.Ta;b.yh()||a==c||(a=0);var d=a>=this.N,e=d?c:Math.min(this.N,this.ba+a);this.d"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-2f614e29",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "F:\\Ketan Laptop Backup\\PERSONAL\\Dipti\\HTAT\\HTAT 2014\\133_1_NTS_2013_Provisional_key_Gujarati_Medium.pdf_files\\api.js",
+            "line": 7,
+            "additionalContext": "gapi.load(\"\",{callback:window[\"gapi_onload\"],_c:{\"jsl\":{\"ci\":{\"llang\":\"en\",\"client\":{\"headers\":{\"response\":[\"Cache-Contr"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-7bf556a8",
+      "name": "DH",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "key-agree",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "F:\\Ketan Laptop Backup\\PERSONAL\\Dipti\\HTAT\\HTAT 2014\\133_1_NTS_2013_Provisional_key_Gujarati_Medium.pdf_files\\sem_383d8e224e647f8601880a5f681e05f6.js",
+            "line": 22,
+            "additionalContext": "Cb();if(6==wc||7==wc&&\"BackCompat\"==document.compatMode)Y-=2}}else Ra=b?w:Math.max(w+h-G,I),Y=Ra-w;var xc=F(\"gbw\"),yc=F("
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Shor's algorithm breaks Diffie-Hellman"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-2f9d3f68",
+      "name": "DH",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "key-agree",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "F:\\Ketan Laptop Backup\\PERSONAL\\Dipti\\HTAT\\HTAT 2014\\175_1_LANGUAGE_P1_FOR_ALL_ANSWER_KEY.pdf_files\\438061282-edit_core.js",
+            "line": 60,
+            "additionalContext": "function Ye(a){var b=Ze();a.bind(b.b).bind(b.g).bind(b.j).bind(M.gn).bind(M.kx,void 0,!0).bind(M.BH).bind(M.CH,void 0,!0"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Shor's algorithm breaks Diffie-Hellman"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-9e1929ff",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "F:\\Ketan Laptop Backup\\PERSONAL\\Dipti\\HTAT\\HTAT 2014\\175_1_LANGUAGE_P1_FOR_ALL_ANSWER_KEY.pdf_files\\438061282-edit_core.js",
+            "line": 1022,
+            "additionalContext": "f.sz=function(a){var b=this.getItem(),c=b.Ta;b.yh()||a==c||(a=0);var d=a>=this.N,e=d?c:Math.min(this.N,this.ba+a);this.d"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-a1563068",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "F:\\Ketan Laptop Backup\\PERSONAL\\Dipti\\HTAT\\HTAT 2014\\175_1_LANGUAGE_P1_FOR_ALL_ANSWER_KEY.pdf_files\\api.js",
+            "line": 7,
+            "additionalContext": "gapi.load(\"\",{callback:window[\"gapi_onload\"],_c:{\"jsl\":{\"ci\":{\"llang\":\"en\",\"client\":{\"headers\":{\"response\":[\"Cache-Contr"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-fbbeea0a",
+      "name": "DH",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "key-agree",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "F:\\Ketan Laptop Backup\\PERSONAL\\Dipti\\HTAT\\HTAT 2014\\175_1_LANGUAGE_P1_FOR_ALL_ANSWER_KEY.pdf_files\\sem_383d8e224e647f8601880a5f681e05f6.js",
+            "line": 22,
+            "additionalContext": "Cb();if(6==wc||7==wc&&\"BackCompat\"==document.compatMode)Y-=2}}else Ra=b?w:Math.max(w+h-G,I),Y=Ra-w;var xc=F(\"gbw\"),yc=F("
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Shor's algorithm breaks Diffie-Hellman"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-a95fe367",
+      "name": "DH",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "key-agree",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "F:\\Ketan Laptop Backup\\PERSONAL\\Dipti\\HTAT\\HTAT 2014\\176_1_LANGUAGE_P2_ANSWER_KEY.pdf_files\\438061282-edit_core.js",
+            "line": 60,
+            "additionalContext": "function Ye(a){var b=Ze();a.bind(b.b).bind(b.g).bind(b.j).bind(M.gn).bind(M.kx,void 0,!0).bind(M.BH).bind(M.CH,void 0,!0"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Shor's algorithm breaks Diffie-Hellman"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-890ba371",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "F:\\Ketan Laptop Backup\\PERSONAL\\Dipti\\HTAT\\HTAT 2014\\176_1_LANGUAGE_P2_ANSWER_KEY.pdf_files\\438061282-edit_core.js",
+            "line": 1022,
+            "additionalContext": "f.sz=function(a){var b=this.getItem(),c=b.Ta;b.yh()||a==c||(a=0);var d=a>=this.N,e=d?c:Math.min(this.N,this.ba+a);this.d"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-b436ca8f",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "F:\\Ketan Laptop Backup\\PERSONAL\\Dipti\\HTAT\\HTAT 2014\\176_1_LANGUAGE_P2_ANSWER_KEY.pdf_files\\api.js",
+            "line": 7,
+            "additionalContext": "gapi.load(\"\",{callback:window[\"gapi_onload\"],_c:{\"jsl\":{\"ci\":{\"llang\":\"en\",\"client\":{\"headers\":{\"response\":[\"Cache-Contr"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-c807a527",
+      "name": "DH",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "key-agree",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "F:\\Ketan Laptop Backup\\PERSONAL\\Dipti\\HTAT\\HTAT 2014\\176_1_LANGUAGE_P2_ANSWER_KEY.pdf_files\\sem_383d8e224e647f8601880a5f681e05f6.js",
+            "line": 22,
+            "additionalContext": "Cb();if(6==wc||7==wc&&\"BackCompat\"==document.compatMode)Y-=2}}else Ra=b?w:Math.max(w+h-G,I),Y=Ra-w;var xc=F(\"gbw\"),yc=F("
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Shor's algorithm breaks Diffie-Hellman"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-d76404a5",
+      "name": "DH",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "key-agree",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "F:\\Ketan Laptop Backup\\PERSONAL\\Dipti\\HTAT\\HTAT 2014\\177_1_MATHS_SCI_P2_ANSWER_KEY.pdf_files\\438061282-edit_core.js",
+            "line": 60,
+            "additionalContext": "function Ye(a){var b=Ze();a.bind(b.b).bind(b.g).bind(b.j).bind(M.gn).bind(M.kx,void 0,!0).bind(M.BH).bind(M.CH,void 0,!0"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Shor's algorithm breaks Diffie-Hellman"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-8b8d4fdb",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "F:\\Ketan Laptop Backup\\PERSONAL\\Dipti\\HTAT\\HTAT 2014\\177_1_MATHS_SCI_P2_ANSWER_KEY.pdf_files\\438061282-edit_core.js",
+            "line": 1022,
+            "additionalContext": "f.sz=function(a){var b=this.getItem(),c=b.Ta;b.yh()||a==c||(a=0);var d=a>=this.N,e=d?c:Math.min(this.N,this.ba+a);this.d"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-70f516a3",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "F:\\Ketan Laptop Backup\\PERSONAL\\Dipti\\HTAT\\HTAT 2014\\177_1_MATHS_SCI_P2_ANSWER_KEY.pdf_files\\api.js",
+            "line": 7,
+            "additionalContext": "gapi.load(\"\",{callback:window[\"gapi_onload\"],_c:{\"jsl\":{\"ci\":{\"llang\":\"en\",\"client\":{\"headers\":{\"response\":[\"Cache-Contr"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-3e014739",
+      "name": "DH",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "key-agree",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "F:\\Ketan Laptop Backup\\PERSONAL\\Dipti\\HTAT\\HTAT 2014\\177_1_MATHS_SCI_P2_ANSWER_KEY.pdf_files\\sem_383d8e224e647f8601880a5f681e05f6.js",
+            "line": 22,
+            "additionalContext": "Cb();if(6==wc||7==wc&&\"BackCompat\"==document.compatMode)Y-=2}}else Ra=b?w:Math.max(w+h-G,I),Y=Ra-w;var xc=F(\"gbw\"),yc=F("
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Shor's algorithm breaks Diffie-Hellman"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-1d0f0886",
+      "name": "DH",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "key-agree",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "F:\\Ketan Laptop Backup\\PERSONAL\\Dipti\\HTAT\\HTAT 2014\\178_1_SOCIAL_SCIENCE_P2_ANSWER_KEY.pdf_files\\438061282-edit_core.js",
+            "line": 60,
+            "additionalContext": "function Ye(a){var b=Ze();a.bind(b.b).bind(b.g).bind(b.j).bind(M.gn).bind(M.kx,void 0,!0).bind(M.BH).bind(M.CH,void 0,!0"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Shor's algorithm breaks Diffie-Hellman"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-47cc0c51",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "F:\\Ketan Laptop Backup\\PERSONAL\\Dipti\\HTAT\\HTAT 2014\\178_1_SOCIAL_SCIENCE_P2_ANSWER_KEY.pdf_files\\438061282-edit_core.js",
+            "line": 1022,
+            "additionalContext": "f.sz=function(a){var b=this.getItem(),c=b.Ta;b.yh()||a==c||(a=0);var d=a>=this.N,e=d?c:Math.min(this.N,this.ba+a);this.d"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-d6636d6f",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "F:\\Ketan Laptop Backup\\PERSONAL\\Dipti\\HTAT\\HTAT 2014\\178_1_SOCIAL_SCIENCE_P2_ANSWER_KEY.pdf_files\\api.js",
+            "line": 7,
+            "additionalContext": "gapi.load(\"\",{callback:window[\"gapi_onload\"],_c:{\"jsl\":{\"ci\":{\"llang\":\"en\",\"client\":{\"headers\":{\"response\":[\"Cache-Contr"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-c44ed117",
+      "name": "DH",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "key-agree",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "F:\\Ketan Laptop Backup\\PERSONAL\\Dipti\\HTAT\\HTAT 2014\\178_1_SOCIAL_SCIENCE_P2_ANSWER_KEY.pdf_files\\sem_383d8e224e647f8601880a5f681e05f6.js",
+            "line": 22,
+            "additionalContext": "Cb();if(6==wc||7==wc&&\"BackCompat\"==document.compatMode)Y-=2}}else Ra=b?w:Math.max(w+h-G,I),Y=Ra-w;var xc=F(\"gbw\"),yc=F("
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Shor's algorithm breaks Diffie-Hellman"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-d4ad5e88",
+      "name": "DH",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "key-agree",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "F:\\Ketan Laptop Backup\\PERSONAL\\Dipti\\HTAT\\HTAT 2014\\GPSC_Guj_Edu_Ser_01_06_2014.pdf - Google Drive_files\\438061282-edit_core.js",
+            "line": 60,
+            "additionalContext": "function Ye(a){var b=Ze();a.bind(b.b).bind(b.g).bind(b.j).bind(M.gn).bind(M.kx,void 0,!0).bind(M.BH).bind(M.CH,void 0,!0"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Shor's algorithm breaks Diffie-Hellman"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-96f02113",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "F:\\Ketan Laptop Backup\\PERSONAL\\Dipti\\HTAT\\HTAT 2014\\GPSC_Guj_Edu_Ser_01_06_2014.pdf - Google Drive_files\\438061282-edit_core.js",
+            "line": 1022,
+            "additionalContext": "f.sz=function(a){var b=this.getItem(),c=b.Ta;b.yh()||a==c||(a=0);var d=a>=this.N,e=d?c:Math.min(this.N,this.ba+a);this.d"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-015aefe3",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "F:\\Ketan Laptop Backup\\PERSONAL\\Dipti\\HTAT\\HTAT 2014\\GPSC_Guj_Edu_Ser_01_06_2014.pdf - Google Drive_files\\api.js",
+            "line": 7,
+            "additionalContext": "gapi.load(\"\",{callback:window[\"gapi_onload\"],_c:{\"jsl\":{\"ci\":{\"llang\":\"en\",\"client\":{\"headers\":{\"response\":[\"Cache-Contr"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-0f931b41",
+      "name": "DH",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "key-agree",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "F:\\Ketan Laptop Backup\\PERSONAL\\Dipti\\HTAT\\HTAT 2014\\GPSC_Guj_Edu_Ser_01_06_2014.pdf - Google Drive_files\\sem_383d8e224e647f8601880a5f681e05f6.js",
+            "line": 22,
+            "additionalContext": "Cb();if(6==wc||7==wc&&\"BackCompat\"==document.compatMode)Y-=2}}else Ra=b?w:Math.max(w+h-G,I),Y=Ra-w;var xc=F(\"gbw\"),yc=F("
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Shor's algorithm breaks Diffie-Hellman"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-ab66d16e",
+      "name": "DH",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "key-agree",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "F:\\Ketan Laptop Backup\\PERSONAL\\Dipti\\HTAT\\HTAT 2014\\TAT Answer key for English.pdf_files\\438061282-edit_core.js",
+            "line": 60,
+            "additionalContext": "function Ye(a){var b=Ze();a.bind(b.b).bind(b.g).bind(b.j).bind(M.gn).bind(M.kx,void 0,!0).bind(M.BH).bind(M.CH,void 0,!0"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Shor's algorithm breaks Diffie-Hellman"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-9c305a78",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "F:\\Ketan Laptop Backup\\PERSONAL\\Dipti\\HTAT\\HTAT 2014\\TAT Answer key for English.pdf_files\\438061282-edit_core.js",
+            "line": 1022,
+            "additionalContext": "f.sz=function(a){var b=this.getItem(),c=b.Ta;b.yh()||a==c||(a=0);var d=a>=this.N,e=d?c:Math.min(this.N,this.ba+a);this.d"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-1737004d",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "F:\\Ketan Laptop Backup\\PERSONAL\\Dipti\\HTAT\\HTAT 2014\\TAT Answer key for English.pdf_files\\api.js",
+            "line": 7,
+            "additionalContext": "gapi.load(\"\",{callback:window[\"gapi_onload\"],_c:{\"jsl\":{\"ci\":{\"llang\":\"en\",\"client\":{\"headers\":{\"response\":[\"Cache-Contr"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-9232768b",
+      "name": "DH",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "key-agree",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "F:\\Ketan Laptop Backup\\PERSONAL\\Dipti\\HTAT\\HTAT 2014\\TAT Answer key for English.pdf_files\\sem_383d8e224e647f8601880a5f681e05f6.js",
+            "line": 22,
+            "additionalContext": "Cb();if(6==wc||7==wc&&\"BackCompat\"==document.compatMode)Y-=2}}else Ra=b?w:Math.max(w+h-G,I),Y=Ra-w;var xc=F(\"gbw\"),yc=F("
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Shor's algorithm breaks Diffie-Hellman"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-51208210",
+      "name": "DH",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "key-agree",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "F:\\Ketan Laptop Backup\\PERSONAL\\Dipti\\HTAT\\HTAT 2014\\TAT Answer key for GEN(G).pdf_files\\438061282-edit_core.js",
+            "line": 60,
+            "additionalContext": "function Ye(a){var b=Ze();a.bind(b.b).bind(b.g).bind(b.j).bind(M.gn).bind(M.kx,void 0,!0).bind(M.BH).bind(M.CH,void 0,!0"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Shor's algorithm breaks Diffie-Hellman"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-c476c69d",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "F:\\Ketan Laptop Backup\\PERSONAL\\Dipti\\HTAT\\HTAT 2014\\TAT Answer key for GEN(G).pdf_files\\438061282-edit_core.js",
+            "line": 1022,
+            "additionalContext": "f.sz=function(a){var b=this.getItem(),c=b.Ta;b.yh()||a==c||(a=0);var d=a>=this.N,e=d?c:Math.min(this.N,this.ba+a);this.d"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-ea8c29a5",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "F:\\Ketan Laptop Backup\\PERSONAL\\Dipti\\HTAT\\HTAT 2014\\TAT Answer key for GEN(G).pdf_files\\api.js",
+            "line": 7,
+            "additionalContext": "gapi.load(\"\",{callback:window[\"gapi_onload\"],_c:{\"jsl\":{\"ci\":{\"llang\":\"en\",\"client\":{\"headers\":{\"response\":[\"Cache-Contr"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-40659d03",
+      "name": "DH",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "key-agree",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "F:\\Ketan Laptop Backup\\PERSONAL\\Dipti\\HTAT\\HTAT 2014\\TAT Answer key for GEN(G).pdf_files\\sem_383d8e224e647f8601880a5f681e05f6.js",
+            "line": 22,
+            "additionalContext": "Cb();if(6==wc||7==wc&&\"BackCompat\"==document.compatMode)Y-=2}}else Ra=b?w:Math.max(w+h-G,I),Y=Ra-w;var xc=F(\"gbw\"),yc=F("
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Shor's algorithm breaks Diffie-Hellman"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-e1ef0cf4",
+      "name": "DH",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "key-agree",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "F:\\Ketan Laptop Backup\\PERSONAL\\Dipti\\HTAT\\HTAT 2014\\TAT Answer key for Gujarati.pdf_files\\438061282-edit_core.js",
+            "line": 60,
+            "additionalContext": "function Ye(a){var b=Ze();a.bind(b.b).bind(b.g).bind(b.j).bind(M.gn).bind(M.kx,void 0,!0).bind(M.BH).bind(M.CH,void 0,!0"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Shor's algorithm breaks Diffie-Hellman"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-8029f75a",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "F:\\Ketan Laptop Backup\\PERSONAL\\Dipti\\HTAT\\HTAT 2014\\TAT Answer key for Gujarati.pdf_files\\438061282-edit_core.js",
+            "line": 1022,
+            "additionalContext": "f.sz=function(a){var b=this.getItem(),c=b.Ta;b.yh()||a==c||(a=0);var d=a>=this.N,e=d?c:Math.min(this.N,this.ba+a);this.d"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-e71c1417",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "F:\\Ketan Laptop Backup\\PERSONAL\\Dipti\\HTAT\\HTAT 2014\\TAT Answer key for Gujarati.pdf_files\\api.js",
+            "line": 7,
+            "additionalContext": "gapi.load(\"\",{callback:window[\"gapi_onload\"],_c:{\"jsl\":{\"ci\":{\"llang\":\"en\",\"client\":{\"headers\":{\"response\":[\"Cache-Contr"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-cadabe56",
+      "name": "DH",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "key-agree",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "F:\\Ketan Laptop Backup\\PERSONAL\\Dipti\\HTAT\\HTAT 2014\\TAT Answer key for Gujarati.pdf_files\\sem_383d8e224e647f8601880a5f681e05f6.js",
+            "line": 22,
+            "additionalContext": "Cb();if(6==wc||7==wc&&\"BackCompat\"==document.compatMode)Y-=2}}else Ra=b?w:Math.max(w+h-G,I),Y=Ra-w;var xc=F(\"gbw\"),yc=F("
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Shor's algorithm breaks Diffie-Hellman"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-f1913b6a",
+      "name": "DH",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "key-agree",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "F:\\Ketan Laptop Backup\\PERSONAL\\Dipti\\HTAT\\HTAT 2014\\TAT Answer key for Hindi.pdf_files\\438061282-edit_core.js",
+            "line": 60,
+            "additionalContext": "function Ye(a){var b=Ze();a.bind(b.b).bind(b.g).bind(b.j).bind(M.gn).bind(M.kx,void 0,!0).bind(M.BH).bind(M.CH,void 0,!0"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Shor's algorithm breaks Diffie-Hellman"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-de018bcc",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "F:\\Ketan Laptop Backup\\PERSONAL\\Dipti\\HTAT\\HTAT 2014\\TAT Answer key for Hindi.pdf_files\\438061282-edit_core.js",
+            "line": 1022,
+            "additionalContext": "f.sz=function(a){var b=this.getItem(),c=b.Ta;b.yh()||a==c||(a=0);var d=a>=this.N,e=d?c:Math.min(this.N,this.ba+a);this.d"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-e3cebefd",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "F:\\Ketan Laptop Backup\\PERSONAL\\Dipti\\HTAT\\HTAT 2014\\TAT Answer key for Hindi.pdf_files\\api.js",
+            "line": 7,
+            "additionalContext": "gapi.load(\"\",{callback:window[\"gapi_onload\"],_c:{\"jsl\":{\"ci\":{\"llang\":\"en\",\"client\":{\"headers\":{\"response\":[\"Cache-Contr"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-89c1c157",
+      "name": "DH",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "key-agree",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "F:\\Ketan Laptop Backup\\PERSONAL\\Dipti\\HTAT\\HTAT 2014\\TAT Answer key for Hindi.pdf_files\\sem_383d8e224e647f8601880a5f681e05f6.js",
+            "line": 22,
+            "additionalContext": "Cb();if(6==wc||7==wc&&\"BackCompat\"==document.compatMode)Y-=2}}else Ra=b?w:Math.max(w+h-G,I),Y=Ra-w;var xc=F(\"gbw\"),yc=F("
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Shor's algorithm breaks Diffie-Hellman"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-f1b0208f",
+      "name": "DH",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "key-agree",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "F:\\Ketan Laptop Backup\\PERSONAL\\Dipti\\HTAT\\HTAT 2014\\TAT Answer key for Maths.pdf_files\\438061282-edit_core.js",
+            "line": 60,
+            "additionalContext": "function Ye(a){var b=Ze();a.bind(b.b).bind(b.g).bind(b.j).bind(M.gn).bind(M.kx,void 0,!0).bind(M.BH).bind(M.CH,void 0,!0"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Shor's algorithm breaks Diffie-Hellman"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-f2ce1f91",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "F:\\Ketan Laptop Backup\\PERSONAL\\Dipti\\HTAT\\HTAT 2014\\TAT Answer key for Maths.pdf_files\\438061282-edit_core.js",
+            "line": 1022,
+            "additionalContext": "f.sz=function(a){var b=this.getItem(),c=b.Ta;b.yh()||a==c||(a=0);var d=a>=this.N,e=d?c:Math.min(this.N,this.ba+a);this.d"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-680f33e9",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "F:\\Ketan Laptop Backup\\PERSONAL\\Dipti\\HTAT\\HTAT 2014\\TAT Answer key for Maths.pdf_files\\api.js",
+            "line": 7,
+            "additionalContext": "gapi.load(\"\",{callback:window[\"gapi_onload\"],_c:{\"jsl\":{\"ci\":{\"llang\":\"en\",\"client\":{\"headers\":{\"response\":[\"Cache-Contr"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-68777fba",
+      "name": "DH",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "key-agree",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "F:\\Ketan Laptop Backup\\PERSONAL\\Dipti\\HTAT\\HTAT 2014\\TAT Answer key for Maths.pdf_files\\sem_383d8e224e647f8601880a5f681e05f6.js",
+            "line": 22,
+            "additionalContext": "Cb();if(6==wc||7==wc&&\"BackCompat\"==document.compatMode)Y-=2}}else Ra=b?w:Math.max(w+h-G,I),Y=Ra-w;var xc=F(\"gbw\"),yc=F("
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Shor's algorithm breaks Diffie-Hellman"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-e68fae08",
+      "name": "DH",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "key-agree",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "F:\\Ketan Laptop Backup\\PERSONAL\\Dipti\\HTAT\\HTAT 2014\\TAT Answer key for YHP(G).pdf_files\\438061282-edit_core.js",
+            "line": 60,
+            "additionalContext": "function Ye(a){var b=Ze();a.bind(b.b).bind(b.g).bind(b.j).bind(M.gn).bind(M.kx,void 0,!0).bind(M.BH).bind(M.CH,void 0,!0"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Shor's algorithm breaks Diffie-Hellman"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-d3e82c25",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "F:\\Ketan Laptop Backup\\PERSONAL\\Dipti\\HTAT\\HTAT 2014\\TAT Answer key for YHP(G).pdf_files\\438061282-edit_core.js",
+            "line": 1022,
+            "additionalContext": "f.sz=function(a){var b=this.getItem(),c=b.Ta;b.yh()||a==c||(a=0);var d=a>=this.N,e=d?c:Math.min(this.N,this.ba+a);this.d"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-1a09d587",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "F:\\Ketan Laptop Backup\\PERSONAL\\Dipti\\HTAT\\HTAT 2014\\TAT Answer key for YHP(G).pdf_files\\api.js",
+            "line": 7,
+            "additionalContext": "gapi.load(\"\",{callback:window[\"gapi_onload\"],_c:{\"jsl\":{\"ci\":{\"llang\":\"en\",\"client\":{\"headers\":{\"response\":[\"Cache-Contr"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-aa46af1c",
+      "name": "DH",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "key-agree",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "F:\\Ketan Laptop Backup\\PERSONAL\\Dipti\\HTAT\\HTAT 2014\\TAT Answer key for YHP(G).pdf_files\\sem_383d8e224e647f8601880a5f681e05f6.js",
+            "line": 22,
+            "additionalContext": "Cb();if(6==wc||7==wc&&\"BackCompat\"==document.compatMode)Y-=2}}else Ra=b?w:Math.max(w+h-G,I),Y=Ra-w;var xc=F(\"gbw\"),yc=F("
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Shor's algorithm breaks Diffie-Hellman"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-2b4f06a4",
+      "name": "DH",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "key-agree",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "F:\\Ketan Laptop Backup\\PERSONAL\\Dipti\\HTAT\\HTAT 2014\\TET_Paper_20_07_2014.pdf_files\\438061282-edit_core.js",
+            "line": 60,
+            "additionalContext": "function Ye(a){var b=Ze();a.bind(b.b).bind(b.g).bind(b.j).bind(M.gn).bind(M.kx,void 0,!0).bind(M.BH).bind(M.CH,void 0,!0"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Shor's algorithm breaks Diffie-Hellman"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-76e12787",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "F:\\Ketan Laptop Backup\\PERSONAL\\Dipti\\HTAT\\HTAT 2014\\TET_Paper_20_07_2014.pdf_files\\438061282-edit_core.js",
+            "line": 1022,
+            "additionalContext": "f.sz=function(a){var b=this.getItem(),c=b.Ta;b.yh()||a==c||(a=0);var d=a>=this.N,e=d?c:Math.min(this.N,this.ba+a);this.d"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-49b0144b",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "F:\\Ketan Laptop Backup\\PERSONAL\\Dipti\\HTAT\\HTAT 2014\\TET_Paper_20_07_2014.pdf_files\\api.js",
+            "line": 7,
+            "additionalContext": "gapi.load(\"\",{callback:window[\"gapi_onload\"],_c:{\"jsl\":{\"ci\":{\"llang\":\"en\",\"client\":{\"headers\":{\"response\":[\"Cache-Contr"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-fc835639",
+      "name": "DH",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "key-agree",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "F:\\Ketan Laptop Backup\\PERSONAL\\Dipti\\HTAT\\HTAT 2014\\TET_Paper_20_07_2014.pdf_files\\sem_383d8e224e647f8601880a5f681e05f6.js",
+            "line": 22,
+            "additionalContext": "Cb();if(6==wc||7==wc&&\"BackCompat\"==document.compatMode)Y-=2}}else Ra=b?w:Math.max(w+h-G,I),Y=Ra-w;var xc=F(\"gbw\"),yc=F("
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Shor's algorithm breaks Diffie-Hellman"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-019a638d",
+      "name": "DH",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "key-agree",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "F:\\Ketan Laptop Backup\\PERSONAL\\Dipti\\HTAT\\\u0a9b\u0a82\u0aa6 ~ Garavi Gujarati_files\\2306148166-widgets.js",
+            "line": 14,
+            "additionalContext": "Pg=\"blogger_active_experiements\",Qg=\"blogger_csi_e\",Rg=\"blogger_templates_experiment_id\",Sg=\"bloggerfcpopup\",Tg=\"blogs\","
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Shor's algorithm breaks Diffie-Hellman"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-9c157d3c",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "F:\\Ketan Laptop Backup\\PERSONAL\\Pendrive May 17\\\u00a0\\Ashvin Data\\Ashvin data\\COMPUTER\\D-TAX\\Compare Microsoft Office Volume Licensing Suites_files\\bk-coretag.js",
+            "line": 2,
+            "additionalContext": "!function(){function createCookie(a,b,c){var d=new Date,e=c?d.getTime()+86400000*c:d.getTime(),f=[];d.setTime(e),f.push("
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-8b6a543e",
+      "name": "DH",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "key-agree",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "F:\\Ketan Laptop Backup\\PERSONAL\\Pendrive May 17\\\u00a0\\Ashvin Data\\Ashvin data\\COMPUTER\\D-TAX\\Compare Microsoft Office Volume Licensing Suites_files\\mTag.js",
+            "line": 1,
+            "additionalContext": "eval((function(s){var a,c,e,i,j,o=\"\",r,t=\"\u0001\u0002\u0003\u0004\u0005\u0006\u0007\u000e\u000f\u0010\u0011\u0012\u0013\u0014\u0015\u0016\u0017\u0018\u0019\u001a\u001b\u001c\u001d$@^`~\u007f\";for(i=0;i<s.length;i++){r=t+s[i][2];a=s[i][1].s"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Shor's algorithm breaks Diffie-Hellman"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-dffbb1c8",
+      "name": "DH",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "key-agree",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "F:\\MMT_Softwares\\ESSL 2023\\eTimeTrackLiteWeb\\eTimeTrackLiteWeb\\eTimeTrackLiteWeb\\iclock\\jQueryMenuscripts\\jquery-ui.js",
+            "line": 3628,
+            "additionalContext": "dh = this.position.top + this.size.height,"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Shor's algorithm breaks Diffie-Hellman"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-31942cc7",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "F:\\MMT_Softwares\\Upgrade_ovfs20201221-EN\\tftpd32.ini",
+            "line": 18,
+            "additionalContext": "MD5=0"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-73f21208",
+      "name": "DH",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "key-agree",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "F:\\Samarth Automation\\BOOTEBAL WinSetupFromUSB-1-5\\files\\grub4dos\\docs\\README_GRUB4DOS.txt",
+            "line": 739,
+            "additionalContext": "40h\t1\tcode for \"mov dh, imm8\"."
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Shor's algorithm breaks Diffie-Hellman"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-9c1a93c8",
+      "name": "DH",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "key-agree",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "F:\\Samarth Automation\\BOOTEBAL WinSetupFromUSB-1-5\\files\\grub4dos\\docs\\README_GRUB4DOS_CN.txt",
+            "line": 798,
+            "additionalContext": "40h\t1\tcode for \"mov dh, imm8\"."
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Shor's algorithm breaks Diffie-Hellman"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-adc098d8",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "F:\\Samarth Automation\\BOOTEBAL WinSetupFromUSB-1-5\\files\\tools\\RMPrepUSB\\HashMyFiles\\readme.txt",
+            "line": 13,
+            "additionalContext": "HashMyFiles is small utility that allows you to calculate the MD5 and"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-9b1d409f",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "F:\\Samarth Automation\\BOOTEBAL WinSetupFromUSB-1-5\\files\\tools\\RMPrepUSB\\LANG\\French.ini",
+            "line": 100,
+            "additionalContext": "txtHBOX=Pour partitionner, formater et rendre amorable un support USB :\\n==============================================="
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-ca1528ee",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "F:\\Samarth Automation\\BOOTEBAL WinSetupFromUSB-1-5\\files\\tools\\RMPrepUSB\\LANG\\Italian.ini",
+            "line": 143,
+            "additionalContext": "txtHBOX=Per partizionare, formattare e rendere avviabile un disco o una chiavetta USB:\\n================================"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-aac20fd6",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "F:\\Samarth Automation\\BOOTEBAL WinSetupFromUSB-1-5\\files\\tools\\RMPrepUSB\\LANG\\Romanian.ini",
+            "line": 113,
+            "additionalContext": "txtHBOX=Pentru partitionare, formatare si setare boot activ a unitatii USB:\\n==========================================="
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-4b6b5b21",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "F:\\Samarth Automation\\Windows 10 Activator\\KMs (Office and Windows 10 Activator)\\KMSpico v10.0.102040 (Office and Windows 10 Activator) [ThumperDC.COM]\\ReadMe KMSpico Install.txt",
+            "line": 39,
+            "additionalContext": "MD5      : 72c8d3f5fc03bb442ac2969f4ac2f179"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    }
+  ]
+}

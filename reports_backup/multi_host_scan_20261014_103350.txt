@@ -1,0 +1,342 @@
+======================================================================
+MULTI-HOST NETWORK SCAN REPORT
+======================================================================
+Scan Time: 2026-10-14T10:33:50.750841
+Total Hosts: 10
+Total Findings: 17
+======================================================================
+
+SUMMARY:
+----------------------------------------------------------------------
+  ril.com                                  | Ports: 1 | Findings: 1
+  jsw.in                                   | Ports: 1 | Findings: 3
+  adityabirla.com                          | Ports: 1 | Findings: 3
+  hdfcbank.com                             | Ports: 2 | Findings: 2
+  microsoft.com                            | Ports: 1 | Findings: 1
+  apple.com                                | Ports: 1 | Findings: 1
+  meta.com                                 | Ports: 1 | Findings: 2
+  claude.ai                                | Ports: 2 | Findings: 2
+  bseindia.com                             | Ports: 1 | Findings: 1
+  nseindia.com                             | Ports: 1 | Findings: 1
+
+
+
+======================================================================
+HOST: ril.com
+======================================================================
+Open Ports: [443]
+
+----------------------------------------------------------------------
+TLS on ril.com:443
+----------------------------------------------------------------------
+  Status: success
+  TLS Version: TLSv1.3
+  Cipher Suite: ('TLS_AES_128_GCM_SHA256', 'TLSv1.3', 128)
+
+  CERTIFICATE DETAILS:
+    Subject: {'CN': 'ril.com'}
+    Issuer: {'C': 'US', 'O': 'GoDaddy.com', 'CN': 'GoDaddy TLS Intermediate CA DV - R1v1'}
+    Valid Until: 2027-03-20 04:58:58
+    Expiry Status: VALID
+    Public Key: {'type': 'RSA', 'bits': 2048}
+    SAN: ['rilstaticasset.ril.com', 'cmsadmin.ril.com', 'ril.com', 'www.ril.com']
+
+  Findings (1):
+    [HIGH] RSA
+      Reason: Shor's algorithm breaks RSA certificate signature
+      Context: Signature: sha256WithRSAEncryption
+
+
+======================================================================
+HOST: jsw.in
+======================================================================
+Open Ports: [443]
+
+----------------------------------------------------------------------
+TLS on jsw.in:443
+----------------------------------------------------------------------
+  Status: success
+  TLS Version: TLSv1.2
+  Cipher Suite: ('ECDHE-RSA-AES256-GCM-SHA384', 'TLSv1.2', 256)
+
+  CERTIFICATE DETAILS:
+    Subject: {'C': 'IN', 'ST': 'Maharashtra', 'L': 'Mumbai', 'O': 'JSW IP HOLDINGS PRIVATE LIMITED', 'CN': 'jsw.in'}
+    Issuer: {'C': 'US', 'O': 'DigiCert Inc', 'OU': 'www.digicert.com', 'CN': 'GeoTrust TLS RSA CA G1'}
+    Valid Until: 2027-01-28 23:59:59
+    Expiry Status: VALID
+    Public Key: {'type': 'RSA', 'bits': 2048}
+    SAN: ['jsw.in', 'www.jsw.in', 'jswsteel.in', 'jswenergy.in', 'jswholdings.in', 'jswinfrastructure.in', 'jswfoundation.in', 'jswsales.in', 'jvm.in', 'uat.jsw.in', 'newsletter.jsw.in', 'group.jsw.in', 'jswvishwastmt.in', 'uat.jswvishwastmt.in', 'uat.jswsteel.in', 'jswcoatedsteel.in', 'jswneosteel.in', 'jswsteelformsme.in', 'www.jswsteel.in', 'www.jswenergy.in', 'www.jswholdings.in', 'www.jswinfrastructure.in', 'www.jswfoundation.in', 'www.jswsales.in', 'www.jvm.in', 'www.jswvishwastmt.in', 'www.uat.jswvishwastmt.in']
+
+  Findings (3):
+    [HIGH] RSA
+      Reason: Shor's algorithm breaks RSA
+      Context: Cipher suite: ECDHE-RSA-AES256-GCM-SHA384
+
+    [HIGH] ECDH
+      Reason: Shor's algorithm breaks ECDH
+      Context: Cipher suite: ECDHE-RSA-AES256-GCM-SHA384
+
+    [HIGH] DH
+      Reason: Shor's algorithm breaks Diffie-Hellman
+      Context: Cipher suite: ECDHE-RSA-AES256-GCM-SHA384
+
+
+======================================================================
+HOST: adityabirla.com
+======================================================================
+Open Ports: [443]
+
+----------------------------------------------------------------------
+TLS on adityabirla.com:443
+----------------------------------------------------------------------
+  Status: success
+  TLS Version: TLSv1.2
+  Cipher Suite: ('ECDHE-RSA-AES256-GCM-SHA384', 'TLSv1.2', 256)
+
+  CERTIFICATE DETAILS:
+    Subject: {'C': 'IN', 'ST': 'Maharashtra', 'O': 'Birla Management Centre Services Private Limited', 'CN': '*.adityabirla.com'}
+    Issuer: {'C': 'GB', 'O': 'Sectigo Limited', 'CN': 'Sectigo Public Server Authentication CA OV R36'}
+    Valid Until: 2026-11-14 23:59:59
+    Expiry Status: VALID
+    Public Key: {'type': 'RSA', 'bits': 2048}
+    SAN: ['*.adityabirla.com', 'adityabirla.com']
+
+  Findings (3):
+    [HIGH] RSA
+      Reason: Shor's algorithm breaks RSA
+      Context: Cipher suite: ECDHE-RSA-AES256-GCM-SHA384
+
+    [HIGH] ECDH
+      Reason: Shor's algorithm breaks ECDH
+      Context: Cipher suite: ECDHE-RSA-AES256-GCM-SHA384
+
+    [HIGH] DH
+      Reason: Shor's algorithm breaks Diffie-Hellman
+      Context: Cipher suite: ECDHE-RSA-AES256-GCM-SHA384
+
+
+======================================================================
+HOST: hdfcbank.com
+======================================================================
+Open Ports: [443, 8443]
+
+----------------------------------------------------------------------
+TLS on hdfcbank.com:443
+----------------------------------------------------------------------
+  Status: success
+  TLS Version: TLSv1.3
+  Cipher Suite: ('TLS_AES_256_GCM_SHA384', 'TLSv1.3', 256)
+
+  CERTIFICATE DETAILS:
+    Subject: {'C': 'IN', 'ST': 'Maharashtra', 'L': 'Mumbai', 'O': 'Hdfc Bank Limited', 'CN': 'www.hdfc.bank.in'}
+    Issuer: {'C': 'US', 'O': 'DigiCert Inc', 'OU': 'www.digicert.com', 'CN': 'GeoTrust TLS RSA CA G1'}
+    Valid Until: 2027-01-15 23:59:59
+    Expiry Status: VALID
+    Public Key: {'type': 'RSA', 'bits': 2048}
+    SAN: ['www.hdfc.bank.in', 'hdfc.bank.in', 'hdfcbank.com', 'www.hdfcbank.com']
+
+  Findings (1):
+    [HIGH] RSA
+      Reason: Shor's algorithm breaks RSA certificate signature
+      Context: Signature: sha256WithRSAEncryption
+
+----------------------------------------------------------------------
+TLS on hdfcbank.com:8443
+----------------------------------------------------------------------
+  Status: success
+  TLS Version: TLSv1.3
+  Cipher Suite: ('TLS_AES_256_GCM_SHA384', 'TLSv1.3', 256)
+
+  CERTIFICATE DETAILS:
+    Subject: {'C': 'IN', 'ST': 'Maharashtra', 'L': 'Mumbai', 'O': 'Hdfc Bank Limited', 'CN': 'www.hdfc.bank.in'}
+    Issuer: {'C': 'US', 'O': 'DigiCert Inc', 'OU': 'www.digicert.com', 'CN': 'GeoTrust TLS RSA CA G1'}
+    Valid Until: 2027-01-15 23:59:59
+    Expiry Status: VALID
+    Public Key: {'type': 'RSA', 'bits': 2048}
+    SAN: ['www.hdfc.bank.in', 'hdfc.bank.in', 'hdfcbank.com', 'www.hdfcbank.com']
+
+  Findings (1):
+    [HIGH] RSA
+      Reason: Shor's algorithm breaks RSA certificate signature
+      Context: Signature: sha256WithRSAEncryption
+
+
+======================================================================
+HOST: microsoft.com
+======================================================================
+Open Ports: [443]
+
+----------------------------------------------------------------------
+TLS on microsoft.com:443
+----------------------------------------------------------------------
+  Status: success
+  TLS Version: TLSv1.3
+  Cipher Suite: ('TLS_AES_256_GCM_SHA384', 'TLSv1.3', 256)
+
+  CERTIFICATE DETAILS:
+    Subject: {'C': 'US', 'ST': 'WA', 'L': 'Redmond', 'O': 'Microsoft Corporation', 'CN': 'microsoft.com'}
+    Issuer: {'C': 'US', 'O': 'Microsoft Corporation', 'CN': 'Microsoft TLS G2 RSA CA OCSP 04'}
+    Valid Until: 2026-12-20 09:04:17
+    Expiry Status: VALID
+    Public Key: {'type': 'RSA', 'bits': 2048}
+    SAN: ['microsoft.com', 's.microsoft.com', 'ga.microsoft.com', 'aep.microsoft.com', 'aer.microsoft.com', 'grv.microsoft.com', 'hup.microsoft.com', 'mac.microsoft.com', 'mkb.microsoft.com', 'pme.microsoft.com', 'pmi.microsoft.com', 'rss.microsoft.com', 'sar.microsoft.com', 'tco.microsoft.com', 'fuse.microsoft.com', 'ieak.microsoft.com', 'mac2.microsoft.com', 'mcsp.microsoft.com', 'open.microsoft.com', 'shop.microsoft.com', 'spur.microsoft.com', 'itpro.microsoft.com', 'mango.microsoft.com', 'music.microsoft.com', 'pymes.microsoft.com', 'store.microsoft.com', 'aether.microsoft.com', 'alerts.microsoft.com', 'design.microsoft.com', 'garage.microsoft.com', 'gigjam.microsoft.com', 'msctec.microsoft.com', 'online.microsoft.com', 'stream.microsoft.com', 'afflink.microsoft.com', 'connect.microsoft.com', 'develop.microsoft.com', 'domains.microsoft.com', 'example.microsoft.com', 'madeira.microsoft.com', 'msdnisv.microsoft.com', 'mspress.microsoft.com', 'www.aep.microsoft.com', 'www.aer.microsoft.com', 'wwwbeta.microsoft.com', 'business.microsoft.com', 'empresas.microsoft.com', 'learning.microsoft.com', 'msdnwiki.microsoft.com', 'openness.microsoft.com', 'pinpoint.microsoft.com', 'snackbox.microsoft.com', 'sponsors.microsoft.com', 'stationq.microsoft.com', 'aistories.microsoft.com', 'community.microsoft.com', 'crawlmsdn.microsoft.com', 'iotschool.microsoft.com', 'messenger.microsoft.com', 'minecraft.microsoft.com', 'backoffice.microsoft.com', 'enterprise.microsoft.com', 'iotcentral.microsoft.com', 'pinunblock.microsoft.com', 'reroute443.microsoft.com', 'communities.microsoft.com', 'explore-smb.microsoft.com', 'expressions.microsoft.com', 'ondernemers.microsoft.com', 'techacademy.microsoft.com', 'terraserver.microsoft.com', 'communities2.microsoft.com', 'connectevent.microsoft.com', 'dataplatform.microsoft.com', 'entrepreneur.microsoft.com', 'hxd.research.microsoft.com', 'mspartnerira.microsoft.com', 'mydatahealth.microsoft.com', 'oemcommunity.microsoft.com', 'real-stories.microsoft.com', 'www.formspro.microsoft.com', 'futuredecoded.microsoft.com', 'upgradecenter.microsoft.com', 'learnanalytics.microsoft.com', 'onlinelearning.microsoft.com', 'businesscentral.microsoft.com', 'cloud-immersion.microsoft.com', 'studentpartners.microsoft.com', 'analyticspartner.microsoft.com', 'businessplatform.microsoft.com', 'explore-security.microsoft.com', 'kleinunternehmen.microsoft.com', 'partnercommunity.microsoft.com', 'explore-marketing.microsoft.com', 'innovationcontest.microsoft.com', 'partnerincentives.microsoft.com', 'phoenixcataloguat.microsoft.com', 'szkolyprzyszlosci.microsoft.com', 'www.powerautomate.microsoft.com', 'successionplanning.microsoft.com', 'lumiaconversationsuk.microsoft.com', 'successionplanninguat.microsoft.com', 'businessmobilitycenter.microsoft.com', 'skypeandteams.fasttrack.microsoft.com', 'www.microsoftdlapartnerow.microsoft.com', 'commercialappcertification.microsoft.com', 'www.skypeandteams.fasttrack.microsoft.com', 'ceoconnections.event.microsoft.com', 'biz4afrika.microsoft.com', 'cashback.microsoft.com', 'www.cashback.microsoft.com', 'visio.microsoft.com', 'insidemsr.microsoft.com', 'developervelocityassessment.com', 'www.developervelocityassessment.com', 'gears5.com', 'www.gears5.com', 'www.gearstactics.com', 'gearstactics.com', 'm12.microsoft.com', 'seeingai.com', 'yourchoice.microsoft.com', 'mvtd.events.microsoft.com', 'imagine.microsoft.com', 'microsoft.com.au', 'www.microsoft.com.au', 'dynamics.microsoft.com', 'powerplatform.microsoft.com', 'powerapps.microsoft.com', 'powerautomate.microsoft.com', 'powervirtualagents.microsoft.com', 'powerpages.microsoft.com', 'test.ideas.fabric.microsoft.com', 'sds.microsoft.com', 'ppe.sds.microsoft.com', 'www.microsoft365copilot.com', 'www.jclarity.com', 'techinnovatorsspotlight.com', 'www.techinnovatorsspotlight.com', 'copilot.ai', 'getlicensingready.com', 'www.getlicensingready.com', 'jpn.delve.office.com', 'aus.delve.office.com', 'ind.delve.office.com', 'kor.delve.office.com', 'cobra.me.microsoft.com', 'www.businesscentral.com', 'businesscentral.com', 'msaidatastudio.officeppe.net', 'ideas.fabric.microsoft.com', 'www.cpt.link', 'cpt.link', 'yarp.dot.net', 'microsoftstream.com', 'www.microsoftstream.com', 'web.microsoftstream.com', 'discover.copilot.ai', 'copilot.com', 'www.copilot.com', 'discover.copilot.com', 'researchforum.microsoft.com', 'cdn.techcommunity.microsoft.com']
+
+  Findings (1):
+    [HIGH] RSA
+      Reason: Shor's algorithm breaks RSA certificate signature
+      Context: Signature: sha384WithRSAEncryption
+
+
+======================================================================
+HOST: apple.com
+======================================================================
+Open Ports: [443]
+
+----------------------------------------------------------------------
+TLS on apple.com:443
+----------------------------------------------------------------------
+  Status: success
+  TLS Version: TLSv1.3
+  Cipher Suite: ('TLS_AES_256_GCM_SHA384', 'TLSv1.3', 256)
+
+  CERTIFICATE DETAILS:
+    Subject: {'businessCategory': 'Private Organization', 'jurisdictionC': 'US', 'jurisdictionST': 'California', 'serialNumber': 'C0806592', 'C': 'US', 'ST': 'California', 'L': 'Cupertino', 'O': 'Apple Inc.', 'CN': 'apple.com'}
+    Issuer: {'C': 'US', 'O': 'Apple Inc.', 'CN': 'Apple Public EV Server ECC CA 1 - G1'}
+    Valid Until: 2026-12-23 19:10:23
+    Expiry Status: VALID
+    Public Key: {'type': 'EC', 'bits': 256}
+    SAN: ['apple.com']
+
+  Findings (1):
+    [HIGH] ECDSA
+      Reason: ECDSA-256 public key is quantum-vulnerable
+      Context: Public key: EC-256
+
+
+======================================================================
+HOST: meta.com
+======================================================================
+Open Ports: [443]
+
+----------------------------------------------------------------------
+TLS on meta.com:443
+----------------------------------------------------------------------
+  Status: success
+  TLS Version: TLSv1.3
+  Cipher Suite: ('TLS_CHACHA20_POLY1305_SHA256', 'TLSv1.3', 256)
+
+  CERTIFICATE DETAILS:
+    Subject: {'C': 'US', 'ST': 'California', 'L': 'Menlo Park', 'O': 'Meta Platforms, Inc.', 'CN': '*.meta.com'}
+    Issuer: {'C': 'US', 'O': 'DigiCert Inc', 'CN': 'DigiCert Global G2 TLS RSA SHA256 2020 CA1'}
+    Valid Until: 2026-10-21 23:59:59
+    Expiry Status: EXPIRING_SOON
+    Public Key: {'type': 'RSA', 'bits': 2048}
+    SAN: ['*.meta.com', 'meta.com']
+
+  Findings (2):
+    [HIGH] RSA
+      Reason: Shor's algorithm breaks RSA certificate signature
+      Context: Signature: sha256WithRSAEncryption
+
+    [MEDIUM] Certificate-ExpiringSoon
+      Reason: Certificate expires in 7 days
+      Context: Expires: 2026-10-21 23:59:59
+
+
+======================================================================
+HOST: claude.ai
+======================================================================
+Open Ports: [443, 8443]
+
+----------------------------------------------------------------------
+TLS on claude.ai:443
+----------------------------------------------------------------------
+  Status: success
+  TLS Version: TLSv1.3
+  Cipher Suite: ('TLS_AES_256_GCM_SHA384', 'TLSv1.3', 256)
+
+  CERTIFICATE DETAILS:
+    Subject: {'CN': 'claude.ai'}
+    Issuer: {'C': 'US', 'O': "Let's Encrypt", 'CN': 'YE2'}
+    Valid Until: 2026-12-09 14:25:14
+    Expiry Status: VALID
+    Public Key: {'type': 'EC', 'bits': 256}
+    SAN: ['claude.ai', 'staging.claude.ai', 'www.claude.ai']
+
+  Findings (1):
+    [HIGH] ECDSA
+      Reason: ECDSA-256 public key is quantum-vulnerable
+      Context: Public key: EC-256
+
+----------------------------------------------------------------------
+TLS on claude.ai:8443
+----------------------------------------------------------------------
+  Status: success
+  TLS Version: TLSv1.3
+  Cipher Suite: ('TLS_AES_256_GCM_SHA384', 'TLSv1.3', 256)
+
+  CERTIFICATE DETAILS:
+    Subject: {'CN': 'claude.ai'}
+    Issuer: {'C': 'US', 'O': "Let's Encrypt", 'CN': 'YE2'}
+    Valid Until: 2026-12-09 14:25:14
+    Expiry Status: VALID
+    Public Key: {'type': 'EC', 'bits': 256}
+    SAN: ['claude.ai', 'staging.claude.ai', 'www.claude.ai']
+
+  Findings (1):
+    [HIGH] ECDSA
+      Reason: ECDSA-256 public key is quantum-vulnerable
+      Context: Public key: EC-256
+
+
+======================================================================
+HOST: bseindia.com
+======================================================================
+Open Ports: [443]
+
+----------------------------------------------------------------------
+TLS on bseindia.com:443
+----------------------------------------------------------------------
+  Status: success
+  TLS Version: TLSv1.3
+  Cipher Suite: ('TLS_AES_256_GCM_SHA384', 'TLSv1.3', 256)
+
+  CERTIFICATE DETAILS:
+    Subject: {'C': 'IN', 'ST': 'Maharashtra', 'L': 'Mumbai', 'O': 'BSE Limited', 'CN': '*.bseindia.com'}
+    Issuer: {'C': 'US', 'O': 'DigiCert Inc', 'CN': 'DigiCert Global G3 TLS ECC SHA384 2020 CA1'}
+    Valid Until: 2026-11-21 23:59:59
+    Expiry Status: VALID
+    Public Key: {'type': 'EC', 'bits': 256}
+    SAN: ['*.bseindia.com', 'bseindia.com']
+
+  Findings (1):
+    [HIGH] ECDSA
+      Reason: ECDSA-256 public key is quantum-vulnerable
+      Context: Public key: EC-256
+
+
+======================================================================
+HOST: nseindia.com
+======================================================================
+Open Ports: [443]
+
+----------------------------------------------------------------------
+TLS on nseindia.com:443
+----------------------------------------------------------------------
+  Status: success
+  TLS Version: TLSv1.3
+  Cipher Suite: ('TLS_AES_256_GCM_SHA384', 'TLSv1.3', 256)
+
+  CERTIFICATE DETAILS:
+    Subject: {'C': 'IN', 'ST': 'Maharashtra', 'L': 'Mumbai', 'O': 'National Stock Exchange of India Ltd', 'CN': 'www.nseindia.com'}
+    Issuer: {'C': 'US', 'O': 'DigiCert Inc', 'CN': 'DigiCert Global G3 TLS ECC SHA384 2020 CA1'}
+    Valid Until: 2027-04-24 23:59:59
+    Expiry Status: VALID
+    Public Key: {'type': 'EC', 'bits': 256}
+    SAN: ['www.nseindia.com', 'aim.nseindia.com', 'analytics.nseindia.com', 'apim.nseindia.com', 'awnac1.nse.co.in', 'awnac2.nse.co.in', 'beta.nseindia.com', 'betanseapi.nseindia.com', 'betansearchives.nseindia.com', 'betastreamer.nseindia.com', 'blob.niftyindices.com', 'caapindia.com', 'charting.nseindia.com', 'clientprofilinguat.nseindia.com', 'cnsapi.connect2nsccl.com', 'cogmobile.cogencis.com', 'cogmobilec.cogencis.com', 'connect.cogencis.com', 'connect2nsccl.com', 'data.indiapassivefunds.com', 'dev-sf.niftyindices.com', 'dev.niftyindices.com', 'digitalexchange.nseindia.com', 'dotexbilling-bcp.nseindia.com', 'dotexbilling-uat1.nseindia.com', 'dotexdata.nseindia.com', 'egr.nseindia.com', 'eipo.nseindia.com', 'enit.nseindia.com', 'enitnextgen.nseindia.com', 'enov8.nseindia.com', 'eofs.nseindia.com', 'hrms.cogencis.com', 'iap.nseindia.com', 'igrafx1.nseindia.com', 'iislbilling.nseindia.com', 'iislbillingdr.nseindia.com', 'ims.connect2nsccl.com', 'inspection.nseindia.com', 'investorhelpline.nseclearing.in', 'investorhelpline.nseindia.com', 'isrm.connect2nsccl.com', 'isrmcoll.connect2nsccl.com', 'isrmxnet.connect2nsccl.com', 'lama.nseindia.com', 'muse2.cogencis.com', 'neaps.nseindia.com', 'neaps.nseix.com', 'nilbilling-bcp.nseindia.com', 'nilbilling-uat.nseindia.com', 'nilbilling.nseindia.com', 'nscclindia.com', 'nse-ebp.com', 'nsearchives.nseindia.com', 'nseclearing.in', 'nseeboard.nseindia.com', 'nseifsc.com', 'nseindia.com', 'nseix.com', 'nseixga.com', 'nsekorporate.nseindia.com', 'nsekra.com', 'nsesmart.com', 'nsralbilling-bcp.nseindia.com', 'nsralbilling-uat.nseindia.com', 'nsralbilling.nseindia.com', 'preprod.nsekra.com', 'sebicof.nseindia.com', 'sebp.nseindia.com', 'selfservice.nse.co.in', 'streamer.nseindia.com', 'test.nseindia.com', 'testiap.nseindia.com', 'uat-backend.niftyindices.com', 'uat-frontend.niftyindices.com', 'uat-ipo.nseindia.com', 'uat.connect2nsccl.com', 'uat.nscclindia.com', 'uat.nseicc.com', 'uat.nseix.com', 'uat.nsekra.com', 'www.archive.nseclearing.in', 'www.caapindia.com', 'www.cogencis.com', 'www.connect2nsccl.com', 'www.indiapassivefunds.com', 'www.ncfm-india.com', 'www.nscclindia.com', 'www.nse-ebp.com', 'www.nse-esgrating.com', 'www.nseacademy.com', 'www.nseclearing.in', 'www.nsefoundation.nseindia.com', 'www.nseix.com', 'www.nseixga.com', 'www.nsekra.com', 'www.nsesmart.com']
+
+  Findings (1):
+    [HIGH] ECDSA
+      Reason: ECDSA-256 public key is quantum-vulnerable
+      Context: Public key: EC-256
+

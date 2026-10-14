@@ -1,0 +1,53 @@
+======================================================================
+NETWORK SCAN REPORT
+======================================================================
+Host: 13.75.6.248
+Scan Time: 2026-10-13T14:06:19.821875
+Total Ports Scanned: 4131
+Open Ports: 2
+Services Found: 1
+======================================================================
+
+Open Ports: [80, 443]
+
+
+----------------------------------------------------------------------
+TLS on 13.75.6.248:443
+----------------------------------------------------------------------
+  Status: success
+  TLS Version: TLSv1.2
+  Cipher Suite: ('ECDHE-RSA-AES256-GCM-SHA384', 'TLSv1.2', 256)
+
+  CERTIFICATE DETAILS:
+    Subject: {'CN': '*.srk.one'}
+    Issuer: {'C': 'US', 'ST': 'Arizona', 'L': 'Scottsdale', 'O': 'Starfield Technologies, Inc.', 'OU': 'http://certs.starfieldtech.com/repository/', 'CN': 'Starfield Secure Certificate Authority - G2'}
+    Valid From: 2026-04-27 10:37:50
+    Valid Until: 2026-11-11 10:37:50
+    Expiry Status: EXPIRING_SOON
+    Days Until Expiry: 28
+    Public Key: {'type': 'DH', 'bits': 2048}
+    Signature Algorithm: sha256WithRSAEncryption
+    Serial: 0x8a8b50b41fcd1e3a
+    SAN: []
+
+  Findings (4):
+    [HIGH] RSA
+      Reason: Shor's algorithm breaks RSA
+      Context: Cipher suite: ECDHE-RSA-AES256-GCM-SHA384
+      Source: TLS cipher suite
+
+    [HIGH] ECDH
+      Reason: Shor's algorithm breaks ECDH
+      Context: Cipher suite: ECDHE-RSA-AES256-GCM-SHA384
+      Source: TLS cipher suite
+
+    [HIGH] DH
+      Reason: Shor's algorithm breaks Diffie-Hellman
+      Context: Cipher suite: ECDHE-RSA-AES256-GCM-SHA384
+      Source: TLS cipher suite
+
+    [MEDIUM] Certificate-ExpiringSoon
+      Reason: Certificate expires in 28 days
+      Context: Expires: 2026-11-11 10:37:50
+      Source: Certificate validity
+

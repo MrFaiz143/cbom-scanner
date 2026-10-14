@@ -1,0 +1,50 @@
+{
+  "host": "13.75.6.248",
+  "scan_time": "2026-10-13T13:38:38.401953",
+  "total_ports_scanned": 5131,
+  "open_ports": [
+    80,
+    443
+  ],
+  "services": [
+    {
+      "target": "13.75.6.248:443",
+      "protocol": "TLS",
+      "port": 443,
+      "status": "success",
+      "tls_version": "TLSv1.2",
+      "cipher_suite": [
+        "ECDHE-RSA-AES256-GCM-SHA384",
+        "TLSv1.2",
+        256
+      ],
+      "certificate": {
+        "raw_size_bytes": 1710,
+        "note": "Certificate mila (binary form, parsed nahi)"
+      },
+      "findings": [
+        {
+          "algorithm": "RSA",
+          "risk": "HIGH",
+          "reason": "Shor's algorithm breaks RSA",
+          "context": "Cipher suite: ECDHE-RSA-AES256-GCM-SHA384",
+          "source": "TLS cipher suite"
+        },
+        {
+          "algorithm": "ECDH",
+          "risk": "HIGH",
+          "reason": "Shor's algorithm breaks ECDH",
+          "context": "Cipher suite: ECDHE-RSA-AES256-GCM-SHA384",
+          "source": "TLS cipher suite"
+        },
+        {
+          "algorithm": "DH",
+          "risk": "HIGH",
+          "reason": "Shor's algorithm breaks Diffie-Hellman",
+          "context": "Cipher suite: ECDHE-RSA-AES256-GCM-SHA384",
+          "source": "TLS cipher suite"
+        }
+      ]
+    }
+  ]
+}

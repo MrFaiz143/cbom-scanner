@@ -1,0 +1,48 @@
+{
+  "host": "13.75.6.248",
+  "scan_time": "2026-10-13T13:24:59.726587",
+  "services": [
+    {
+      "target": "13.75.6.248:443",
+      "protocol": "TLS",
+      "status": "success",
+      "tls_version": "TLSv1.2",
+      "cipher_suite": [
+        "ECDHE-RSA-AES256-GCM-SHA384",
+        "TLSv1.2",
+        256
+      ],
+      "certificate": null,
+      "findings": [
+        {
+          "algorithm": "RSA",
+          "risk": "HIGH",
+          "reason": "Shor's algorithm breaks RSA",
+          "context": "Cipher suite: ECDHE-RSA-AES256-GCM-SHA384",
+          "source": "TLS cipher suite"
+        },
+        {
+          "algorithm": "ECDH",
+          "risk": "HIGH",
+          "reason": "Shor's algorithm breaks ECDH",
+          "context": "Cipher suite: ECDHE-RSA-AES256-GCM-SHA384",
+          "source": "TLS cipher suite"
+        },
+        {
+          "algorithm": "DHE",
+          "risk": "HIGH",
+          "reason": "Shor's algorithm breaks Diffie-Hellman",
+          "context": "Cipher suite: ECDHE-RSA-AES256-GCM-SHA384",
+          "source": "TLS cipher suite"
+        },
+        {
+          "algorithm": "DH",
+          "risk": "HIGH",
+          "reason": "Shor's algorithm breaks Diffie-Hellman",
+          "context": "Cipher suite: ECDHE-RSA-AES256-GCM-SHA384",
+          "source": "TLS cipher suite"
+        }
+      ]
+    }
+  ]
+}

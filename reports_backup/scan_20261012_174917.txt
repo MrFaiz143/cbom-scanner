@@ -1,0 +1,111 @@
+======================================================================
+CBOM SCAN REPORT
+======================================================================
+Scan Time: 2026-10-12T17:49:17.848767
+Folder: G:\Quotation 2025-2026\Fazian\Forex\Faizan\Import\Cbom-Scanner\src
+Files Scanned: 4
+Total Findings: 17
+======================================================================
+
+[HIGH] RSA
+  File: G:\Quotation 2025-2026\Fazian\Forex\Faizan\Import\Cbom-Scanner\src\cbom_generator.py
+  Line: 98, Column: 10
+  Reason: Shor's algorithm breaks RSA
+  Context: 'RSA': 'pke',
+
+[HIGH] RSA
+  File: G:\Quotation 2025-2026\Fazian\Forex\Faizan\Import\Cbom-Scanner\src\cbom_generator.py
+  Line: 116, Column: 31
+  Reason: Shor's algorithm breaks RSA
+  Context: 'algorithm': 'RSA',
+
+[HIGH] RSA
+  File: G:\Quotation 2025-2026\Fazian\Forex\Faizan\Import\Cbom-Scanner\src\cbom_generator.py
+  Line: 118, Column: 52
+  Reason: Shor's algorithm breaks RSA
+  Context: 'reason': "Shor's algorithm breaks RSA",
+
+[HIGH] RSA
+  File: G:\Quotation 2025-2026\Fazian\Forex\Faizan\Import\Cbom-Scanner\src\cbom_generator.py
+  Line: 119, Column: 35
+  Reason: Shor's algorithm breaks RSA
+  Context: 'context': 'key = RSA.generate(2048)'
+
+[HIGH] ECDSA
+  File: G:\Quotation 2025-2026\Fazian\Forex\Faizan\Import\Cbom-Scanner\src\cbom_generator.py
+  Line: 99, Column: 10
+  Reason: Shor's algorithm breaks ECDSA
+  Context: 'ECDSA': 'signature',
+
+[HIGH] ECDH
+  File: G:\Quotation 2025-2026\Fazian\Forex\Faizan\Import\Cbom-Scanner\src\cbom_generator.py
+  Line: 100, Column: 10
+  Reason: Shor's algorithm breaks ECDH
+  Context: 'ECDH': 'key-agree',
+
+[HIGH] DSA
+  File: G:\Quotation 2025-2026\Fazian\Forex\Faizan\Import\Cbom-Scanner\src\cbom_generator.py
+  Line: 101, Column: 10
+  Reason: Shor's algorithm breaks DSA
+  Context: 'DSA': 'signature',
+
+[HIGH] DH
+  File: G:\Quotation 2025-2026\Fazian\Forex\Faizan\Import\Cbom-Scanner\src\cbom_generator.py
+  Line: 102, Column: 10
+  Reason: Shor's algorithm breaks Diffie-Hellman
+  Context: 'DH': 'key-agree',
+
+[MEDIUM] SHA-1
+  File: G:\Quotation 2025-2026\Fazian\Forex\Faizan\Import\Cbom-Scanner\src\cbom_generator.py
+  Line: 103, Column: 10
+  Reason: Collision attacks, deprecated
+  Context: 'SHA-1': 'hash',
+
+[HIGH] MD5
+  File: G:\Quotation 2025-2026\Fazian\Forex\Faizan\Import\Cbom-Scanner\src\cbom_generator.py
+  Line: 104, Column: 10
+  Reason: Broken hash function
+  Context: 'MD5': 'hash',
+
+[HIGH] RSA
+  File: G:\Quotation 2025-2026\Fazian\Forex\Faizan\Import\Cbom-Scanner\src\scanner.py
+  Line: 14, Column: 6
+  Reason: Shor's algorithm breaks RSA
+  Context: 'RSA': {'risk': 'HIGH', 'reason': "Shor's algorithm breaks RSA"},
+
+[HIGH] ECDSA
+  File: G:\Quotation 2025-2026\Fazian\Forex\Faizan\Import\Cbom-Scanner\src\scanner.py
+  Line: 15, Column: 6
+  Reason: Shor's algorithm breaks ECDSA
+  Context: 'ECDSA': {'risk': 'HIGH', 'reason': "Shor's algorithm breaks ECDSA"},
+
+[HIGH] ECDH
+  File: G:\Quotation 2025-2026\Fazian\Forex\Faizan\Import\Cbom-Scanner\src\scanner.py
+  Line: 16, Column: 6
+  Reason: Shor's algorithm breaks ECDH
+  Context: 'ECDH': {'risk': 'HIGH', 'reason': "Shor's algorithm breaks ECDH"},
+
+[HIGH] DSA
+  File: G:\Quotation 2025-2026\Fazian\Forex\Faizan\Import\Cbom-Scanner\src\scanner.py
+  Line: 17, Column: 6
+  Reason: Shor's algorithm breaks DSA
+  Context: 'DSA': {'risk': 'HIGH', 'reason': "Shor's algorithm breaks DSA"},
+
+[HIGH] DH
+  File: G:\Quotation 2025-2026\Fazian\Forex\Faizan\Import\Cbom-Scanner\src\scanner.py
+  Line: 18, Column: 6
+  Reason: Shor's algorithm breaks Diffie-Hellman
+  Context: 'DH': {'risk': 'HIGH', 'reason': "Shor's algorithm breaks Diffie-Hellman"},
+
+[MEDIUM] SHA-1
+  File: G:\Quotation 2025-2026\Fazian\Forex\Faizan\Import\Cbom-Scanner\src\scanner.py
+  Line: 19, Column: 6
+  Reason: Collision attacks, deprecated
+  Context: 'SHA-1': {'risk': 'MEDIUM', 'reason': "Collision attacks, deprecated"},
+
+[HIGH] MD5
+  File: G:\Quotation 2025-2026\Fazian\Forex\Faizan\Import\Cbom-Scanner\src\scanner.py
+  Line: 20, Column: 6
+  Reason: Broken hash function
+  Context: 'MD5': {'risk': 'HIGH', 'reason': "Broken hash function"},
+

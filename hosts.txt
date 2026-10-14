@@ -1,17 +1,73 @@
-# Indian Conglomerates
-ril.com
-jsw.in
-adityabirla.com
-
 # Indian Banks
 hdfcbank.com
+icicibank.com
+axisbank.com
+kotak.com
+pnbindia.in
 
-# Global Tech
+# Indian IT Companies
+tcs.com
+infosys.com
+wipro.com
+hcltech.com
+techmahindra.com
+
+# Indian Government
+irctc.co.in
+incometax.gov.in
+uidai.gov.in
+mha.gov.in
+joinindianarmy.nic.in
+
+# Indian E-commerce
+flipkart.com
+myntra.com
+nykaa.com
+snapdeal.com
+
+# Indian Telecom
+jio.com
+airtel.in
+myvi.in
+bsnl.co.in
+
+# Indian Conglomerates
+ril.com
+adanienterprises.com
+larsentoubro.com
+jsw.in
+adityabirla.com
+mahindra.com
+
+# Indian Stock Exchanges & Broking
+bseindia.com
+nseindia.com
+groww.in
+angelone.in
+zerodha.com
+
+# Global Tech (India operations)
 microsoft.com
 apple.com
 meta.com
-claude.ai
+google.com
+amazon.in
 
-# Indian Stock Exchanges
-bseindia.com
-nseindia.com
+# Indian Startups
+zomato.com
+swiggy.com
+paytm.com
+phonepe.com
+cred.club
+
+# Indian Education
+iitm.ac.in
+iisc.ac.in
+iitb.ac.in
+iitd.ac.in
+nitk.ac.in
+
+# Indian Healthcare
+apollohospitals.com
+fortishealthcare.com
+maxhealthcare.in

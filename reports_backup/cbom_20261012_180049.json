@@ -1,0 +1,4433 @@
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.6",
+  "serialNumber": "urn:uuid:b291c6cf-e6c7-4ee6-b620-9e2c9ff12128",
+  "version": 1,
+  "metadata": {
+    "timestamp": "2026-10-12T18:00:49.475431Z",
+    "tools": [
+      {
+        "vendor": "CBOM Scanner",
+        "name": "cbom-scanner",
+        "version": "0.1.0"
+      }
+    ],
+    "component": {
+      "type": "application",
+      "name": "Scanned Project",
+      "bom-ref": "root-app"
+    }
+  },
+  "components": [
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-a0bc2e95",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "G:\\Quotation 2025-2026\\Fazian\\Forex\\Faizan\\Fazian\\Fazian\\Forex\\office 2007\\Access.en-us\\setup.xml",
+            "line": 16,
+            "additionalContext": "<File Id=\"AccessMUISet.xml\" MD5=\"40F0C972529E751CA409F51CC8C99610\" Size=\"821\" RelativeCachePath=\"AccessMUISet.xml\" Relat"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-3b5271a5",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "G:\\Quotation 2025-2026\\Fazian\\Forex\\Faizan\\Fazian\\Fazian\\Forex\\office 2007\\Enterprise.WW\\setup.xml",
+            "line": 351,
+            "additionalContext": "<File Id=\"Office64WW.xml\" MD5=\"3D97CD89EC26F6F3DF1844C442BED9BE\" Size=\"2310\" RelativeCachePath=\"Office64WW.xml\" Relative"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-8d38daec",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "G:\\Quotation 2025-2026\\Fazian\\Forex\\Faizan\\Fazian\\Fazian\\Forex\\office 2007\\Excel.en-us\\setup.xml",
+            "line": 27,
+            "additionalContext": "<File Id=\"ExcelMUI.xml\" MD5=\"8DC5BB48F2B175D44DD5C26C88964A6E\" Size=\"1801\" RelativeCachePath=\"ExcelMUI.xml\" RelativeSour"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-1014ff38",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "G:\\Quotation 2025-2026\\Fazian\\Forex\\Faizan\\Fazian\\Fazian\\Forex\\office 2007\\Groove.en-us\\setup.xml",
+            "line": 12,
+            "additionalContext": "<File Id=\"GrooveMUISet.xml\" MD5=\"1BBCDE574791341C9D5ADFF6238B8649\" Size=\"821\" RelativeCachePath=\"GrooveMUISet.xml\" Relat"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-4f277494",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "G:\\Quotation 2025-2026\\Fazian\\Forex\\Faizan\\Fazian\\Fazian\\Forex\\office 2007\\InfoPath.en-us\\setup.xml",
+            "line": 48,
+            "additionalContext": "<File Id=\"InfoPathMUI.xml\" MD5=\"C7B049D8D88F240DDC0AEBEAD55A97F4\" Size=\"4585\" RelativeCachePath=\"InfoPathMUI.xml\" Relati"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-26c19f40",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "G:\\Quotation 2025-2026\\Fazian\\Forex\\Faizan\\Fazian\\Fazian\\Forex\\office 2007\\Office.en-us\\setup.xml",
+            "line": 98,
+            "additionalContext": "<File Id=\"OfficeMUISet.xml\" MD5=\"FF95975A90072BE7E36139736AABEF9A\" Size=\"821\" RelativeCachePath=\"OfficeMUISet.xml\" Relat"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-2d8d0472",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "G:\\Quotation 2025-2026\\Fazian\\Forex\\Faizan\\Fazian\\Fazian\\Forex\\office 2007\\Office64.en-us\\setup.xml",
+            "line": 12,
+            "additionalContext": "<File Id=\"Office64MUISet.xml\" MD5=\"B256B21850C30C838D9ED3C77C687BB4\" Size=\"825\" RelativeCachePath=\"Office64MUISet.xml\" R"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-03df5bbe",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "G:\\Quotation 2025-2026\\Fazian\\Forex\\Faizan\\Fazian\\Fazian\\Forex\\office 2007\\OneNote.en-us\\setup.xml",
+            "line": 19,
+            "additionalContext": "<File Id=\"OneNoteMUI.xml\" MD5=\"B0CD2B40E8B24CA734A1F974CA0B674C\" Size=\"1359\" RelativeCachePath=\"OneNoteMUI.xml\" Relative"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-f7042073",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "G:\\Quotation 2025-2026\\Fazian\\Forex\\Faizan\\Fazian\\Fazian\\Forex\\office 2007\\Outlook.en-us\\setup.xml",
+            "line": 46,
+            "additionalContext": "<File Id=\"OutlookMUI.xml\" MD5=\"A3CE955854073E44D49563A823CFC0BC\" Size=\"2945\" RelativeCachePath=\"OutlookMUI.xml\" Relative"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-bf51bbbc",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "G:\\Quotation 2025-2026\\Fazian\\Forex\\Faizan\\Fazian\\Fazian\\Forex\\office 2007\\PowerPoint.en-us\\setup.xml",
+            "line": 18,
+            "additionalContext": "<File Id=\"PowerPointMUI.xml\" MD5=\"60E3A15C790BBD6593CEB43E7E47678E\" Size=\"1553\" RelativeCachePath=\"PowerPointMUI.xml\" Re"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-f22e73a6",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "G:\\Quotation 2025-2026\\Fazian\\Forex\\Faizan\\Fazian\\Fazian\\Forex\\office 2007\\Proofing.en-us\\setup.xml",
+            "line": 55,
+            "additionalContext": "<File Id=\"Proofing.xml\" MD5=\"C47A4FB9C2B5F3C35C5D83FBDB489011\" Size=\"813\" RelativeCachePath=\"Proofing.xml\" RelativeSourc"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-894def56",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "G:\\Quotation 2025-2026\\Fazian\\Forex\\Faizan\\Fazian\\Fazian\\Forex\\office 2007\\Publisher.en-us\\setup.xml",
+            "line": 15,
+            "additionalContext": "<File Id=\"PublisherMUI.xml\" MD5=\"AE6B097C7A32C8C1255204C5E5868EB7\" Size=\"1470\" RelativeCachePath=\"PublisherMUI.xml\" Rela"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-a1765431",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "G:\\Quotation 2025-2026\\Fazian\\Forex\\Faizan\\Fazian\\Fazian\\Forex\\office 2007\\Rosebud.en-us\\setup.xml",
+            "line": 8,
+            "additionalContext": "<File Id=\"RosebudMUI.xml\" MD5=\"0287A5C5D3C001D1CAF924ACB57CAD9F\" Size=\"811\" RelativeCachePath=\"RosebudMUI.xml\" RelativeS"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-da160a73",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "G:\\Quotation 2025-2026\\Fazian\\Forex\\Faizan\\Fazian\\Fazian\\Forex\\office 2007\\Word.en-us\\setup.xml",
+            "line": 27,
+            "additionalContext": "<File Id=\"WordMUI.xml\" MD5=\"497FC7F1BB49EE2EC092045189CD8846\" Size=\"1798\" RelativeCachePath=\"WordMUI.xml\" RelativeSource"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-4a314727",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "G:\\Quotation 2025-2026\\Fazian\\Forex\\Faizan\\Fazian\\Fazian\\Forex\\Office 2013\\en_office_professional_plus_2013_x86_x64_dvd_1135709\\x64\\access.en-us\\setup.xml",
+            "line": 16,
+            "additionalContext": "<File Id=\"AccessMUISet.xml\" MD5=\"D2E040DC9EE123979CA4925C0DF04BDA\" Size=\"0\" RelativeCachePath=\"AccessMUISet.xml\" Relativ"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-59d6dfca",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "G:\\Quotation 2025-2026\\Fazian\\Forex\\Faizan\\Fazian\\Fazian\\Forex\\Office 2013\\en_office_professional_plus_2013_x86_x64_dvd_1135709\\x64\\dcf.en-us\\setup.xml",
+            "line": 17,
+            "additionalContext": "<File Id=\"DCFMUI.xml\" MD5=\"F2D3D00B31FF6A23A16A3336C26DB314\" Size=\"0\" RelativeCachePath=\"DCFMUI.xml\" RelativeSourcePath="
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-21cbf61a",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "G:\\Quotation 2025-2026\\Fazian\\Forex\\Faizan\\Fazian\\Fazian\\Forex\\Office 2013\\en_office_professional_plus_2013_x86_x64_dvd_1135709\\x64\\excel.en-us\\setup.xml",
+            "line": 26,
+            "additionalContext": "<File Id=\"ExcelMUI.xml\" MD5=\"FDCB4F424A536C227EA210173EB276C0\" Size=\"0\" RelativeCachePath=\"ExcelMUI.xml\" RelativeSourceP"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-1e926e43",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "G:\\Quotation 2025-2026\\Fazian\\Forex\\Faizan\\Fazian\\Fazian\\Forex\\Office 2013\\en_office_professional_plus_2013_x86_x64_dvd_1135709\\x64\\groove.en-us\\setup.xml",
+            "line": 12,
+            "additionalContext": "<File Id=\"GrooveMUI.xml\" MD5=\"CE1AF144468A2B675CCABE224F8DB01A\" Size=\"0\" RelativeCachePath=\"GrooveMUI.xml\" RelativeSourc"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-81e6b70b",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "G:\\Quotation 2025-2026\\Fazian\\Forex\\Faizan\\Fazian\\Fazian\\Forex\\Office 2013\\en_office_professional_plus_2013_x86_x64_dvd_1135709\\x64\\infopath.en-us\\setup.xml",
+            "line": 14,
+            "additionalContext": "<File Id=\"InfoPathMUI.xml\" MD5=\"E5049D323496D83EC824B9980DAD3D06\" Size=\"0\" RelativeCachePath=\"InfoPathMUI.xml\" RelativeS"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-6b05adea",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "G:\\Quotation 2025-2026\\Fazian\\Forex\\Faizan\\Fazian\\Fazian\\Forex\\Office 2013\\en_office_professional_plus_2013_x86_x64_dvd_1135709\\x64\\lync.en-us\\setup.xml",
+            "line": 14,
+            "additionalContext": "<File Id=\"LyncMUI.xml\" MD5=\"FB5DC5765D1C83D0FF3E135D76FE43AD\" Size=\"0\" RelativeCachePath=\"LyncMUI.xml\" RelativeSourcePat"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-9a3c22bc",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "G:\\Quotation 2025-2026\\Fazian\\Forex\\Faizan\\Fazian\\Fazian\\Forex\\Office 2013\\en_office_professional_plus_2013_x86_x64_dvd_1135709\\x64\\office.en-us\\setup.xml",
+            "line": 99,
+            "additionalContext": "<File Id=\"OfficeMUISet.xml\" MD5=\"019BABDEC613573BEED1639C05732476\" Size=\"0\" RelativeCachePath=\"OfficeMUISet.xml\" Relativ"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-39495e1d",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "G:\\Quotation 2025-2026\\Fazian\\Forex\\Faizan\\Fazian\\Fazian\\Forex\\Office 2013\\en_office_professional_plus_2013_x86_x64_dvd_1135709\\x64\\office32.en-us\\setup.xml",
+            "line": 30,
+            "additionalContext": "<File Id=\"Office32MUI.xml\" MD5=\"53C987DF0E285FED7DB02A4170F1FB11\" Size=\"0\" RelativeCachePath=\"Office32MUI.xml\" RelativeS"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-169bcf93",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "G:\\Quotation 2025-2026\\Fazian\\Forex\\Faizan\\Fazian\\Fazian\\Forex\\Office 2013\\en_office_professional_plus_2013_x86_x64_dvd_1135709\\x64\\onenote.en-us\\setup.xml",
+            "line": 20,
+            "additionalContext": "<File Id=\"OneNoteMUI.xml\" MD5=\"FE209835BC32860FF1E94C0F268CEEA7\" Size=\"0\" RelativeCachePath=\"OneNoteMUI.xml\" RelativeSou"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-3ac1339f",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "G:\\Quotation 2025-2026\\Fazian\\Forex\\Faizan\\Fazian\\Fazian\\Forex\\Office 2013\\en_office_professional_plus_2013_x86_x64_dvd_1135709\\x64\\osm.en-us\\setup.xml",
+            "line": 14,
+            "additionalContext": "<File Id=\"OSMMUI.xml\" MD5=\"5B2CD5CF7007F3AF26946506488DA30A\" Size=\"0\" RelativeCachePath=\"OSMMUI.xml\" RelativeSourcePath="
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-4bfbf9c6",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "G:\\Quotation 2025-2026\\Fazian\\Forex\\Faizan\\Fazian\\Fazian\\Forex\\Office 2013\\en_office_professional_plus_2013_x86_x64_dvd_1135709\\x64\\osmux.en-us\\setup.xml",
+            "line": 17,
+            "additionalContext": "<File Id=\"OSMUXMUI.xml\" MD5=\"1548F52C3944307BDB2C4FE58460793E\" Size=\"0\" RelativeCachePath=\"OSMUXMUI.xml\" RelativeSourceP"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-ce515c3f",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "G:\\Quotation 2025-2026\\Fazian\\Forex\\Faizan\\Fazian\\Fazian\\Forex\\Office 2013\\en_office_professional_plus_2013_x86_x64_dvd_1135709\\x64\\outlook.en-us\\setup.xml",
+            "line": 46,
+            "additionalContext": "<File Id=\"OutlookMUI.xml\" MD5=\"4A6B0FC8C022261A57736F05CE0ECB79\" Size=\"0\" RelativeCachePath=\"OutlookMUI.xml\" RelativeSou"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-83543e6b",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "G:\\Quotation 2025-2026\\Fazian\\Forex\\Faizan\\Fazian\\Fazian\\Forex\\Office 2013\\en_office_professional_plus_2013_x86_x64_dvd_1135709\\x64\\powerpoint.en-us\\setup.xml",
+            "line": 18,
+            "additionalContext": "<File Id=\"PowerPointMUI.xml\" MD5=\"12F9A46BF7048C042B3B7FCD5525234C\" Size=\"0\" RelativeCachePath=\"PowerPointMUI.xml\" Relat"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-a393223a",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "G:\\Quotation 2025-2026\\Fazian\\Forex\\Faizan\\Fazian\\Fazian\\Forex\\Office 2013\\en_office_professional_plus_2013_x86_x64_dvd_1135709\\x64\\proofing.en-us\\setup.xml",
+            "line": 56,
+            "additionalContext": "<File Id=\"Proofing.xml\" MD5=\"FFF2FBC063C9EFFE03A714A36589FDC5\" Size=\"0\" RelativeCachePath=\"Proofing.xml\" RelativeSourceP"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-d7ebc480",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "G:\\Quotation 2025-2026\\Fazian\\Forex\\Faizan\\Fazian\\Fazian\\Forex\\Office 2013\\en_office_professional_plus_2013_x86_x64_dvd_1135709\\x64\\proplusr.ww\\setup.xml",
+            "line": 443,
+            "additionalContext": "<File Id=\"Office32WW.xml\" MD5=\"582EC7D32762F9D2E2496754DFFE0F44\" Size=\"0\" RelativeCachePath=\"Office32WW.xml\" RelativeSou"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-472be18d",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "G:\\Quotation 2025-2026\\Fazian\\Forex\\Faizan\\Fazian\\Fazian\\Forex\\Office 2013\\en_office_professional_plus_2013_x86_x64_dvd_1135709\\x64\\publisher.en-us\\setup.xml",
+            "line": 14,
+            "additionalContext": "<File Id=\"PublisherMUI.xml\" MD5=\"4236D891D563048D0D37D5D4005C4F1A\" Size=\"0\" RelativeCachePath=\"PublisherMUI.xml\" Relativ"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-2b48f8a7",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "G:\\Quotation 2025-2026\\Fazian\\Forex\\Faizan\\Fazian\\Fazian\\Forex\\Office 2013\\en_office_professional_plus_2013_x86_x64_dvd_1135709\\x64\\word.en-us\\setup.xml",
+            "line": 31,
+            "additionalContext": "<File Id=\"WordMUI.xml\" MD5=\"4EB233AAC957BA8CECE567D36FBB22E7\" Size=\"0\" RelativeCachePath=\"WordMUI.xml\" RelativeSourcePat"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-064209bf",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "G:\\Quotation 2025-2026\\Fazian\\Forex\\Faizan\\Fazian\\Fazian\\Forex\\Office 2013\\en_office_professional_plus_2013_x86_x64_dvd_1135709\\x86\\access.en-us\\setup.xml",
+            "line": 16,
+            "additionalContext": "<File Id=\"AccessMUISet.xml\" MD5=\"9F0DC9C580A9F3986E33BDDA0C6A5055\" Size=\"0\" RelativeCachePath=\"AccessMUISet.xml\" Relativ"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-fa996aa3",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "G:\\Quotation 2025-2026\\Fazian\\Forex\\Faizan\\Fazian\\Fazian\\Forex\\Office 2013\\en_office_professional_plus_2013_x86_x64_dvd_1135709\\x86\\dcf.en-us\\setup.xml",
+            "line": 17,
+            "additionalContext": "<File Id=\"DCFMUI.xml\" MD5=\"6F881EBAD82912BBC7561FD6BA2944D0\" Size=\"0\" RelativeCachePath=\"DCFMUI.xml\" RelativeSourcePath="
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-440f65e9",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "G:\\Quotation 2025-2026\\Fazian\\Forex\\Faizan\\Fazian\\Fazian\\Forex\\Office 2013\\en_office_professional_plus_2013_x86_x64_dvd_1135709\\x86\\excel.en-us\\setup.xml",
+            "line": 26,
+            "additionalContext": "<File Id=\"ExcelMUI.xml\" MD5=\"EEE4F3059C8214679DBA9F183CBAD36E\" Size=\"0\" RelativeCachePath=\"ExcelMUI.xml\" RelativeSourceP"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-1a76216f",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "G:\\Quotation 2025-2026\\Fazian\\Forex\\Faizan\\Fazian\\Fazian\\Forex\\Office 2013\\en_office_professional_plus_2013_x86_x64_dvd_1135709\\x86\\groove.en-us\\setup.xml",
+            "line": 12,
+            "additionalContext": "<File Id=\"GrooveMUI.xml\" MD5=\"353850B7109528467F69717965E23FDA\" Size=\"0\" RelativeCachePath=\"GrooveMUI.xml\" RelativeSourc"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-ad5e1bc9",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "G:\\Quotation 2025-2026\\Fazian\\Forex\\Faizan\\Fazian\\Fazian\\Forex\\Office 2013\\en_office_professional_plus_2013_x86_x64_dvd_1135709\\x86\\infopath.en-us\\setup.xml",
+            "line": 14,
+            "additionalContext": "<File Id=\"InfoPathMUI.xml\" MD5=\"573644D89E50B9B16AA1A913BAAC22AD\" Size=\"0\" RelativeCachePath=\"InfoPathMUI.xml\" RelativeS"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-0f9c00d9",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "G:\\Quotation 2025-2026\\Fazian\\Forex\\Faizan\\Fazian\\Fazian\\Forex\\Office 2013\\en_office_professional_plus_2013_x86_x64_dvd_1135709\\x86\\lync.en-us\\setup.xml",
+            "line": 14,
+            "additionalContext": "<File Id=\"LyncMUI.xml\" MD5=\"8802531C3FC033879918C2A0BDE1DE3A\" Size=\"0\" RelativeCachePath=\"LyncMUI.xml\" RelativeSourcePat"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-120ab0e1",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "G:\\Quotation 2025-2026\\Fazian\\Forex\\Faizan\\Fazian\\Fazian\\Forex\\Office 2013\\en_office_professional_plus_2013_x86_x64_dvd_1135709\\x86\\office.en-us\\setup.xml",
+            "line": 104,
+            "additionalContext": "<File Id=\"OfficeMUISet.xml\" MD5=\"03EBD96B0A98BFAFF8820BA04E7CA78F\" Size=\"0\" RelativeCachePath=\"OfficeMUISet.xml\" Relativ"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-293efbba",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "G:\\Quotation 2025-2026\\Fazian\\Forex\\Faizan\\Fazian\\Fazian\\Forex\\Office 2013\\en_office_professional_plus_2013_x86_x64_dvd_1135709\\x86\\office64.en-us\\setup.xml",
+            "line": 25,
+            "additionalContext": "<File Id=\"Office64MUISet.xml\" MD5=\"B4C45FDA00BDC14F66AB43B2ECB3E383\" Size=\"0\" RelativeCachePath=\"Office64MUISet.xml\" Rel"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-d131362c",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "G:\\Quotation 2025-2026\\Fazian\\Forex\\Faizan\\Fazian\\Fazian\\Forex\\Office 2013\\en_office_professional_plus_2013_x86_x64_dvd_1135709\\x86\\onenote.en-us\\setup.xml",
+            "line": 20,
+            "additionalContext": "<File Id=\"OneNoteMUI.xml\" MD5=\"2AD09BD25A5D75E432DF2BCD61BEC129\" Size=\"0\" RelativeCachePath=\"OneNoteMUI.xml\" RelativeSou"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-4ebdcf7f",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "G:\\Quotation 2025-2026\\Fazian\\Forex\\Faizan\\Fazian\\Fazian\\Forex\\Office 2013\\en_office_professional_plus_2013_x86_x64_dvd_1135709\\x86\\osm.en-us\\setup.xml",
+            "line": 14,
+            "additionalContext": "<File Id=\"OSMMUI.xml\" MD5=\"6EA7A0BF82241730501348E2D0EFC715\" Size=\"0\" RelativeCachePath=\"OSMMUI.xml\" RelativeSourcePath="
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-827942ac",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "G:\\Quotation 2025-2026\\Fazian\\Forex\\Faizan\\Fazian\\Fazian\\Forex\\Office 2013\\en_office_professional_plus_2013_x86_x64_dvd_1135709\\x86\\osmux.en-us\\setup.xml",
+            "line": 17,
+            "additionalContext": "<File Id=\"OSMUXMUI.xml\" MD5=\"5A13E5FFB1985F9A2142AB4A791A8F2F\" Size=\"0\" RelativeCachePath=\"OSMUXMUI.xml\" RelativeSourceP"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-3efe0a51",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "G:\\Quotation 2025-2026\\Fazian\\Forex\\Faizan\\Fazian\\Fazian\\Forex\\Office 2013\\en_office_professional_plus_2013_x86_x64_dvd_1135709\\x86\\outlook.en-us\\setup.xml",
+            "line": 46,
+            "additionalContext": "<File Id=\"OutlookMUI.xml\" MD5=\"3007FB0D545B91774A6B8113C8246277\" Size=\"0\" RelativeCachePath=\"OutlookMUI.xml\" RelativeSou"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-c3bec8d7",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "G:\\Quotation 2025-2026\\Fazian\\Forex\\Faizan\\Fazian\\Fazian\\Forex\\Office 2013\\en_office_professional_plus_2013_x86_x64_dvd_1135709\\x86\\powerpoint.en-us\\setup.xml",
+            "line": 18,
+            "additionalContext": "<File Id=\"PowerPointMUI.xml\" MD5=\"0F99BB11547286D02E3797F81CB795D3\" Size=\"0\" RelativeCachePath=\"PowerPointMUI.xml\" Relat"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-29edad09",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "G:\\Quotation 2025-2026\\Fazian\\Forex\\Faizan\\Fazian\\Fazian\\Forex\\Office 2013\\en_office_professional_plus_2013_x86_x64_dvd_1135709\\x86\\proofing.en-us\\setup.xml",
+            "line": 56,
+            "additionalContext": "<File Id=\"Proofing.xml\" MD5=\"7BA34E3E6440FA2612376396E770CEC8\" Size=\"0\" RelativeCachePath=\"Proofing.xml\" RelativeSourceP"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-fd6bece5",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "G:\\Quotation 2025-2026\\Fazian\\Forex\\Faizan\\Fazian\\Fazian\\Forex\\Office 2013\\en_office_professional_plus_2013_x86_x64_dvd_1135709\\x86\\proplusr.ww\\setup.xml",
+            "line": 458,
+            "additionalContext": "<File Id=\"Office64WW.xml\" MD5=\"3BC3EC55B80DA1F41C0FE5F941CB3498\" Size=\"0\" RelativeCachePath=\"Office64WW.xml\" RelativeSou"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-4f0f005e",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "G:\\Quotation 2025-2026\\Fazian\\Forex\\Faizan\\Fazian\\Fazian\\Forex\\Office 2013\\en_office_professional_plus_2013_x86_x64_dvd_1135709\\x86\\publisher.en-us\\setup.xml",
+            "line": 14,
+            "additionalContext": "<File Id=\"PublisherMUI.xml\" MD5=\"E4D99B507B8D67ADA8534F6B5E6B5D63\" Size=\"0\" RelativeCachePath=\"PublisherMUI.xml\" Relativ"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-42ad15e5",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "G:\\Quotation 2025-2026\\Fazian\\Forex\\Faizan\\Fazian\\Fazian\\Forex\\Office 2013\\en_office_professional_plus_2013_x86_x64_dvd_1135709\\x86\\word.en-us\\setup.xml",
+            "line": 31,
+            "additionalContext": "<File Id=\"WordMUI.xml\" MD5=\"E6475ADC164D2A105EF5A89D6C5971A0\" Size=\"0\" RelativeCachePath=\"WordMUI.xml\" RelativeSourcePat"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-3c55d324",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "G:\\Quotation 2025-2026\\Fazian\\Forex\\Faizan\\Fazian\\Fazian\\Forex\\Office Professional Plus 2010  (full activated)\\Access.en-us\\setup.xml",
+            "line": 18,
+            "additionalContext": "<File Id=\"AccessMUISet.xml\" MD5=\"D9C76865AC14353EAF4C95C1FDB2EB4D\" Size=\"819\" RelativeCachePath=\"AccessMUISet.xml\" Relat"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-9649caf2",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "G:\\Quotation 2025-2026\\Fazian\\Forex\\Faizan\\Fazian\\Fazian\\Forex\\Office Professional Plus 2010  (full activated)\\Excel.en-us\\setup.xml",
+            "line": 25,
+            "additionalContext": "<File Id=\"ExcelMUI.xml\" MD5=\"C04F57C85131FA03058258568AE5F518\" Size=\"1565\" RelativeCachePath=\"ExcelMUI.xml\" RelativeSour"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-fc98361e",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "G:\\Quotation 2025-2026\\Fazian\\Forex\\Faizan\\Fazian\\Fazian\\Forex\\Office Professional Plus 2010  (full activated)\\Groove.en-us\\setup.xml",
+            "line": 11,
+            "additionalContext": "<File Id=\"GrooveMUI.xml\" MD5=\"99886247045A0308A3F0FDC72132C085\" Size=\"913\" RelativeCachePath=\"GrooveMUI.xml\" RelativeSou"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-5c2e5627",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "G:\\Quotation 2025-2026\\Fazian\\Forex\\Faizan\\Fazian\\Fazian\\Forex\\Office Professional Plus 2010  (full activated)\\InfoPath.en-us\\setup.xml",
+            "line": 16,
+            "additionalContext": "<File Id=\"InfoPathMUI.xml\" MD5=\"2D47C23AFE128FFE63E21C4E29BFF495\" Size=\"1231\" RelativeCachePath=\"InfoPathMUI.xml\" Relati"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-fb9b85dd",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "G:\\Quotation 2025-2026\\Fazian\\Forex\\Faizan\\Fazian\\Fazian\\Forex\\Office Professional Plus 2010  (full activated)\\Office.en-us\\setup.xml",
+            "line": 106,
+            "additionalContext": "<File Id=\"OfficeMUISet.xml\" MD5=\"4B0EDDAD525313C14A9055EA6BFAC8C2\" Size=\"819\" RelativeCachePath=\"OfficeMUISet.xml\" Relat"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-3402776e",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "G:\\Quotation 2025-2026\\Fazian\\Forex\\Faizan\\Fazian\\Fazian\\Forex\\Office Professional Plus 2010  (full activated)\\Office64.en-us\\setup.xml",
+            "line": 21,
+            "additionalContext": "<File Id=\"Office64MUISet.xml\" MD5=\"8FC24FB0A4E18C6442C0D6AFA386161A\" Size=\"823\" RelativeCachePath=\"Office64MUISet.xml\" R"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-bb12b16f",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "G:\\Quotation 2025-2026\\Fazian\\Forex\\Faizan\\Fazian\\Fazian\\Forex\\Office Professional Plus 2010  (full activated)\\OneNote.en-us\\setup.xml",
+            "line": 19,
+            "additionalContext": "<File Id=\"OneNoteMUI.xml\" MD5=\"5C2BEF7A90C49319F2522338D46C3AB7\" Size=\"1606\" RelativeCachePath=\"OneNoteMUI.xml\" Relative"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-b445d0e1",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "G:\\Quotation 2025-2026\\Fazian\\Forex\\Faizan\\Fazian\\Fazian\\Forex\\Office Professional Plus 2010  (full activated)\\Outlook.en-us\\setup.xml",
+            "line": 50,
+            "additionalContext": "<File Id=\"OutlookMUI.xml\" MD5=\"0EADBD2B0F1C78E60F5CD688CD5FDC9D\" Size=\"3186\" RelativeCachePath=\"OutlookMUI.xml\" Relative"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-4f148702",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "G:\\Quotation 2025-2026\\Fazian\\Forex\\Faizan\\Fazian\\Fazian\\Forex\\Office Professional Plus 2010  (full activated)\\PowerPoint.en-us\\setup.xml",
+            "line": 17,
+            "additionalContext": "<File Id=\"PowerPointMUI.xml\" MD5=\"6C6FF46DA8E434E194031C6AC96D7168\" Size=\"1557\" RelativeCachePath=\"PowerPointMUI.xml\" Re"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-342ac992",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "G:\\Quotation 2025-2026\\Fazian\\Forex\\Faizan\\Fazian\\Fazian\\Forex\\Office Professional Plus 2010  (full activated)\\Proofing.en-us\\setup.xml",
+            "line": 55,
+            "additionalContext": "<File Id=\"Proofing.xml\" MD5=\"B649F0B5F538CE6C08B1829B376C2424\" Size=\"811\" RelativeCachePath=\"Proofing.xml\" RelativeSourc"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-6ff12958",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "G:\\Quotation 2025-2026\\Fazian\\Forex\\Faizan\\Fazian\\Fazian\\Forex\\Office Professional Plus 2010  (full activated)\\ProPlus.WW\\setup.xml",
+            "line": 434,
+            "additionalContext": "<File Id=\"Office64WW.xml\" MD5=\"899A7D743D01852EBD036B465D1EF181\" Size=\"4685\" RelativeCachePath=\"Office64WW.xml\" Relative"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-553b3b07",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "G:\\Quotation 2025-2026\\Fazian\\Forex\\Faizan\\Fazian\\Fazian\\Forex\\Office Professional Plus 2010  (full activated)\\Publisher.en-us\\setup.xml",
+            "line": 13,
+            "additionalContext": "<File Id=\"PublisherMUI.xml\" MD5=\"6FFEC3592773FB718783A40ACB9BEC81\" Size=\"1450\" RelativeCachePath=\"PublisherMUI.xml\" Rela"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-d4fae50f",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "G:\\Quotation 2025-2026\\Fazian\\Forex\\Faizan\\Fazian\\Fazian\\Forex\\Office Professional Plus 2010  (full activated)\\Rosebud.en-us\\setup.xml",
+            "line": 8,
+            "additionalContext": "<File Id=\"RosebudMUI.xml\" MD5=\"CEFE29853EE7E112A4754D583F66A9B1\" Size=\"809\" RelativeCachePath=\"RosebudMUI.xml\" RelativeS"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-c1daa209",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "G:\\Quotation 2025-2026\\Fazian\\Forex\\Faizan\\Fazian\\Fazian\\Forex\\Office Professional Plus 2010  (full activated)\\Word.en-us\\setup.xml",
+            "line": 27,
+            "additionalContext": "<File Id=\"WordMUI.xml\" MD5=\"E40549A3B988653E83611F4EA270DF7F\" Size=\"1800\" RelativeCachePath=\"WordMUI.xml\" RelativeSource"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-0c4fbbd2",
+      "name": "RSA",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "pke",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "G:\\Quotation 2025-2026\\Fazian\\Forex\\Faizan\\Import\\Cbom-Scanner\\sample_cbom.json",
+            "line": 25,
+            "additionalContext": "\"name\": \"RSA\","
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Shor's algorithm breaks RSA"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-449ddcdf",
+      "name": "RSA",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "pke",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "G:\\Quotation 2025-2026\\Fazian\\Forex\\Faizan\\Import\\Cbom-Scanner\\reports\\cbom_20261012_174917.json",
+            "line": 25,
+            "additionalContext": "\"name\": \"RSA\","
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Shor's algorithm breaks RSA"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-e966d459",
+      "name": "ECDSA",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "signature",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "G:\\Quotation 2025-2026\\Fazian\\Forex\\Faizan\\Import\\Cbom-Scanner\\reports\\cbom_20261012_174917.json",
+            "line": 70,
+            "additionalContext": "\"name\": \"ECDSA\","
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Shor's algorithm breaks ECDSA"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-e0112152",
+      "name": "ECDH",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "key-agree",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "G:\\Quotation 2025-2026\\Fazian\\Forex\\Faizan\\Import\\Cbom-Scanner\\reports\\cbom_20261012_174917.json",
+            "line": 115,
+            "additionalContext": "\"name\": \"ECDH\","
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Shor's algorithm breaks ECDH"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-57389927",
+      "name": "DSA",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "signature",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "G:\\Quotation 2025-2026\\Fazian\\Forex\\Faizan\\Import\\Cbom-Scanner\\reports\\cbom_20261012_174917.json",
+            "line": 160,
+            "additionalContext": "\"name\": \"DSA\","
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Shor's algorithm breaks DSA"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-4b9da2bc",
+      "name": "DH",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "key-agree",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "G:\\Quotation 2025-2026\\Fazian\\Forex\\Faizan\\Import\\Cbom-Scanner\\reports\\cbom_20261012_174917.json",
+            "line": 205,
+            "additionalContext": "\"name\": \"DH\","
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Shor's algorithm breaks Diffie-Hellman"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-25f4188e",
+      "name": "SHA-1",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "G:\\Quotation 2025-2026\\Fazian\\Forex\\Faizan\\Import\\Cbom-Scanner\\reports\\cbom_20261012_174917.json",
+            "line": 250,
+            "additionalContext": "\"name\": \"SHA-1\","
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "MEDIUM"
+        },
+        {
+          "name": "reason",
+          "value": "Collision attacks, deprecated"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-3ac96b17",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "G:\\Quotation 2025-2026\\Fazian\\Forex\\Faizan\\Import\\Cbom-Scanner\\reports\\cbom_20261012_174917.json",
+            "line": 295,
+            "additionalContext": "\"name\": \"MD5\","
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-ceef8fae",
+      "name": "RSA",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "pke",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "G:\\Quotation 2025-2026\\Fazian\\Forex\\Faizan\\Import\\Cbom-Scanner\\reports\\scan_20261012_174917.json",
+            "line": 12,
+            "additionalContext": "\"algorithm\": \"RSA\","
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Shor's algorithm breaks RSA"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-8931584c",
+      "name": "ECDSA",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "signature",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "G:\\Quotation 2025-2026\\Fazian\\Forex\\Faizan\\Import\\Cbom-Scanner\\reports\\scan_20261012_174917.json",
+            "line": 48,
+            "additionalContext": "\"algorithm\": \"ECDSA\","
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Shor's algorithm breaks ECDSA"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-e0458439",
+      "name": "ECDH",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "key-agree",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "G:\\Quotation 2025-2026\\Fazian\\Forex\\Faizan\\Import\\Cbom-Scanner\\reports\\scan_20261012_174917.json",
+            "line": 57,
+            "additionalContext": "\"algorithm\": \"ECDH\","
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Shor's algorithm breaks ECDH"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-0e7cfe6e",
+      "name": "DSA",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "signature",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "G:\\Quotation 2025-2026\\Fazian\\Forex\\Faizan\\Import\\Cbom-Scanner\\reports\\scan_20261012_174917.json",
+            "line": 66,
+            "additionalContext": "\"algorithm\": \"DSA\","
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Shor's algorithm breaks DSA"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-d45b2843",
+      "name": "DH",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "key-agree",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "G:\\Quotation 2025-2026\\Fazian\\Forex\\Faizan\\Import\\Cbom-Scanner\\reports\\scan_20261012_174917.json",
+            "line": 75,
+            "additionalContext": "\"algorithm\": \"DH\","
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Shor's algorithm breaks Diffie-Hellman"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-b52db2a7",
+      "name": "SHA-1",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "G:\\Quotation 2025-2026\\Fazian\\Forex\\Faizan\\Import\\Cbom-Scanner\\reports\\scan_20261012_174917.json",
+            "line": 84,
+            "additionalContext": "\"algorithm\": \"SHA-1\","
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "MEDIUM"
+        },
+        {
+          "name": "reason",
+          "value": "Collision attacks, deprecated"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-99e464f0",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "G:\\Quotation 2025-2026\\Fazian\\Forex\\Faizan\\Import\\Cbom-Scanner\\reports\\scan_20261012_174917.json",
+            "line": 93,
+            "additionalContext": "\"algorithm\": \"MD5\","
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-c9b8072a",
+      "name": "RSA",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "pke",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "G:\\Quotation 2025-2026\\Fazian\\Forex\\Faizan\\Import\\Cbom-Scanner\\reports\\scan_20261012_174917.txt",
+            "line": 10,
+            "additionalContext": "[HIGH] RSA"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Shor's algorithm breaks RSA"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-cf258d1d",
+      "name": "ECDSA",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "signature",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "G:\\Quotation 2025-2026\\Fazian\\Forex\\Faizan\\Import\\Cbom-Scanner\\reports\\scan_20261012_174917.txt",
+            "line": 34,
+            "additionalContext": "[HIGH] ECDSA"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Shor's algorithm breaks ECDSA"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-ed762e74",
+      "name": "ECDH",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "key-agree",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "G:\\Quotation 2025-2026\\Fazian\\Forex\\Faizan\\Import\\Cbom-Scanner\\reports\\scan_20261012_174917.txt",
+            "line": 40,
+            "additionalContext": "[HIGH] ECDH"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Shor's algorithm breaks ECDH"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-bead9317",
+      "name": "DSA",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "signature",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "G:\\Quotation 2025-2026\\Fazian\\Forex\\Faizan\\Import\\Cbom-Scanner\\reports\\scan_20261012_174917.txt",
+            "line": 46,
+            "additionalContext": "[HIGH] DSA"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Shor's algorithm breaks DSA"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-6d733952",
+      "name": "DH",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "key-agree",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "G:\\Quotation 2025-2026\\Fazian\\Forex\\Faizan\\Import\\Cbom-Scanner\\reports\\scan_20261012_174917.txt",
+            "line": 52,
+            "additionalContext": "[HIGH] DH"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Shor's algorithm breaks Diffie-Hellman"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-aa265e90",
+      "name": "SHA-1",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "G:\\Quotation 2025-2026\\Fazian\\Forex\\Faizan\\Import\\Cbom-Scanner\\reports\\scan_20261012_174917.txt",
+            "line": 58,
+            "additionalContext": "[MEDIUM] SHA-1"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "MEDIUM"
+        },
+        {
+          "name": "reason",
+          "value": "Collision attacks, deprecated"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-5aaa78bf",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "G:\\Quotation 2025-2026\\Fazian\\Forex\\Faizan\\Import\\Cbom-Scanner\\reports\\scan_20261012_174917.txt",
+            "line": 64,
+            "additionalContext": "[HIGH] MD5"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-414a25bf",
+      "name": "RSA",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "pke",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "G:\\Quotation 2025-2026\\Fazian\\Forex\\Faizan\\Import\\Cbom-Scanner\\src\\cbom_generator.py",
+            "line": 98,
+            "additionalContext": "'RSA': 'pke',"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Shor's algorithm breaks RSA"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-05efe742",
+      "name": "ECDSA",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "signature",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "G:\\Quotation 2025-2026\\Fazian\\Forex\\Faizan\\Import\\Cbom-Scanner\\src\\cbom_generator.py",
+            "line": 99,
+            "additionalContext": "'ECDSA': 'signature',"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Shor's algorithm breaks ECDSA"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-508f90af",
+      "name": "ECDH",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "key-agree",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "G:\\Quotation 2025-2026\\Fazian\\Forex\\Faizan\\Import\\Cbom-Scanner\\src\\cbom_generator.py",
+            "line": 100,
+            "additionalContext": "'ECDH': 'key-agree',"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Shor's algorithm breaks ECDH"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-d804b31f",
+      "name": "DSA",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "signature",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "G:\\Quotation 2025-2026\\Fazian\\Forex\\Faizan\\Import\\Cbom-Scanner\\src\\cbom_generator.py",
+            "line": 101,
+            "additionalContext": "'DSA': 'signature',"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Shor's algorithm breaks DSA"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-f72cf875",
+      "name": "DH",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "key-agree",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "G:\\Quotation 2025-2026\\Fazian\\Forex\\Faizan\\Import\\Cbom-Scanner\\src\\cbom_generator.py",
+            "line": 102,
+            "additionalContext": "'DH': 'key-agree',"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Shor's algorithm breaks Diffie-Hellman"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-54910a1a",
+      "name": "SHA-1",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "G:\\Quotation 2025-2026\\Fazian\\Forex\\Faizan\\Import\\Cbom-Scanner\\src\\cbom_generator.py",
+            "line": 103,
+            "additionalContext": "'SHA-1': 'hash',"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "MEDIUM"
+        },
+        {
+          "name": "reason",
+          "value": "Collision attacks, deprecated"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-f3a2123f",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "G:\\Quotation 2025-2026\\Fazian\\Forex\\Faizan\\Import\\Cbom-Scanner\\src\\cbom_generator.py",
+            "line": 104,
+            "additionalContext": "'MD5': 'hash',"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-d9deafcd",
+      "name": "RSA",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "pke",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "G:\\Quotation 2025-2026\\Fazian\\Forex\\Faizan\\Import\\Cbom-Scanner\\src\\scanner.py",
+            "line": 14,
+            "additionalContext": "'RSA': {'risk': 'HIGH', 'reason': \"Shor's algorithm breaks RSA\"},"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Shor's algorithm breaks RSA"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-c688b790",
+      "name": "ECDSA",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "signature",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "G:\\Quotation 2025-2026\\Fazian\\Forex\\Faizan\\Import\\Cbom-Scanner\\src\\scanner.py",
+            "line": 15,
+            "additionalContext": "'ECDSA': {'risk': 'HIGH', 'reason': \"Shor's algorithm breaks ECDSA\"},"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Shor's algorithm breaks ECDSA"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-57969390",
+      "name": "ECDH",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "key-agree",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "G:\\Quotation 2025-2026\\Fazian\\Forex\\Faizan\\Import\\Cbom-Scanner\\src\\scanner.py",
+            "line": 16,
+            "additionalContext": "'ECDH': {'risk': 'HIGH', 'reason': \"Shor's algorithm breaks ECDH\"},"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Shor's algorithm breaks ECDH"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-fc47fd14",
+      "name": "DSA",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "signature",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "G:\\Quotation 2025-2026\\Fazian\\Forex\\Faizan\\Import\\Cbom-Scanner\\src\\scanner.py",
+            "line": 17,
+            "additionalContext": "'DSA': {'risk': 'HIGH', 'reason': \"Shor's algorithm breaks DSA\"},"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Shor's algorithm breaks DSA"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-b0e96c45",
+      "name": "DH",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "key-agree",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "G:\\Quotation 2025-2026\\Fazian\\Forex\\Faizan\\Import\\Cbom-Scanner\\src\\scanner.py",
+            "line": 18,
+            "additionalContext": "'DH': {'risk': 'HIGH', 'reason': \"Shor's algorithm breaks Diffie-Hellman\"},"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Shor's algorithm breaks Diffie-Hellman"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-820046bf",
+      "name": "SHA-1",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "G:\\Quotation 2025-2026\\Fazian\\Forex\\Faizan\\Import\\Cbom-Scanner\\src\\scanner.py",
+            "line": 19,
+            "additionalContext": "'SHA-1': {'risk': 'MEDIUM', 'reason': \"Collision attacks, deprecated\"},"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "MEDIUM"
+        },
+        {
+          "name": "reason",
+          "value": "Collision attacks, deprecated"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-93e54bf2",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "G:\\Quotation 2025-2026\\Fazian\\Forex\\Faizan\\Import\\Cbom-Scanner\\src\\scanner.py",
+            "line": 20,
+            "additionalContext": "'MD5': {'risk': 'HIGH', 'reason': \"Broken hash function\"},"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    }
+  ]
+}

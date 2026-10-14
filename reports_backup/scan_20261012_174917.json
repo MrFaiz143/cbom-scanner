@@ -1,0 +1,162 @@
+{
+  "scan_time": "2026-10-12T17:49:17.848767",
+  "folder": "G:\\Quotation 2025-2026\\Fazian\\Forex\\Faizan\\Import\\Cbom-Scanner\\src",
+  "files_scanned": 4,
+  "files_skipped": 0,
+  "total_findings": 17,
+  "findings": [
+    {
+      "file": "G:\\Quotation 2025-2026\\Fazian\\Forex\\Faizan\\Import\\Cbom-Scanner\\src\\cbom_generator.py",
+      "line": 98,
+      "column": 10,
+      "algorithm": "RSA",
+      "risk": "HIGH",
+      "reason": "Shor's algorithm breaks RSA",
+      "context": "'RSA': 'pke',"
+    },
+    {
+      "file": "G:\\Quotation 2025-2026\\Fazian\\Forex\\Faizan\\Import\\Cbom-Scanner\\src\\cbom_generator.py",
+      "line": 116,
+      "column": 31,
+      "algorithm": "RSA",
+      "risk": "HIGH",
+      "reason": "Shor's algorithm breaks RSA",
+      "context": "'algorithm': 'RSA',"
+    },
+    {
+      "file": "G:\\Quotation 2025-2026\\Fazian\\Forex\\Faizan\\Import\\Cbom-Scanner\\src\\cbom_generator.py",
+      "line": 118,
+      "column": 52,
+      "algorithm": "RSA",
+      "risk": "HIGH",
+      "reason": "Shor's algorithm breaks RSA",
+      "context": "'reason': \"Shor's algorithm breaks RSA\","
+    },
+    {
+      "file": "G:\\Quotation 2025-2026\\Fazian\\Forex\\Faizan\\Import\\Cbom-Scanner\\src\\cbom_generator.py",
+      "line": 119,
+      "column": 35,
+      "algorithm": "RSA",
+      "risk": "HIGH",
+      "reason": "Shor's algorithm breaks RSA",
+      "context": "'context': 'key = RSA.generate(2048)'"
+    },
+    {
+      "file": "G:\\Quotation 2025-2026\\Fazian\\Forex\\Faizan\\Import\\Cbom-Scanner\\src\\cbom_generator.py",
+      "line": 99,
+      "column": 10,
+      "algorithm": "ECDSA",
+      "risk": "HIGH",
+      "reason": "Shor's algorithm breaks ECDSA",
+      "context": "'ECDSA': 'signature',"
+    },
+    {
+      "file": "G:\\Quotation 2025-2026\\Fazian\\Forex\\Faizan\\Import\\Cbom-Scanner\\src\\cbom_generator.py",
+      "line": 100,
+      "column": 10,
+      "algorithm": "ECDH",
+      "risk": "HIGH",
+      "reason": "Shor's algorithm breaks ECDH",
+      "context": "'ECDH': 'key-agree',"
+    },
+    {
+      "file": "G:\\Quotation 2025-2026\\Fazian\\Forex\\Faizan\\Import\\Cbom-Scanner\\src\\cbom_generator.py",
+      "line": 101,
+      "column": 10,
+      "algorithm": "DSA",
+      "risk": "HIGH",
+      "reason": "Shor's algorithm breaks DSA",
+      "context": "'DSA': 'signature',"
+    },
+    {
+      "file": "G:\\Quotation 2025-2026\\Fazian\\Forex\\Faizan\\Import\\Cbom-Scanner\\src\\cbom_generator.py",
+      "line": 102,
+      "column": 10,
+      "algorithm": "DH",
+      "risk": "HIGH",
+      "reason": "Shor's algorithm breaks Diffie-Hellman",
+      "context": "'DH': 'key-agree',"
+    },
+    {
+      "file": "G:\\Quotation 2025-2026\\Fazian\\Forex\\Faizan\\Import\\Cbom-Scanner\\src\\cbom_generator.py",
+      "line": 103,
+      "column": 10,
+      "algorithm": "SHA-1",
+      "risk": "MEDIUM",
+      "reason": "Collision attacks, deprecated",
+      "context": "'SHA-1': 'hash',"
+    },
+    {
+      "file": "G:\\Quotation 2025-2026\\Fazian\\Forex\\Faizan\\Import\\Cbom-Scanner\\src\\cbom_generator.py",
+      "line": 104,
+      "column": 10,
+      "algorithm": "MD5",
+      "risk": "HIGH",
+      "reason": "Broken hash function",
+      "context": "'MD5': 'hash',"
+    },
+    {
+      "file": "G:\\Quotation 2025-2026\\Fazian\\Forex\\Faizan\\Import\\Cbom-Scanner\\src\\scanner.py",
+      "line": 14,
+      "column": 6,
+      "algorithm": "RSA",
+      "risk": "HIGH",
+      "reason": "Shor's algorithm breaks RSA",
+      "context": "'RSA': {'risk': 'HIGH', 'reason': \"Shor's algorithm breaks RSA\"},"
+    },
+    {
+      "file": "G:\\Quotation 2025-2026\\Fazian\\Forex\\Faizan\\Import\\Cbom-Scanner\\src\\scanner.py",
+      "line": 15,
+      "column": 6,
+      "algorithm": "ECDSA",
+      "risk": "HIGH",
+      "reason": "Shor's algorithm breaks ECDSA",
+      "context": "'ECDSA': {'risk': 'HIGH', 'reason': \"Shor's algorithm breaks ECDSA\"},"
+    },
+    {
+      "file": "G:\\Quotation 2025-2026\\Fazian\\Forex\\Faizan\\Import\\Cbom-Scanner\\src\\scanner.py",
+      "line": 16,
+      "column": 6,
+      "algorithm": "ECDH",
+      "risk": "HIGH",
+      "reason": "Shor's algorithm breaks ECDH",
+      "context": "'ECDH': {'risk': 'HIGH', 'reason': \"Shor's algorithm breaks ECDH\"},"
+    },
+    {
+      "file": "G:\\Quotation 2025-2026\\Fazian\\Forex\\Faizan\\Import\\Cbom-Scanner\\src\\scanner.py",
+      "line": 17,
+      "column": 6,
+      "algorithm": "DSA",
+      "risk": "HIGH",
+      "reason": "Shor's algorithm breaks DSA",
+      "context": "'DSA': {'risk': 'HIGH', 'reason': \"Shor's algorithm breaks DSA\"},"
+    },
+    {
+      "file": "G:\\Quotation 2025-2026\\Fazian\\Forex\\Faizan\\Import\\Cbom-Scanner\\src\\scanner.py",
+      "line": 18,
+      "column": 6,
+      "algorithm": "DH",
+      "risk": "HIGH",
+      "reason": "Shor's algorithm breaks Diffie-Hellman",
+      "context": "'DH': {'risk': 'HIGH', 'reason': \"Shor's algorithm breaks Diffie-Hellman\"},"
+    },
+    {
+      "file": "G:\\Quotation 2025-2026\\Fazian\\Forex\\Faizan\\Import\\Cbom-Scanner\\src\\scanner.py",
+      "line": 19,
+      "column": 6,
+      "algorithm": "SHA-1",
+      "risk": "MEDIUM",
+      "reason": "Collision attacks, deprecated",
+      "context": "'SHA-1': {'risk': 'MEDIUM', 'reason': \"Collision attacks, deprecated\"},"
+    },
+    {
+      "file": "G:\\Quotation 2025-2026\\Fazian\\Forex\\Faizan\\Import\\Cbom-Scanner\\src\\scanner.py",
+      "line": 20,
+      "column": 6,
+      "algorithm": "MD5",
+      "risk": "HIGH",
+      "reason": "Broken hash function",
+      "context": "'MD5': {'risk': 'HIGH', 'reason': \"Broken hash function\"},"
+    }
+  ]
+}

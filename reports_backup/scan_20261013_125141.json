@@ -1,0 +1,320 @@
+{
+  "scan_time": "2026-10-13T12:51:41.023382",
+  "folder": "C:\\",
+  "files_scanned": 22067,
+  "files_skipped": 419185,
+  "files_self_excluded": 1,
+  "total_findings": 31,
+  "findings": [
+    {
+      "file": "C:\\Program Files\\Microsoft Office\\root\\Office16\\ACCMonaco\\vs\\language\\typescript\\tsWorker.js",
+      "line": 22842,
+      "column": 5,
+      "algorithm": "RSA",
+      "risk": "HIGH",
+      "reason": "Shor's algorithm breaks RSA",
+      "context": "generateKey(algorithm: RsaHashedKeyGenParams | EcKeyGenParams, extractable: boolean, keyUsages: ReadonlyArray<KeyUsage>)",
+      "matched_pattern": "generateKey.*RSA"
+    },
+    {
+      "file": "C:\\Program Files\\Microsoft Office\\root\\Office16\\ACCMonaco\\vs\\language\\typescript\\tsWorker.js",
+      "line": 29583,
+      "column": 5,
+      "algorithm": "RSA",
+      "risk": "HIGH",
+      "reason": "Shor's algorithm breaks RSA",
+      "context": "generateKey(algorithm: RsaHashedKeyGenParams | EcKeyGenParams, extractable: boolean, keyUsages: ReadonlyArray<KeyUsage>)",
+      "matched_pattern": "generateKey.*RSA"
+    },
+    {
+      "file": "C:\\Program Files\\Microsoft Office\\root\\Office16\\ACCMonaco\\vs\\language\\typescript\\tsWorker.js",
+      "line": 47002,
+      "column": 5,
+      "algorithm": "RSA",
+      "risk": "HIGH",
+      "reason": "Shor's algorithm breaks RSA",
+      "context": "generateKey(algorithm: RsaHashedKeyGenParams | EcKeyGenParams, extractable: boolean, keyUsages: ReadonlyArray<KeyUsage>)",
+      "matched_pattern": "generateKey.*RSA"
+    },
+    {
+      "file": "C:\\Program Files\\Microsoft Office\\root\\Office16\\ACCMonaco\\vs\\language\\typescript\\tsWorker.js",
+      "line": 51171,
+      "column": 5,
+      "algorithm": "RSA",
+      "risk": "HIGH",
+      "reason": "Shor's algorithm breaks RSA",
+      "context": "generateKey(algorithm: RsaHashedKeyGenParams | EcKeyGenParams, extractable: boolean, keyUsages: ReadonlyArray<KeyUsage>)",
+      "matched_pattern": "generateKey.*RSA"
+    },
+    {
+      "file": "C:\\Program Files\\Python312\\Lib\\antigravity.py",
+      "line": 15,
+      "column": 9,
+      "algorithm": "MD5",
+      "risk": "HIGH",
+      "reason": "Broken hash function",
+      "context": "h = hashlib.md5(datedow, usedforsecurity=False).hexdigest()",
+      "matched_pattern": "hashlib\\.md5"
+    },
+    {
+      "file": "C:\\Program Files\\Python312\\Lib\\hashlib.py",
+      "line": 43,
+      "column": 13,
+      "algorithm": "MD5",
+      "risk": "HIGH",
+      "reason": "Broken hash function",
+      "context": ">>> m = hashlib.md5()",
+      "matched_pattern": "hashlib\\.md5"
+    },
+    {
+      "file": "C:\\Program Files\\Python312\\Lib\\poplib.py",
+      "line": 346,
+      "column": 18,
+      "algorithm": "MD5",
+      "risk": "HIGH",
+      "reason": "Broken hash function",
+      "context": "digest = hashlib.md5(digest).hexdigest()",
+      "matched_pattern": "hashlib\\.md5"
+    },
+    {
+      "file": "C:\\Program Files\\Python312\\Lib\\uuid.py",
+      "line": 716,
+      "column": 5,
+      "algorithm": "MD5",
+      "risk": "HIGH",
+      "reason": "Broken hash function",
+      "context": "from hashlib import md5",
+      "matched_pattern": "from\\s+hashlib\\s+import\\s+md5"
+    },
+    {
+      "file": "C:\\Program Files\\Python312\\Lib\\site-packages\\pip\\_vendor\\distlib\\database.py",
+      "line": 513,
+      "column": 22,
+      "algorithm": "MD5",
+      "risk": "HIGH",
+      "reason": "Broken hash function",
+      "context": "hasher = hashlib.md5",
+      "matched_pattern": "hashlib\\.md5"
+    },
+    {
+      "file": "C:\\Program Files\\Python312\\Lib\\site-packages\\pip\\_vendor\\distlib\\database.py",
+      "line": 1007,
+      "column": 20,
+      "algorithm": "MD5",
+      "risk": "HIGH",
+      "reason": "Broken hash function",
+      "context": "return hashlib.md5(content).hexdigest()",
+      "matched_pattern": "hashlib\\.md5"
+    },
+    {
+      "file": "C:\\Program Files\\Python312\\Lib\\site-packages\\pip\\_vendor\\distlib\\index.py",
+      "line": 269,
+      "column": 22,
+      "algorithm": "MD5",
+      "risk": "HIGH",
+      "reason": "Broken hash function",
+      "context": "md5_digest = hashlib.md5(file_data).hexdigest()",
+      "matched_pattern": "hashlib\\.md5"
+    },
+    {
+      "file": "C:\\Program Files\\Python312\\Lib\\site-packages\\pip\\_vendor\\requests\\auth.py",
+      "line": 156,
+      "column": 24,
+      "algorithm": "SHA-1",
+      "risk": "MEDIUM",
+      "reason": "Collision attacks, deprecated",
+      "context": "return hashlib.sha1(x).hexdigest()",
+      "matched_pattern": "hashlib\\.sha1"
+    },
+    {
+      "file": "C:\\Program Files\\Python312\\Lib\\site-packages\\pip\\_vendor\\requests\\auth.py",
+      "line": 205,
+      "column": 18,
+      "algorithm": "SHA-1",
+      "risk": "MEDIUM",
+      "reason": "Collision attacks, deprecated",
+      "context": "cnonce = hashlib.sha1(s).hexdigest()[:16]",
+      "matched_pattern": "hashlib\\.sha1"
+    },
+    {
+      "file": "C:\\Program Files\\Python312\\Lib\\site-packages\\pip\\_vendor\\requests\\auth.py",
+      "line": 148,
+      "column": 24,
+      "algorithm": "MD5",
+      "risk": "HIGH",
+      "reason": "Broken hash function",
+      "context": "return hashlib.md5(x).hexdigest()",
+      "matched_pattern": "hashlib\\.md5"
+    },
+    {
+      "file": "C:\\Program Files\\Python312\\Lib\\urllib\\request.py",
+      "line": 1139,
+      "column": 15,
+      "algorithm": "SHA-1",
+      "risk": "MEDIUM",
+      "reason": "Collision attacks, deprecated",
+      "context": "dig = hashlib.sha1(b).hexdigest()",
+      "matched_pattern": "hashlib\\.sha1"
+    },
+    {
+      "file": "C:\\Program Files\\Python312\\Lib\\urllib\\request.py",
+      "line": 1209,
+      "column": 27,
+      "algorithm": "SHA-1",
+      "risk": "MEDIUM",
+      "reason": "Collision attacks, deprecated",
+      "context": "H = lambda x: hashlib.sha1(x.encode(\"ascii\")).hexdigest()",
+      "matched_pattern": "hashlib\\.sha1"
+    },
+    {
+      "file": "C:\\Program Files\\Python312\\Lib\\urllib\\request.py",
+      "line": 1207,
+      "column": 27,
+      "algorithm": "MD5",
+      "risk": "HIGH",
+      "reason": "Broken hash function",
+      "context": "H = lambda x: hashlib.md5(x.encode(\"ascii\")).hexdigest()",
+      "matched_pattern": "hashlib\\.md5"
+    },
+    {
+      "file": "C:\\Program Files (x86)\\iVMS-4200 Site\\Nginx\\html\\WebCfgPackage\\Packages\\01\\020\\doc\\thirdLib\\forge.worker.js",
+      "line": 13,
+      "column": 33,
+      "algorithm": "RSA",
+      "risk": "HIGH",
+      "reason": "Shor's algorithm breaks RSA",
+      "context": "var keypair = forge.rsa.generateKeyPair({",
+      "matched_pattern": "RSA\\.generate"
+    },
+    {
+      "file": "C:\\Users\\Admin\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\antigravity.py",
+      "line": 15,
+      "column": 9,
+      "algorithm": "MD5",
+      "risk": "HIGH",
+      "reason": "Broken hash function",
+      "context": "h = hashlib.md5(datedow, usedforsecurity=False).hexdigest()",
+      "matched_pattern": "hashlib\\.md5"
+    },
+    {
+      "file": "C:\\Users\\Admin\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\hashlib.py",
+      "line": 43,
+      "column": 13,
+      "algorithm": "MD5",
+      "risk": "HIGH",
+      "reason": "Broken hash function",
+      "context": ">>> m = hashlib.md5()",
+      "matched_pattern": "hashlib\\.md5"
+    },
+    {
+      "file": "C:\\Users\\Admin\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\poplib.py",
+      "line": 346,
+      "column": 18,
+      "algorithm": "MD5",
+      "risk": "HIGH",
+      "reason": "Broken hash function",
+      "context": "digest = hashlib.md5(digest).hexdigest()",
+      "matched_pattern": "hashlib\\.md5"
+    },
+    {
+      "file": "C:\\Users\\Admin\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\uuid.py",
+      "line": 786,
+      "column": 9,
+      "algorithm": "SHA-1",
+      "risk": "MEDIUM",
+      "reason": "Collision attacks, deprecated",
+      "context": "h = hashlib.sha1(namespace.bytes + name, usedforsecurity=False)",
+      "matched_pattern": "hashlib\\.sha1"
+    },
+    {
+      "file": "C:\\Users\\Admin\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\uuid.py",
+      "line": 768,
+      "column": 9,
+      "algorithm": "MD5",
+      "risk": "HIGH",
+      "reason": "Broken hash function",
+      "context": "h = hashlib.md5(namespace.bytes + name, usedforsecurity=False)",
+      "matched_pattern": "hashlib\\.md5"
+    },
+    {
+      "file": "C:\\Users\\Admin\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pip\\_vendor\\requests\\auth.py",
+      "line": 187,
+      "column": 24,
+      "algorithm": "SHA-1",
+      "risk": "MEDIUM",
+      "reason": "Collision attacks, deprecated",
+      "context": "return hashlib.sha1(x, usedforsecurity=False).hexdigest()",
+      "matched_pattern": "hashlib\\.sha1"
+    },
+    {
+      "file": "C:\\Users\\Admin\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pip\\_vendor\\requests\\auth.py",
+      "line": 237,
+      "column": 18,
+      "algorithm": "SHA-1",
+      "risk": "MEDIUM",
+      "reason": "Collision attacks, deprecated",
+      "context": "cnonce = hashlib.sha1(s, usedforsecurity=False).hexdigest()[:16]",
+      "matched_pattern": "hashlib\\.sha1"
+    },
+    {
+      "file": "C:\\Users\\Admin\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pip\\_vendor\\requests\\auth.py",
+      "line": 179,
+      "column": 24,
+      "algorithm": "MD5",
+      "risk": "HIGH",
+      "reason": "Broken hash function",
+      "context": "return hashlib.md5(x, usedforsecurity=False).hexdigest()",
+      "matched_pattern": "hashlib\\.md5"
+    },
+    {
+      "file": "C:\\Users\\Admin\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\urllib\\request.py",
+      "line": 1113,
+      "column": 15,
+      "algorithm": "SHA-1",
+      "risk": "MEDIUM",
+      "reason": "Collision attacks, deprecated",
+      "context": "dig = hashlib.sha1(b).hexdigest()",
+      "matched_pattern": "hashlib\\.sha1"
+    },
+    {
+      "file": "C:\\Users\\Admin\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\urllib\\request.py",
+      "line": 1184,
+      "column": 27,
+      "algorithm": "SHA-1",
+      "risk": "MEDIUM",
+      "reason": "Collision attacks, deprecated",
+      "context": "H = lambda x: hashlib.sha1(x.encode(\"ascii\")).hexdigest()",
+      "matched_pattern": "hashlib\\.sha1"
+    },
+    {
+      "file": "C:\\Users\\Admin\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\urllib\\request.py",
+      "line": 1182,
+      "column": 27,
+      "algorithm": "MD5",
+      "risk": "HIGH",
+      "reason": "Broken hash function",
+      "context": "H = lambda x: hashlib.md5(x.encode(\"ascii\")).hexdigest()",
+      "matched_pattern": "hashlib\\.md5"
+    },
+    {
+      "file": "C:\\Users\\Admin\\AppData\\Roaming\\Code\\User\\History\\-4238d5b9\\yBBl.py",
+      "line": 30,
+      "column": 15,
+      "algorithm": "RSA",
+      "risk": "HIGH",
+      "reason": "Shor's algorithm breaks RSA",
+      "context": "r'generateKey.*RSA',",
+      "matched_pattern": "generateKey.*RSA"
+    },
+    {
+      "file": "C:\\Users\\Admin\\AppData\\Roaming\\Code\\User\\History\\-65093888\\mV3J.py",
+      "line": 119,
+      "column": 35,
+      "algorithm": "RSA",
+      "risk": "HIGH",
+      "reason": "Shor's algorithm breaks RSA",
+      "context": "'context': 'key = RSA.generate(2048)'",
+      "matched_pattern": "RSA\\.generate"
+    }
+  ]
+}

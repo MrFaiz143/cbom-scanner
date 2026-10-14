@@ -1,0 +1,1038 @@
+{
+  "scan_time": "2026-10-14T10:28:48.871073",
+  "total_hosts": 10,
+  "total_findings": 17,
+  "hosts": [
+    {
+      "host": "ril.com",
+      "scan_time": "2026-10-14T10:27:31.431006",
+      "total_ports_scanned": 5,
+      "open_ports": [
+        443
+      ],
+      "services": [
+        {
+          "target": "ril.com:443",
+          "protocol": "TLS",
+          "port": 443,
+          "status": "success",
+          "tls_version": "TLSv1.3",
+          "cipher_suite": [
+            "TLS_AES_128_GCM_SHA256",
+            "TLSv1.3",
+            128
+          ],
+          "certificate": {
+            "subject": {
+              "CN": "ril.com"
+            },
+            "issuer": {
+              "C": "US",
+              "O": "GoDaddy.com",
+              "CN": "GoDaddy TLS Intermediate CA DV - R1v1"
+            },
+            "serial_number": "0x18782528efb1fa62",
+            "version": 3,
+            "not_before": "2026-09-03 04:58:58",
+            "not_after": "2027-03-20 04:58:58",
+            "signature_algorithm": "sha256WithRSAEncryption",
+            "public_key": {
+              "type": "RSA",
+              "bits": 2048
+            },
+            "subject_alt_names": [
+              "rilstaticasset.ril.com",
+              "cmsadmin.ril.com",
+              "ril.com",
+              "www.ril.com"
+            ],
+            "raw_size_bytes": 1879,
+            "days_until_expiry": 156,
+            "expiry_status": "VALID"
+          },
+          "findings": [
+            {
+              "algorithm": "RSA",
+              "risk": "HIGH",
+              "reason": "Shor's algorithm breaks RSA certificate signature",
+              "context": "Signature: sha256WithRSAEncryption",
+              "source": "Certificate signature"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "host": "jsw.in",
+      "scan_time": "2026-10-14T10:27:34.968812",
+      "total_ports_scanned": 5,
+      "open_ports": [
+        443
+      ],
+      "services": [
+        {
+          "target": "jsw.in:443",
+          "protocol": "TLS",
+          "port": 443,
+          "status": "success",
+          "tls_version": "TLSv1.2",
+          "cipher_suite": [
+            "ECDHE-RSA-AES256-GCM-SHA384",
+            "TLSv1.2",
+            256
+          ],
+          "certificate": {
+            "subject": {
+              "C": "IN",
+              "ST": "Maharashtra",
+              "L": "Mumbai",
+              "O": "JSW IP HOLDINGS PRIVATE LIMITED",
+              "CN": "jsw.in"
+            },
+            "issuer": {
+              "C": "US",
+              "O": "DigiCert Inc",
+              "OU": "www.digicert.com",
+              "CN": "GeoTrust TLS RSA CA G1"
+            },
+            "serial_number": "0xfa74089f3c14ff128df68f1125afa57",
+            "version": 3,
+            "not_before": "2026-07-14 00:00:00",
+            "not_after": "2027-01-28 23:59:59",
+            "signature_algorithm": "sha256WithRSAEncryption",
+            "public_key": {
+              "type": "RSA",
+              "bits": 2048
+            },
+            "subject_alt_names": [
+              "jsw.in",
+              "www.jsw.in",
+              "jswsteel.in",
+              "jswenergy.in",
+              "jswholdings.in",
+              "jswinfrastructure.in",
+              "jswfoundation.in",
+              "jswsales.in",
+              "jvm.in",
+              "uat.jsw.in",
+              "newsletter.jsw.in",
+              "group.jsw.in",
+              "jswvishwastmt.in",
+              "uat.jswvishwastmt.in",
+              "uat.jswsteel.in",
+              "jswcoatedsteel.in",
+              "jswneosteel.in",
+              "jswsteelformsme.in",
+              "www.jswsteel.in",
+              "www.jswenergy.in",
+              "www.jswholdings.in",
+              "www.jswinfrastructure.in",
+              "www.jswfoundation.in",
+              "www.jswsales.in",
+              "www.jvm.in",
+              "www.jswvishwastmt.in",
+              "www.uat.jswvishwastmt.in"
+            ],
+            "raw_size_bytes": 2106,
+            "days_until_expiry": 106,
+            "expiry_status": "VALID"
+          },
+          "findings": [
+            {
+              "algorithm": "RSA",
+              "risk": "HIGH",
+              "reason": "Shor's algorithm breaks RSA",
+              "context": "Cipher suite: ECDHE-RSA-AES256-GCM-SHA384",
+              "source": "TLS cipher suite"
+            },
+            {
+              "algorithm": "ECDH",
+              "risk": "HIGH",
+              "reason": "Shor's algorithm breaks ECDH",
+              "context": "Cipher suite: ECDHE-RSA-AES256-GCM-SHA384",
+              "source": "TLS cipher suite"
+            },
+            {
+              "algorithm": "DH",
+              "risk": "HIGH",
+              "reason": "Shor's algorithm breaks Diffie-Hellman",
+              "context": "Cipher suite: ECDHE-RSA-AES256-GCM-SHA384",
+              "source": "TLS cipher suite"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "host": "adityabirla.com",
+      "scan_time": "2026-10-14T10:27:38.108831",
+      "total_ports_scanned": 5,
+      "open_ports": [
+        443
+      ],
+      "services": [
+        {
+          "target": "adityabirla.com:443",
+          "protocol": "TLS",
+          "port": 443,
+          "status": "success",
+          "tls_version": "TLSv1.2",
+          "cipher_suite": [
+            "ECDHE-RSA-AES256-GCM-SHA384",
+            "TLSv1.2",
+            256
+          ],
+          "certificate": {
+            "subject": {
+              "C": "IN",
+              "ST": "Maharashtra",
+              "O": "Birla Management Centre Services Private Limited",
+              "CN": "*.adityabirla.com"
+            },
+            "issuer": {
+              "C": "GB",
+              "O": "Sectigo Limited",
+              "CN": "Sectigo Public Server Authentication CA OV R36"
+            },
+            "serial_number": "0x9cf54ee32873df5e93e76e2584ec6b69",
+            "version": 3,
+            "not_before": "2025-10-31 00:00:00",
+            "not_after": "2026-11-14 23:59:59",
+            "signature_algorithm": "sha256WithRSAEncryption",
+            "public_key": {
+              "type": "RSA",
+              "bits": 2048
+            },
+            "subject_alt_names": [
+              "*.adityabirla.com",
+              "adityabirla.com"
+            ],
+            "raw_size_bytes": 1851,
+            "days_until_expiry": 31,
+            "expiry_status": "VALID"
+          },
+          "findings": [
+            {
+              "algorithm": "RSA",
+              "risk": "HIGH",
+              "reason": "Shor's algorithm breaks RSA",
+              "context": "Cipher suite: ECDHE-RSA-AES256-GCM-SHA384",
+              "source": "TLS cipher suite"
+            },
+            {
+              "algorithm": "ECDH",
+              "risk": "HIGH",
+              "reason": "Shor's algorithm breaks ECDH",
+              "context": "Cipher suite: ECDHE-RSA-AES256-GCM-SHA384",
+              "source": "TLS cipher suite"
+            },
+            {
+              "algorithm": "DH",
+              "risk": "HIGH",
+              "reason": "Shor's algorithm breaks Diffie-Hellman",
+              "context": "Cipher suite: ECDHE-RSA-AES256-GCM-SHA384",
+              "source": "TLS cipher suite"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "host": "hdfcbank.com",
+      "scan_time": "2026-10-14T10:27:41.246043",
+      "total_ports_scanned": 5,
+      "open_ports": [
+        443,
+        8443
+      ],
+      "services": [
+        {
+          "target": "hdfcbank.com:443",
+          "protocol": "TLS",
+          "port": 443,
+          "status": "success",
+          "tls_version": "TLSv1.3",
+          "cipher_suite": [
+            "TLS_AES_256_GCM_SHA384",
+            "TLSv1.3",
+            256
+          ],
+          "certificate": {
+            "subject": {
+              "C": "IN",
+              "ST": "Maharashtra",
+              "L": "Mumbai",
+              "O": "Hdfc Bank Limited",
+              "CN": "www.hdfc.bank.in"
+            },
+            "issuer": {
+              "C": "US",
+              "O": "DigiCert Inc",
+              "OU": "www.digicert.com",
+              "CN": "GeoTrust TLS RSA CA G1"
+            },
+            "serial_number": "0xef46ab2f8a0748dc591dc4056be781d",
+            "version": 3,
+            "not_before": "2026-07-01 00:00:00",
+            "not_after": "2027-01-15 23:59:59",
+            "signature_algorithm": "sha256WithRSAEncryption",
+            "public_key": {
+              "type": "RSA",
+              "bits": 2048
+            },
+            "subject_alt_names": [
+              "www.hdfc.bank.in",
+              "hdfc.bank.in",
+              "hdfcbank.com",
+              "www.hdfcbank.com"
+            ],
+            "raw_size_bytes": 1698,
+            "days_until_expiry": 93,
+            "expiry_status": "VALID"
+          },
+          "findings": [
+            {
+              "algorithm": "RSA",
+              "risk": "HIGH",
+              "reason": "Shor's algorithm breaks RSA certificate signature",
+              "context": "Signature: sha256WithRSAEncryption",
+              "source": "Certificate signature"
+            }
+          ]
+        },
+        {
+          "target": "hdfcbank.com:8443",
+          "protocol": "TLS",
+          "port": 8443,
+          "status": "success",
+          "tls_version": "TLSv1.3",
+          "cipher_suite": [
+            "TLS_AES_256_GCM_SHA384",
+            "TLSv1.3",
+            256
+          ],
+          "certificate": {
+            "subject": {
+              "C": "IN",
+              "ST": "Maharashtra",
+              "L": "Mumbai",
+              "O": "Hdfc Bank Limited",
+              "CN": "www.hdfc.bank.in"
+            },
+            "issuer": {
+              "C": "US",
+              "O": "DigiCert Inc",
+              "OU": "www.digicert.com",
+              "CN": "GeoTrust TLS RSA CA G1"
+            },
+            "serial_number": "0xef46ab2f8a0748dc591dc4056be781d",
+            "version": 3,
+            "not_before": "2026-07-01 00:00:00",
+            "not_after": "2027-01-15 23:59:59",
+            "signature_algorithm": "sha256WithRSAEncryption",
+            "public_key": {
+              "type": "RSA",
+              "bits": 2048
+            },
+            "subject_alt_names": [
+              "www.hdfc.bank.in",
+              "hdfc.bank.in",
+              "hdfcbank.com",
+              "www.hdfcbank.com"
+            ],
+            "raw_size_bytes": 1698,
+            "days_until_expiry": 93,
+            "expiry_status": "VALID"
+          },
+          "findings": [
+            {
+              "algorithm": "RSA",
+              "risk": "HIGH",
+              "reason": "Shor's algorithm breaks RSA certificate signature",
+              "context": "Signature: sha256WithRSAEncryption",
+              "source": "Certificate signature"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "host": "microsoft.com",
+      "scan_time": "2026-10-14T10:27:47.473528",
+      "total_ports_scanned": 5,
+      "open_ports": [
+        443
+      ],
+      "services": [
+        {
+          "target": "microsoft.com:443",
+          "protocol": "TLS",
+          "port": 443,
+          "status": "success",
+          "tls_version": "TLSv1.3",
+          "cipher_suite": [
+            "TLS_AES_256_GCM_SHA384",
+            "TLSv1.3",
+            256
+          ],
+          "certificate": {
+            "subject": {
+              "C": "US",
+              "ST": "WA",
+              "L": "Redmond",
+              "O": "Microsoft Corporation",
+              "CN": "microsoft.com"
+            },
+            "issuer": {
+              "C": "US",
+              "O": "Microsoft Corporation",
+              "CN": "Microsoft TLS G2 RSA CA OCSP 04"
+            },
+            "serial_number": "0x430067484aab73b3d94b36070f00000067484a",
+            "version": 3,
+            "not_before": "2026-06-23 09:04:17",
+            "not_after": "2026-12-20 09:04:17",
+            "signature_algorithm": "sha384WithRSAEncryption",
+            "public_key": {
+              "type": "RSA",
+              "bits": 2048
+            },
+            "subject_alt_names": [
+              "microsoft.com",
+              "s.microsoft.com",
+              "ga.microsoft.com",
+              "aep.microsoft.com",
+              "aer.microsoft.com",
+              "grv.microsoft.com",
+              "hup.microsoft.com",
+              "mac.microsoft.com",
+              "mkb.microsoft.com",
+              "pme.microsoft.com",
+              "pmi.microsoft.com",
+              "rss.microsoft.com",
+              "sar.microsoft.com",
+              "tco.microsoft.com",
+              "fuse.microsoft.com",
+              "ieak.microsoft.com",
+              "mac2.microsoft.com",
+              "mcsp.microsoft.com",
+              "open.microsoft.com",
+              "shop.microsoft.com",
+              "spur.microsoft.com",
+              "itpro.microsoft.com",
+              "mango.microsoft.com",
+              "music.microsoft.com",
+              "pymes.microsoft.com",
+              "store.microsoft.com",
+              "aether.microsoft.com",
+              "alerts.microsoft.com",
+              "design.microsoft.com",
+              "garage.microsoft.com",
+              "gigjam.microsoft.com",
+              "msctec.microsoft.com",
+              "online.microsoft.com",
+              "stream.microsoft.com",
+              "afflink.microsoft.com",
+              "connect.microsoft.com",
+              "develop.microsoft.com",
+              "domains.microsoft.com",
+              "example.microsoft.com",
+              "madeira.microsoft.com",
+              "msdnisv.microsoft.com",
+              "mspress.microsoft.com",
+              "www.aep.microsoft.com",
+              "www.aer.microsoft.com",
+              "wwwbeta.microsoft.com",
+              "business.microsoft.com",
+              "empresas.microsoft.com",
+              "learning.microsoft.com",
+              "msdnwiki.microsoft.com",
+              "openness.microsoft.com",
+              "pinpoint.microsoft.com",
+              "snackbox.microsoft.com",
+              "sponsors.microsoft.com",
+              "stationq.microsoft.com",
+              "aistories.microsoft.com",
+              "community.microsoft.com",
+              "crawlmsdn.microsoft.com",
+              "iotschool.microsoft.com",
+              "messenger.microsoft.com",
+              "minecraft.microsoft.com",
+              "backoffice.microsoft.com",
+              "enterprise.microsoft.com",
+              "iotcentral.microsoft.com",
+              "pinunblock.microsoft.com",
+              "reroute443.microsoft.com",
+              "communities.microsoft.com",
+              "explore-smb.microsoft.com",
+              "expressions.microsoft.com",
+              "ondernemers.microsoft.com",
+              "techacademy.microsoft.com",
+              "terraserver.microsoft.com",
+              "communities2.microsoft.com",
+              "connectevent.microsoft.com",
+              "dataplatform.microsoft.com",
+              "entrepreneur.microsoft.com",
+              "hxd.research.microsoft.com",
+              "mspartnerira.microsoft.com",
+              "mydatahealth.microsoft.com",
+              "oemcommunity.microsoft.com",
+              "real-stories.microsoft.com",
+              "www.formspro.microsoft.com",
+              "futuredecoded.microsoft.com",
+              "upgradecenter.microsoft.com",
+              "learnanalytics.microsoft.com",
+              "onlinelearning.microsoft.com",
+              "businesscentral.microsoft.com",
+              "cloud-immersion.microsoft.com",
+              "studentpartners.microsoft.com",
+              "analyticspartner.microsoft.com",
+              "businessplatform.microsoft.com",
+              "explore-security.microsoft.com",
+              "kleinunternehmen.microsoft.com",
+              "partnercommunity.microsoft.com",
+              "explore-marketing.microsoft.com",
+              "innovationcontest.microsoft.com",
+              "partnerincentives.microsoft.com",
+              "phoenixcataloguat.microsoft.com",
+              "szkolyprzyszlosci.microsoft.com",
+              "www.powerautomate.microsoft.com",
+              "successionplanning.microsoft.com",
+              "lumiaconversationsuk.microsoft.com",
+              "successionplanninguat.microsoft.com",
+              "businessmobilitycenter.microsoft.com",
+              "skypeandteams.fasttrack.microsoft.com",
+              "www.microsoftdlapartnerow.microsoft.com",
+              "commercialappcertification.microsoft.com",
+              "www.skypeandteams.fasttrack.microsoft.com",
+              "ceoconnections.event.microsoft.com",
+              "biz4afrika.microsoft.com",
+              "cashback.microsoft.com",
+              "www.cashback.microsoft.com",
+              "visio.microsoft.com",
+              "insidemsr.microsoft.com",
+              "developervelocityassessment.com",
+              "www.developervelocityassessment.com",
+              "gears5.com",
+              "www.gears5.com",
+              "www.gearstactics.com",
+              "gearstactics.com",
+              "m12.microsoft.com",
+              "seeingai.com",
+              "yourchoice.microsoft.com",
+              "mvtd.events.microsoft.com",
+              "imagine.microsoft.com",
+              "microsoft.com.au",
+              "www.microsoft.com.au",
+              "dynamics.microsoft.com",
+              "powerplatform.microsoft.com",
+              "powerapps.microsoft.com",
+              "powerautomate.microsoft.com",
+              "powervirtualagents.microsoft.com",
+              "powerpages.microsoft.com",
+              "test.ideas.fabric.microsoft.com",
+              "sds.microsoft.com",
+              "ppe.sds.microsoft.com",
+              "www.microsoft365copilot.com",
+              "www.jclarity.com",
+              "techinnovatorsspotlight.com",
+              "www.techinnovatorsspotlight.com",
+              "copilot.ai",
+              "getlicensingready.com",
+              "www.getlicensingready.com",
+              "jpn.delve.office.com",
+              "aus.delve.office.com",
+              "ind.delve.office.com",
+              "kor.delve.office.com",
+              "cobra.me.microsoft.com",
+              "www.businesscentral.com",
+              "businesscentral.com",
+              "msaidatastudio.officeppe.net",
+              "ideas.fabric.microsoft.com",
+              "www.cpt.link",
+              "cpt.link",
+              "yarp.dot.net",
+              "microsoftstream.com",
+              "www.microsoftstream.com",
+              "web.microsoftstream.com",
+              "discover.copilot.ai",
+              "copilot.com",
+              "www.copilot.com",
+              "discover.copilot.com",
+              "researchforum.microsoft.com",
+              "cdn.techcommunity.microsoft.com"
+            ],
+            "raw_size_bytes": 6404,
+            "days_until_expiry": 66,
+            "expiry_status": "VALID"
+          },
+          "findings": [
+            {
+              "algorithm": "RSA",
+              "risk": "HIGH",
+              "reason": "Shor's algorithm breaks RSA certificate signature",
+              "context": "Signature: sha384WithRSAEncryption",
+              "source": "Certificate signature"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "host": "apple.com",
+      "scan_time": "2026-10-14T10:27:50.672894",
+      "total_ports_scanned": 5,
+      "open_ports": [
+        443
+      ],
+      "services": [
+        {
+          "target": "apple.com:443",
+          "protocol": "TLS",
+          "port": 443,
+          "status": "success",
+          "tls_version": "TLSv1.3",
+          "cipher_suite": [
+            "TLS_AES_256_GCM_SHA384",
+            "TLSv1.3",
+            256
+          ],
+          "certificate": {
+            "subject": {
+              "businessCategory": "Private Organization",
+              "jurisdictionC": "US",
+              "jurisdictionST": "California",
+              "serialNumber": "C0806592",
+              "C": "US",
+              "ST": "California",
+              "L": "Cupertino",
+              "O": "Apple Inc.",
+              "CN": "apple.com"
+            },
+            "issuer": {
+              "C": "US",
+              "O": "Apple Inc.",
+              "CN": "Apple Public EV Server ECC CA 1 - G1"
+            },
+            "serial_number": "0x7d8dcf912525b28585c4a3577c0d0ed7",
+            "version": 3,
+            "not_before": "2026-09-30 15:28:37",
+            "not_after": "2026-12-23 19:10:23",
+            "signature_algorithm": "ecdsa-with-SHA256",
+            "public_key": {
+              "type": "EC",
+              "bits": 256
+            },
+            "subject_alt_names": [
+              "apple.com"
+            ],
+            "raw_size_bytes": 1478,
+            "days_until_expiry": 70,
+            "expiry_status": "VALID"
+          },
+          "findings": [
+            {
+              "algorithm": "ECDSA",
+              "risk": "HIGH",
+              "reason": "ECDSA-256 public key is quantum-vulnerable",
+              "context": "Public key: EC-256",
+              "source": "Certificate public key"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "host": "meta.com",
+      "scan_time": "2026-10-14T10:27:53.785659",
+      "total_ports_scanned": 5,
+      "open_ports": [
+        443
+      ],
+      "services": [
+        {
+          "target": "meta.com:443",
+          "protocol": "TLS",
+          "port": 443,
+          "status": "success",
+          "tls_version": "TLSv1.3",
+          "cipher_suite": [
+            "TLS_CHACHA20_POLY1305_SHA256",
+            "TLSv1.3",
+            256
+          ],
+          "certificate": {
+            "subject": {
+              "C": "US",
+              "ST": "California",
+              "L": "Menlo Park",
+              "O": "Meta Platforms, Inc.",
+              "CN": "*.meta.com"
+            },
+            "issuer": {
+              "C": "US",
+              "O": "DigiCert Inc",
+              "CN": "DigiCert Global G2 TLS RSA SHA256 2020 CA1"
+            },
+            "serial_number": "0x189219fafef912f50ffa27bf2736261",
+            "version": 3,
+            "not_before": "2026-07-23 00:00:00",
+            "not_after": "2026-10-21 23:59:59",
+            "signature_algorithm": "sha256WithRSAEncryption",
+            "public_key": {
+              "type": "RSA",
+              "bits": 2048
+            },
+            "subject_alt_names": [
+              "*.meta.com",
+              "meta.com"
+            ],
+            "raw_size_bytes": 1753,
+            "days_until_expiry": 7,
+            "expiry_status": "EXPIRING_SOON"
+          },
+          "findings": [
+            {
+              "algorithm": "RSA",
+              "risk": "HIGH",
+              "reason": "Shor's algorithm breaks RSA certificate signature",
+              "context": "Signature: sha256WithRSAEncryption",
+              "source": "Certificate signature"
+            },
+            {
+              "algorithm": "Certificate-ExpiringSoon",
+              "risk": "MEDIUM",
+              "reason": "Certificate expires in 7 days",
+              "context": "Expires: 2026-10-21 23:59:59",
+              "source": "Certificate validity"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "host": "claude.ai",
+      "scan_time": "2026-10-14T10:27:56.968209",
+      "total_ports_scanned": 5,
+      "open_ports": [
+        443,
+        8443
+      ],
+      "services": [
+        {
+          "target": "claude.ai:443",
+          "protocol": "TLS",
+          "port": 443,
+          "status": "success",
+          "tls_version": "TLSv1.3",
+          "cipher_suite": [
+            "TLS_AES_256_GCM_SHA384",
+            "TLSv1.3",
+            256
+          ],
+          "certificate": {
+            "subject": {
+              "CN": "claude.ai"
+            },
+            "issuer": {
+              "C": "US",
+              "O": "Let's Encrypt",
+              "CN": "YE2"
+            },
+            "serial_number": "0x6bb101435cb643915521bad87747328bac2",
+            "version": 3,
+            "not_before": "2026-09-10 14:25:15",
+            "not_after": "2026-12-09 14:25:14",
+            "signature_algorithm": "ecdsa-with-SHA384",
+            "public_key": {
+              "type": "EC",
+              "bits": 256
+            },
+            "subject_alt_names": [
+              "claude.ai",
+              "staging.claude.ai",
+              "www.claude.ai"
+            ],
+            "raw_size_bytes": 934,
+            "days_until_expiry": 56,
+            "expiry_status": "VALID"
+          },
+          "findings": [
+            {
+              "algorithm": "ECDSA",
+              "risk": "HIGH",
+              "reason": "ECDSA-256 public key is quantum-vulnerable",
+              "context": "Public key: EC-256",
+              "source": "Certificate public key"
+            }
+          ]
+        },
+        {
+          "target": "claude.ai:8443",
+          "protocol": "TLS",
+          "port": 8443,
+          "status": "success",
+          "tls_version": "TLSv1.3",
+          "cipher_suite": [
+            "TLS_AES_256_GCM_SHA384",
+            "TLSv1.3",
+            256
+          ],
+          "certificate": {
+            "subject": {
+              "CN": "claude.ai"
+            },
+            "issuer": {
+              "C": "US",
+              "O": "Let's Encrypt",
+              "CN": "YE2"
+            },
+            "serial_number": "0x6bb101435cb643915521bad87747328bac2",
+            "version": 3,
+            "not_before": "2026-09-10 14:25:15",
+            "not_after": "2026-12-09 14:25:14",
+            "signature_algorithm": "ecdsa-with-SHA384",
+            "public_key": {
+              "type": "EC",
+              "bits": 256
+            },
+            "subject_alt_names": [
+              "claude.ai",
+              "staging.claude.ai",
+              "www.claude.ai"
+            ],
+            "raw_size_bytes": 934,
+            "days_until_expiry": 56,
+            "expiry_status": "VALID"
+          },
+          "findings": [
+            {
+              "algorithm": "ECDSA",
+              "risk": "HIGH",
+              "reason": "ECDSA-256 public key is quantum-vulnerable",
+              "context": "Public key: EC-256",
+              "source": "Certificate public key"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "host": "bseindia.com",
+      "scan_time": "2026-10-14T10:28:00.224383",
+      "total_ports_scanned": 5,
+      "open_ports": [
+        443
+      ],
+      "services": [
+        {
+          "target": "bseindia.com:443",
+          "protocol": "TLS",
+          "port": 443,
+          "status": "success",
+          "tls_version": "TLSv1.3",
+          "cipher_suite": [
+            "TLS_AES_256_GCM_SHA384",
+            "TLSv1.3",
+            256
+          ],
+          "certificate": {
+            "subject": {
+              "C": "IN",
+              "ST": "Maharashtra",
+              "L": "Mumbai",
+              "O": "BSE Limited",
+              "CN": "*.bseindia.com"
+            },
+            "issuer": {
+              "C": "US",
+              "O": "DigiCert Inc",
+              "CN": "DigiCert Global G3 TLS ECC SHA384 2020 CA1"
+            },
+            "serial_number": "0x30c7cc6b92effb873dd2f060d6a5b08",
+            "version": 3,
+            "not_before": "2025-11-21 00:00:00",
+            "not_after": "2026-11-21 23:59:59",
+            "signature_algorithm": "ecdsa-with-SHA384",
+            "public_key": {
+              "type": "EC",
+              "bits": 256
+            },
+            "subject_alt_names": [
+              "*.bseindia.com",
+              "bseindia.com"
+            ],
+            "raw_size_bytes": 1389,
+            "days_until_expiry": 38,
+            "expiry_status": "VALID"
+          },
+          "findings": [
+            {
+              "algorithm": "ECDSA",
+              "risk": "HIGH",
+              "reason": "ECDSA-256 public key is quantum-vulnerable",
+              "context": "Public key: EC-256",
+              "source": "Certificate public key"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "host": "nseindia.com",
+      "scan_time": "2026-10-14T10:28:24.515538",
+      "total_ports_scanned": 5,
+      "open_ports": [
+        443
+      ],
+      "services": [
+        {
+          "target": "nseindia.com:443",
+          "protocol": "TLS",
+          "port": 443,
+          "status": "success",
+          "tls_version": "TLSv1.3",
+          "cipher_suite": [
+            "TLS_AES_256_GCM_SHA384",
+            "TLSv1.3",
+            256
+          ],
+          "certificate": {
+            "subject": {
+              "C": "IN",
+              "ST": "Maharashtra",
+              "L": "Mumbai",
+              "O": "National Stock Exchange of India Ltd",
+              "CN": "www.nseindia.com"
+            },
+            "issuer": {
+              "C": "US",
+              "O": "DigiCert Inc",
+              "CN": "DigiCert Global G3 TLS ECC SHA384 2020 CA1"
+            },
+            "serial_number": "0xe96a2ff51b655f3f8aa159aeed8e2bf",
+            "version": 3,
+            "not_before": "2026-10-08 00:00:00",
+            "not_after": "2027-04-24 23:59:59",
+            "signature_algorithm": "ecdsa-with-SHA384",
+            "public_key": {
+              "type": "EC",
+              "bits": 256
+            },
+            "subject_alt_names": [
+              "www.nseindia.com",
+              "aim.nseindia.com",
+              "analytics.nseindia.com",
+              "apim.nseindia.com",
+              "awnac1.nse.co.in",
+              "awnac2.nse.co.in",
+              "beta.nseindia.com",
+              "betanseapi.nseindia.com",
+              "betansearchives.nseindia.com",
+              "betastreamer.nseindia.com",
+              "blob.niftyindices.com",
+              "caapindia.com",
+              "charting.nseindia.com",
+              "clientprofilinguat.nseindia.com",
+              "cnsapi.connect2nsccl.com",
+              "cogmobile.cogencis.com",
+              "cogmobilec.cogencis.com",
+              "connect.cogencis.com",
+              "connect2nsccl.com",
+              "data.indiapassivefunds.com",
+              "dev-sf.niftyindices.com",
+              "dev.niftyindices.com",
+              "digitalexchange.nseindia.com",
+              "dotexbilling-bcp.nseindia.com",
+              "dotexbilling-uat1.nseindia.com",
+              "dotexdata.nseindia.com",
+              "egr.nseindia.com",
+              "eipo.nseindia.com",
+              "enit.nseindia.com",
+              "enitnextgen.nseindia.com",
+              "enov8.nseindia.com",
+              "eofs.nseindia.com",
+              "hrms.cogencis.com",
+              "iap.nseindia.com",
+              "igrafx1.nseindia.com",
+              "iislbilling.nseindia.com",
+              "iislbillingdr.nseindia.com",
+              "ims.connect2nsccl.com",
+              "inspection.nseindia.com",
+              "investorhelpline.nseclearing.in",
+              "investorhelpline.nseindia.com",
+              "isrm.connect2nsccl.com",
+              "isrmcoll.connect2nsccl.com",
+              "isrmxnet.connect2nsccl.com",
+              "lama.nseindia.com",
+              "muse2.cogencis.com",
+              "neaps.nseindia.com",
+              "neaps.nseix.com",
+              "nilbilling-bcp.nseindia.com",
+              "nilbilling-uat.nseindia.com",
+              "nilbilling.nseindia.com",
+              "nscclindia.com",
+              "nse-ebp.com",
+              "nsearchives.nseindia.com",
+              "nseclearing.in",
+              "nseeboard.nseindia.com",
+              "nseifsc.com",
+              "nseindia.com",
+              "nseix.com",
+              "nseixga.com",
+              "nsekorporate.nseindia.com",
+              "nsekra.com",
+              "nsesmart.com",
+              "nsralbilling-bcp.nseindia.com",
+              "nsralbilling-uat.nseindia.com",
+              "nsralbilling.nseindia.com",
+              "preprod.nsekra.com",
+              "sebicof.nseindia.com",
+              "sebp.nseindia.com",
+              "selfservice.nse.co.in",
+              "streamer.nseindia.com",
+              "test.nseindia.com",
+              "testiap.nseindia.com",
+              "uat-backend.niftyindices.com",
+              "uat-frontend.niftyindices.com",
+              "uat-ipo.nseindia.com",
+              "uat.connect2nsccl.com",
+              "uat.nscclindia.com",
+              "uat.nseicc.com",
+              "uat.nseix.com",
+              "uat.nsekra.com",
+              "www.archive.nseclearing.in",
+              "www.caapindia.com",
+              "www.cogencis.com",
+              "www.connect2nsccl.com",
+              "www.indiapassivefunds.com",
+              "www.ncfm-india.com",
+              "www.nscclindia.com",
+              "www.nse-ebp.com",
+              "www.nse-esgrating.com",
+              "www.nseacademy.com",
+              "www.nseclearing.in",
+              "www.nsefoundation.nseindia.com",
+              "www.nseix.com",
+              "www.nseixga.com",
+              "www.nsekra.com",
+              "www.nsesmart.com"
+            ],
+            "raw_size_bytes": 3537,
+            "days_until_expiry": 192,
+            "expiry_status": "VALID"
+          },
+          "findings": [
+            {
+              "algorithm": "ECDSA",
+              "risk": "HIGH",
+              "reason": "ECDSA-256 public key is quantum-vulnerable",
+              "context": "Public key: EC-256",
+              "source": "Certificate public key"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

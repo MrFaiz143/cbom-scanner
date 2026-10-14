@@ -1,0 +1,653 @@
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.6",
+  "serialNumber": "urn:uuid:e831f106-d469-421c-a08a-135b588041cc",
+  "version": 1,
+  "metadata": {
+    "timestamp": "2026-10-12T17:49:17.860708Z",
+    "tools": [
+      {
+        "vendor": "CBOM Scanner",
+        "name": "cbom-scanner",
+        "version": "0.1.0"
+      }
+    ],
+    "component": {
+      "type": "application",
+      "name": "Scanned Project",
+      "bom-ref": "root-app"
+    }
+  },
+  "components": [
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-b3449a16",
+      "name": "RSA",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "pke",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "G:\\Quotation 2025-2026\\Fazian\\Forex\\Faizan\\Import\\Cbom-Scanner\\src\\cbom_generator.py",
+            "line": 98,
+            "additionalContext": "'RSA': 'pke',"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Shor's algorithm breaks RSA"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-f9ff7c69",
+      "name": "ECDSA",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "signature",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "G:\\Quotation 2025-2026\\Fazian\\Forex\\Faizan\\Import\\Cbom-Scanner\\src\\cbom_generator.py",
+            "line": 99,
+            "additionalContext": "'ECDSA': 'signature',"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Shor's algorithm breaks ECDSA"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-624ba4ea",
+      "name": "ECDH",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "key-agree",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "G:\\Quotation 2025-2026\\Fazian\\Forex\\Faizan\\Import\\Cbom-Scanner\\src\\cbom_generator.py",
+            "line": 100,
+            "additionalContext": "'ECDH': 'key-agree',"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Shor's algorithm breaks ECDH"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-e85f2071",
+      "name": "DSA",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "signature",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "G:\\Quotation 2025-2026\\Fazian\\Forex\\Faizan\\Import\\Cbom-Scanner\\src\\cbom_generator.py",
+            "line": 101,
+            "additionalContext": "'DSA': 'signature',"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Shor's algorithm breaks DSA"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-6cc4d8d6",
+      "name": "DH",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "key-agree",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "G:\\Quotation 2025-2026\\Fazian\\Forex\\Faizan\\Import\\Cbom-Scanner\\src\\cbom_generator.py",
+            "line": 102,
+            "additionalContext": "'DH': 'key-agree',"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Shor's algorithm breaks Diffie-Hellman"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-f528b286",
+      "name": "SHA-1",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "G:\\Quotation 2025-2026\\Fazian\\Forex\\Faizan\\Import\\Cbom-Scanner\\src\\cbom_generator.py",
+            "line": 103,
+            "additionalContext": "'SHA-1': 'hash',"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "MEDIUM"
+        },
+        {
+          "name": "reason",
+          "value": "Collision attacks, deprecated"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-91a1ca6b",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "G:\\Quotation 2025-2026\\Fazian\\Forex\\Faizan\\Import\\Cbom-Scanner\\src\\cbom_generator.py",
+            "line": 104,
+            "additionalContext": "'MD5': 'hash',"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-665bac67",
+      "name": "RSA",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "pke",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "G:\\Quotation 2025-2026\\Fazian\\Forex\\Faizan\\Import\\Cbom-Scanner\\src\\scanner.py",
+            "line": 14,
+            "additionalContext": "'RSA': {'risk': 'HIGH', 'reason': \"Shor's algorithm breaks RSA\"},"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Shor's algorithm breaks RSA"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-351721b5",
+      "name": "ECDSA",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "signature",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "G:\\Quotation 2025-2026\\Fazian\\Forex\\Faizan\\Import\\Cbom-Scanner\\src\\scanner.py",
+            "line": 15,
+            "additionalContext": "'ECDSA': {'risk': 'HIGH', 'reason': \"Shor's algorithm breaks ECDSA\"},"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Shor's algorithm breaks ECDSA"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-fd05b170",
+      "name": "ECDH",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "key-agree",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "G:\\Quotation 2025-2026\\Fazian\\Forex\\Faizan\\Import\\Cbom-Scanner\\src\\scanner.py",
+            "line": 16,
+            "additionalContext": "'ECDH': {'risk': 'HIGH', 'reason': \"Shor's algorithm breaks ECDH\"},"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Shor's algorithm breaks ECDH"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-8183e8ff",
+      "name": "DSA",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "signature",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "G:\\Quotation 2025-2026\\Fazian\\Forex\\Faizan\\Import\\Cbom-Scanner\\src\\scanner.py",
+            "line": 17,
+            "additionalContext": "'DSA': {'risk': 'HIGH', 'reason': \"Shor's algorithm breaks DSA\"},"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Shor's algorithm breaks DSA"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-b7033dce",
+      "name": "DH",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "key-agree",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "G:\\Quotation 2025-2026\\Fazian\\Forex\\Faizan\\Import\\Cbom-Scanner\\src\\scanner.py",
+            "line": 18,
+            "additionalContext": "'DH': {'risk': 'HIGH', 'reason': \"Shor's algorithm breaks Diffie-Hellman\"},"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Shor's algorithm breaks Diffie-Hellman"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-ed8331f4",
+      "name": "SHA-1",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "G:\\Quotation 2025-2026\\Fazian\\Forex\\Faizan\\Import\\Cbom-Scanner\\src\\scanner.py",
+            "line": 19,
+            "additionalContext": "'SHA-1': {'risk': 'MEDIUM', 'reason': \"Collision attacks, deprecated\"},"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "MEDIUM"
+        },
+        {
+          "name": "reason",
+          "value": "Collision attacks, deprecated"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-1b4a6afc",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "unknown",
+          "executionEnvironment": "software",
+          "implementationPlatform": "unknown",
+          "certificationLevel": [],
+          "mode": "unknown",
+          "padding": "unknown",
+          "cryptoFunctions": [
+            "keygen",
+            "encrypt",
+            "decrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "G:\\Quotation 2025-2026\\Fazian\\Forex\\Faizan\\Import\\Cbom-Scanner\\src\\scanner.py",
+            "line": 20,
+            "additionalContext": "'MD5': {'risk': 'HIGH', 'reason': \"Broken hash function\"},"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "risk-level",
+          "value": "HIGH"
+        },
+        {
+          "name": "reason",
+          "value": "Broken hash function"
+        },
+        {
+          "name": "quantum-vulnerable",
+          "value": "true"
+        }
+      ]
+    }
+  ]
+}

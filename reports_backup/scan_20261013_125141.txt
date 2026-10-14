@@ -1,0 +1,195 @@
+======================================================================
+CBOM SCAN REPORT
+======================================================================
+Scan Time: 2026-10-13T12:51:41.023382
+Folder: C:\
+Files Scanned: 22067
+Total Findings: 31
+======================================================================
+
+[HIGH] RSA
+  File: C:\Program Files\Microsoft Office\root\Office16\ACCMonaco\vs\language\typescript\tsWorker.js
+  Line: 22842, Column: 5
+  Reason: Shor's algorithm breaks RSA
+  Context: generateKey(algorithm: RsaHashedKeyGenParams | EcKeyGenParams, extractable: boolean, keyUsages: ReadonlyArray<KeyUsage>)
+
+[HIGH] RSA
+  File: C:\Program Files\Microsoft Office\root\Office16\ACCMonaco\vs\language\typescript\tsWorker.js
+  Line: 29583, Column: 5
+  Reason: Shor's algorithm breaks RSA
+  Context: generateKey(algorithm: RsaHashedKeyGenParams | EcKeyGenParams, extractable: boolean, keyUsages: ReadonlyArray<KeyUsage>)
+
+[HIGH] RSA
+  File: C:\Program Files\Microsoft Office\root\Office16\ACCMonaco\vs\language\typescript\tsWorker.js
+  Line: 47002, Column: 5
+  Reason: Shor's algorithm breaks RSA
+  Context: generateKey(algorithm: RsaHashedKeyGenParams | EcKeyGenParams, extractable: boolean, keyUsages: ReadonlyArray<KeyUsage>)
+
+[HIGH] RSA
+  File: C:\Program Files\Microsoft Office\root\Office16\ACCMonaco\vs\language\typescript\tsWorker.js
+  Line: 51171, Column: 5
+  Reason: Shor's algorithm breaks RSA
+  Context: generateKey(algorithm: RsaHashedKeyGenParams | EcKeyGenParams, extractable: boolean, keyUsages: ReadonlyArray<KeyUsage>)
+
+[HIGH] MD5
+  File: C:\Program Files\Python312\Lib\antigravity.py
+  Line: 15, Column: 9
+  Reason: Broken hash function
+  Context: h = hashlib.md5(datedow, usedforsecurity=False).hexdigest()
+
+[HIGH] MD5
+  File: C:\Program Files\Python312\Lib\hashlib.py
+  Line: 43, Column: 13
+  Reason: Broken hash function
+  Context: >>> m = hashlib.md5()
+
+[HIGH] MD5
+  File: C:\Program Files\Python312\Lib\poplib.py
+  Line: 346, Column: 18
+  Reason: Broken hash function
+  Context: digest = hashlib.md5(digest).hexdigest()
+
+[HIGH] MD5
+  File: C:\Program Files\Python312\Lib\uuid.py
+  Line: 716, Column: 5
+  Reason: Broken hash function
+  Context: from hashlib import md5
+
+[HIGH] MD5
+  File: C:\Program Files\Python312\Lib\site-packages\pip\_vendor\distlib\database.py
+  Line: 513, Column: 22
+  Reason: Broken hash function
+  Context: hasher = hashlib.md5
+
+[HIGH] MD5
+  File: C:\Program Files\Python312\Lib\site-packages\pip\_vendor\distlib\database.py
+  Line: 1007, Column: 20
+  Reason: Broken hash function
+  Context: return hashlib.md5(content).hexdigest()
+
+[HIGH] MD5
+  File: C:\Program Files\Python312\Lib\site-packages\pip\_vendor\distlib\index.py
+  Line: 269, Column: 22
+  Reason: Broken hash function
+  Context: md5_digest = hashlib.md5(file_data).hexdigest()
+
+[MEDIUM] SHA-1
+  File: C:\Program Files\Python312\Lib\site-packages\pip\_vendor\requests\auth.py
+  Line: 156, Column: 24
+  Reason: Collision attacks, deprecated
+  Context: return hashlib.sha1(x).hexdigest()
+
+[MEDIUM] SHA-1
+  File: C:\Program Files\Python312\Lib\site-packages\pip\_vendor\requests\auth.py
+  Line: 205, Column: 18
+  Reason: Collision attacks, deprecated
+  Context: cnonce = hashlib.sha1(s).hexdigest()[:16]
+
+[HIGH] MD5
+  File: C:\Program Files\Python312\Lib\site-packages\pip\_vendor\requests\auth.py
+  Line: 148, Column: 24
+  Reason: Broken hash function
+  Context: return hashlib.md5(x).hexdigest()
+
+[MEDIUM] SHA-1
+  File: C:\Program Files\Python312\Lib\urllib\request.py
+  Line: 1139, Column: 15
+  Reason: Collision attacks, deprecated
+  Context: dig = hashlib.sha1(b).hexdigest()
+
+[MEDIUM] SHA-1
+  File: C:\Program Files\Python312\Lib\urllib\request.py
+  Line: 1209, Column: 27
+  Reason: Collision attacks, deprecated
+  Context: H = lambda x: hashlib.sha1(x.encode("ascii")).hexdigest()
+
+[HIGH] MD5
+  File: C:\Program Files\Python312\Lib\urllib\request.py
+  Line: 1207, Column: 27
+  Reason: Broken hash function
+  Context: H = lambda x: hashlib.md5(x.encode("ascii")).hexdigest()
+
+[HIGH] RSA
+  File: C:\Program Files (x86)\iVMS-4200 Site\Nginx\html\WebCfgPackage\Packages\01\020\doc\thirdLib\forge.worker.js
+  Line: 13, Column: 33
+  Reason: Shor's algorithm breaks RSA
+  Context: var keypair = forge.rsa.generateKeyPair({
+
+[HIGH] MD5
+  File: C:\Users\Admin\AppData\Local\Python\pythoncore-3.14-64\Lib\antigravity.py
+  Line: 15, Column: 9
+  Reason: Broken hash function
+  Context: h = hashlib.md5(datedow, usedforsecurity=False).hexdigest()
+
+[HIGH] MD5
+  File: C:\Users\Admin\AppData\Local\Python\pythoncore-3.14-64\Lib\hashlib.py
+  Line: 43, Column: 13
+  Reason: Broken hash function
+  Context: >>> m = hashlib.md5()
+
+[HIGH] MD5
+  File: C:\Users\Admin\AppData\Local\Python\pythoncore-3.14-64\Lib\poplib.py
+  Line: 346, Column: 18
+  Reason: Broken hash function
+  Context: digest = hashlib.md5(digest).hexdigest()
+
+[MEDIUM] SHA-1
+  File: C:\Users\Admin\AppData\Local\Python\pythoncore-3.14-64\Lib\uuid.py
+  Line: 786, Column: 9
+  Reason: Collision attacks, deprecated
+  Context: h = hashlib.sha1(namespace.bytes + name, usedforsecurity=False)
+
+[HIGH] MD5
+  File: C:\Users\Admin\AppData\Local\Python\pythoncore-3.14-64\Lib\uuid.py
+  Line: 768, Column: 9
+  Reason: Broken hash function
+  Context: h = hashlib.md5(namespace.bytes + name, usedforsecurity=False)
+
+[MEDIUM] SHA-1
+  File: C:\Users\Admin\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\pip\_vendor\requests\auth.py
+  Line: 187, Column: 24
+  Reason: Collision attacks, deprecated
+  Context: return hashlib.sha1(x, usedforsecurity=False).hexdigest()
+
+[MEDIUM] SHA-1
+  File: C:\Users\Admin\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\pip\_vendor\requests\auth.py
+  Line: 237, Column: 18
+  Reason: Collision attacks, deprecated
+  Context: cnonce = hashlib.sha1(s, usedforsecurity=False).hexdigest()[:16]
+
+[HIGH] MD5
+  File: C:\Users\Admin\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\pip\_vendor\requests\auth.py
+  Line: 179, Column: 24
+  Reason: Broken hash function
+  Context: return hashlib.md5(x, usedforsecurity=False).hexdigest()
+
+[MEDIUM] SHA-1
+  File: C:\Users\Admin\AppData\Local\Python\pythoncore-3.14-64\Lib\urllib\request.py
+  Line: 1113, Column: 15
+  Reason: Collision attacks, deprecated
+  Context: dig = hashlib.sha1(b).hexdigest()
+
+[MEDIUM] SHA-1
+  File: C:\Users\Admin\AppData\Local\Python\pythoncore-3.14-64\Lib\urllib\request.py
+  Line: 1184, Column: 27
+  Reason: Collision attacks, deprecated
+  Context: H = lambda x: hashlib.sha1(x.encode("ascii")).hexdigest()
+
+[HIGH] MD5
+  File: C:\Users\Admin\AppData\Local\Python\pythoncore-3.14-64\Lib\urllib\request.py
+  Line: 1182, Column: 27
+  Reason: Broken hash function
+  Context: H = lambda x: hashlib.md5(x.encode("ascii")).hexdigest()
+
+[HIGH] RSA
+  File: C:\Users\Admin\AppData\Roaming\Code\User\History\-4238d5b9\yBBl.py
+  Line: 30, Column: 15
+  Reason: Shor's algorithm breaks RSA
+  Context: r'generateKey.*RSA',
+
+[HIGH] RSA
+  File: C:\Users\Admin\AppData\Roaming\Code\User\History\-65093888\mV3J.py
+  Line: 119, Column: 35
+  Reason: Shor's algorithm breaks RSA
+  Context: 'context': 'key = RSA.generate(2048)'
+
