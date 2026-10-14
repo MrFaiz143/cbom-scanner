@@ -18,7 +18,7 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'src'))
 from scanner import scan_folder
 from cbom_generator import generate_cbom
 from reporter import print_console_report, save_json_report, save_text_report
-from network_scanner import scan_host, TOP_1000_PORTS
+from web.static.network_scanner import scan_host, TOP_1000_PORTS
 
 
 def print_banner():
