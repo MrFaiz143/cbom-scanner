@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup - CBOM Scanner</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">
+            <h1>🔐 CBOM Scanner</h1>
+        </div>
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/login">Login</a>
+        </div>
+    </nav>
+
+    <div class="auth-container">
+        <div class="auth-card">
+            <div class="auth-header">
+                <div class="auth-icon">📝</div>
+                <h1>Create Account</h1>
+                <p>Naya account banao — free hai</p>
+            </div>
+
+            <form id="signup-form" class="auth-form">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" placeholder="Choose a username" required autocomplete="username">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="your@email.com" required autocomplete="email">
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Min 6 characters" required autocomplete="new-password">
+                    <small class="form-hint">Password kam se kam 6 characters ka hona chahiye</small>
+                </div>
+
+                <button type="submit" class="btn-auth">
+                    <span>Create Account</span>
+                    <span class="btn-arrow">→</span>
+                </button>
+            </form>
+
+            <div id="message" class="auth-message hidden"></div>
+
+            <div class="auth-footer">
+                <p>Account hai? <a href="/login">Login karo</a></p>
+            </div>
+        </div>
+
+        <div class="auth-side">
+            <h2>🚀 Get Started</h2>
+            <p>India ke PQC Migration ke liye ready ho jao</p>
+            <div class="auth-features">
+                <div class="auth-feature">
+                    <span>📁</span>
+                    <p>Folder scanning — code files</p>
+                </div>
+                <div class="auth-feature">
+                    <span>🌐</span>
+                    <p>Network scanning — TLS/SSH</p>
+                </div>
+                <div class="auth-feature">
+                    <span>📊</span>
+                    <p>CBOM reports — CycloneDX 1.6</p>
+                </div>
+                <div class="auth-feature">
+                    <span>📈</span>
+                    <p>Dashboard — charts & analytics</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('signup-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const username = document.getElementById('username').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const msgDiv = document.getElementById('message');
+            
+            msgDiv.classList.add('hidden');
+            
+            if (password.length < 6) {
+                msgDiv.className = 'auth-message error';
+                msgDiv.textContent = '❌ Password must be at least 6 characters';
+                return;
+            }
+            
+            const formData = new FormData();
+            formData.append('username', username);
+            formData.append('email', email);
+            formData.append('password', password);
+            
+            try {
+                const response = await fetch('/api/auth/signup', {
+                    method: 'POST',
+                    body: formData
+                });
+                const data = await response.json();
+                
+                if (data.success) {
+                    msgDiv.className = 'auth-message success';
+                    msgDiv.textContent = '✅ Account created! Redirecting to login...';
+                    setTimeout(() => window.location.href = '/login', 1500);
+                } else {
+                    msgDiv.className = 'auth-message error';
+                    msgDiv.textContent = '❌ ' + data.error;
+                }
+            } catch (error) {
+                msgDiv.className = 'auth-message error';
+                msgDiv.textContent = '❌ Error: ' + error.message;
+            }
+        });
+    </script>
+</body>
+</html>

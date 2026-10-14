@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - CBOM Scanner</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand"><h1>🔐 CBOM Scanner</h1></div>
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/scan">Scan</a>
+            <a href="/dashboard">Dashboard</a>
+            <a href="#" onclick="logout()">Logout ({{ user.username }})</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1 style="text-align: center; color: #58a6ff; margin-bottom: 30px;">
+            📊 Dashboard
+        </h1>
+        <p style="text-align: center; color: #8b95b0; margin-bottom: 40px;">
+            Welcome, <strong style="color: #58a6ff;">{{ user.username }}</strong>!
+        </p>
+
+        <!-- Stats Cards -->
+        <div class="stats-grid" style="margin-bottom: 40px;">
+            <div class="stat-card">
+                <div class="stat-value" id="total-hosts">-</div>
+                <div class="stat-label">Total Hosts</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="total-findings">-</div>
+                <div class="stat-label">Total Findings</div>
+            </div>
+        </div>
+
+        <!-- Charts -->
+        <div class="chart-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 25px; margin-bottom: 40px;">
+            <div class="result-card">
+                <h3>📊 TLS Version Distribution</h3>
+                <canvas id="tlsChart"></canvas>
+            </div>
+            <div class="result-card">
+                <h3>🔐 Quantum-Vulnerable Algorithms</h3>
+                <canvas id="algoChart"></canvas>
+            </div>
+            <div class="result-card">
+                <h3>🏢 Certificate Issuers</h3>
+                <canvas id="issuerChart"></canvas>
+            </div>
+            <div class="result-card">
+                <h3>🔑 Public Key Types</h3>
+                <canvas id="pubkeyChart"></canvas>
+            </div>
+        </div>
+
+        <!-- Expiry Status -->
+        <div class="result-card">
+            <h3>📅 Certificate Expiry Status</h3>
+            <div class="stats-grid" id="expiry-stats" style="margin-top: 20px;"></div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-bottom">
+            <p>© 2026 CBOM Scanner. All rights reserved.</p>
+            <p>Licensed under <a href="https://opensource.org/licenses/MIT">MIT License</a></p>
+        </div>
+    </footer>
+
+    <script>
+        async function loadCharts() {
+            try {
+                const response = await fetch('/api/charts/data');
+                const data = await response.json();
+                
+                document.getElementById('total-hosts').textContent = data.total_hosts || 0;
+                document.getElementById('total-findings').textContent = data.total_findings || 0;
+                
+                // TLS Chart
+                new Chart(document.getElementById('tlsChart'), {
+                    type: 'doughnut',
+                    data: {
+                        labels: Object.keys(data.tls_versions || {}),
+                        datasets: [{
+                            data: Object.values(data.tls_versions || {}),
+                            backgroundColor: ['#58a6ff', '#f0883e', '#3fb950', '#f85149', '#a371f7']
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        plugins: {
+                            legend: { position: 'bottom', labels: { color: '#c9d1d9' } }
+                        }
+                    }
+                });
+                
+                // Algorithm Chart
+                new Chart(document.getElementById('algoChart'), {
+                    type: 'bar',
+                    data: {
+                        labels: Object.keys(data.algorithms || {}),
+                        datasets: [{
+                            label: 'Occurrences',
+                            data: Object.values(data.algorithms || {}),
+                            backgroundColor: '#f85149'
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        plugins: { legend: { display: false } },
+                        scales: {
+                            y: { ticks: { color: '#c9d1d9' }, grid: { color: '#30363d' } },
+                            x: { ticks: { color: '#c9d1d9' }, grid: { color: '#30363d' } }
+                        }
+                    }
+                });
+                
+                // Issuer Chart
+                new Chart(document.getElementById('issuerChart'), {
+                    type: 'bar',
+                    data: {
+                        labels: Object.keys(data.issuers || {}),
+                        datasets: [{
+                            label: 'Certificates',
+                            data: Object.values(data.issuers || {}),
+                            backgroundColor: '#3fb950'
+                        }]
+                    },
+                    options: {
+                        indexAxis: 'y',
+                        responsive: true,
+                        plugins: { legend: { display: false } },
+                        scales: {
+                            y: { ticks: { color: '#c9d1d9' }, grid: { color: '#30363d' } },
+                            x: { ticks: { color: '#c9d1d9' }, grid: { color: '#30363d' } }
+                        }
+                    }
+                });
+                
+                // Public Key Chart
+                new Chart(document.getElementById('pubkeyChart'), {
+                    type: 'pie',
+                    data: {
+                        labels: Object.keys(data.public_key_types || {}),
+                        datasets: [{
+                            data: Object.values(data.public_key_types || {}),
+                            backgroundColor: ['#58a6ff', '#f0883e', '#3fb950', '#f85149']
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        plugins: {
+                            legend: { position: 'bottom', labels: { color: '#c9d1d9' } }
+                        }
+                    }
+                });
+                
+                // Expiry Stats
+                const expiryDiv = document.getElementById('expiry-stats');
+                const expiry = data.expiry_status || {};
+                const colors = {
+                    'VALID': '#3fb950',
+                    'EXPIRING_SOON': '#f0883e',
+                    'EXPIRED': '#f85149',
+                    'unknown': '#8b95b0'
+                };
+                
+                expiryDiv.innerHTML = Object.entries(expiry).map(([status, count]) => `
+                    <div class="stat-card">
+                        <div class="stat-value" style="color: ${colors[status] || '#8b95b0'};">${count}</div>
+                        <div class="stat-label">${status}</div>
+                    </div>
+                `).join('');
+                
+            } catch (error) {
+                console.error('Error loading charts:', error);
+            }
+        }
+        
+        async function logout() {
+            await fetch('/api/auth/logout');
+            window.location.href = '/login';
+        }
+        
+        // Load charts on page load
+        loadCharts();
+    </script>
+</body>
+</html>

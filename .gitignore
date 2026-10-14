@@ -32,3 +32,37 @@ desktop.ini
 # Logs
 *.log
 logs/
+# Database
+cbom_scanner.db
+cbom_scanner.db-wal
+cbom_scanner.db-shm
+*.db
+
+# Reports (sensitive scan data)
+reports/
+reports_backup/
+
+# Virtual Environment
+venv/
+env/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+.pytest_cache/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# Environment
+.env
+.env.local
+
+# OS
+.DS_Store
+Thumbs.db
