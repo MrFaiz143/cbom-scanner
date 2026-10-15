@@ -1,43 +1,60 @@
 """
 CBOM Generator - CycloneDX 1.6 format mein report banata hai.
 Yeh India ke NQM roadmap ke according standard format hai.
+
+v0.9.0 Changes:
+- PQC replacement mapping added (config se)
+- Recommended replacement + NIST standard CBOM me
 """
 
 import json
 import uuid
+import sys
+import os
 from datetime import datetime
+
+# Config se PQC mapping import
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+try:
+    from config import PQC_REPLACEMENTS, APP_NAME, APP_VERSION
+except ImportError:
+    PQC_REPLACEMENTS = {}
+    APP_NAME = "CBOM Scanner"
+    APP_VERSION = "0.9.0"
 
 
 def generate_cbom(scan_results, output_path=None):
     """
     Scan results ko CycloneDX 1.6 CBOM format mein convert karo.
-    
+
     Args:
         scan_results (dict): scanner.scan_folder() ka output
         output_path (str): JSON file ka path (optional)
-    
+
     Returns:
         dict: CycloneDX CBOM
     """
-    # Unique components banao (algorithm + file combination)
     components = []
     seen = set()
-    
+
     for finding in scan_results.get('findings', []):
         key = (finding['file'], finding['algorithm'])
         if key in seen:
             continue
         seen.add(key)
-        
+
+        algo = finding['algorithm']
+        pqc = PQC_REPLACEMENTS.get(algo, {})
+
         component = {
             'type': 'cryptographic-asset',
             'bom-ref': f"crypto-{uuid.uuid4().hex[:8]}",
-            'name': finding['algorithm'],
+            'name': algo,
             'cryptoProperties': {
                 'assetType': 'algorithm',
                 'algorithmProperties': {
-                    'primitive': _get_primitive(finding['algorithm']),
-                    'parameterSetIdentifier': 'unknown',
+                    'primitive': _get_primitive(algo),
+                    'parameterSetIdentifier': finding.get('key_size', 'unknown'),
                     'executionEnvironment': 'software',
                     'implementationPlatform': 'unknown',
                     'certificationLevel': [],
@@ -56,12 +73,14 @@ def generate_cbom(scan_results, output_path=None):
             'properties': [
                 {'name': 'risk-level', 'value': finding['risk']},
                 {'name': 'reason', 'value': finding['reason']},
-                {'name': 'quantum-vulnerable', 'value': 'true'}
+                {'name': 'quantum-vulnerable', 'value': 'true'},
+                {'name': 'recommended-replacement', 'value': pqc.get('replacement', 'N/A')},
+                {'name': 'nist-standard', 'value': pqc.get('standard', 'N/A')},
+                {'name': 'migration-note', 'value': pqc.get('note', '')},
             ]
         }
         components.append(component)
-    
-    # CycloneDX document banao
+
     cbom = {
         'bomFormat': 'CycloneDX',
         'specVersion': '1.6',
@@ -70,9 +89,9 @@ def generate_cbom(scan_results, output_path=None):
         'metadata': {
             'timestamp': datetime.now().isoformat() + 'Z',
             'tools': [{
-                'vendor': 'CBOM Scanner',
+                'vendor': APP_NAME,
                 'name': 'cbom-scanner',
-                'version': '0.1.0'
+                'version': APP_VERSION
             }],
             'component': {
                 'type': 'application',
@@ -82,13 +101,12 @@ def generate_cbom(scan_results, output_path=None):
         },
         'components': components
     }
-    
-    # File mein save karo
+
     if output_path:
         with open(output_path, 'w', encoding='utf-8') as f:
             json.dump(cbom, f, indent=2)
         print(f"[INFO] CBOM saved to: {output_path}")
-    
+
     return cbom
 
 
@@ -100,8 +118,12 @@ def _get_primitive(algorithm):
         'ECDH': 'key-agree',
         'DSA': 'signature',
         'DH': 'key-agree',
+        'DHE': 'key-agree',
         'SHA-1': 'hash',
         'MD5': 'hash',
+        '3DES': 'block-cipher',
+        'RC4': 'stream-cipher',
+        'DES': 'block-cipher',
     }
     return primitives.get(algorithm, 'unknown')
 
@@ -116,10 +138,11 @@ if __name__ == "__main__":
                 'algorithm': 'RSA',
                 'risk': 'HIGH',
                 'reason': "Shor's algorithm breaks RSA",
-                'context': 'key = RSA.generate(2048)'
+                'context': 'key = RSA.generate(2048)',
+                'key_size': '2048'
             }
         ]
     }
-    
+
     cbom = generate_cbom(sample_results, 'sample_cbom.json')
     print(json.dumps(cbom, indent=2))

@@ -3,31 +3,127 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CBOM Scanner - Scan</title>
-    <link rel="stylesheet" href="/static/style.css">
+    <title>Scan - CBOM Scanner</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
+            background: #0a0e1a; color: #e6edf3; line-height: 1.6; min-height: 100vh;
+            letter-spacing: -0.01em;
+        }
+        h1, h2, h3, h4, h5, h6 { font-family: 'Poppins', 'Inter', sans-serif; font-weight: 700; letter-spacing: -0.02em; }
+        .navbar {
+            background: rgba(19, 24, 41, 0.95); border-bottom: 1px solid #2a3050;
+            padding: 15px 40px; display: flex; justify-content: space-between; align-items: center;
+            position: sticky; top: 0; z-index: 100;
+        }
+        .nav-brand h1 { color: #4a9eff; font-size: 1.4em; }
+        .nav-links { display: flex; gap: 5px; }
+        .nav-links a { color: #8b95b0; text-decoration: none; padding: 8px 16px; border-radius: 8px; transition: all 0.3s; font-size: 0.9em; }
+        .nav-links a:hover { background: rgba(74, 158, 255, 0.1); color: #4a9eff; }
+        .nav-links a.active { background: rgba(74, 158, 255, 0.15); color: #4a9eff; }
+
+        .container { max-width: 1100px; margin: 0 auto; padding: 40px 30px; }
+        .page-header { text-align: center; padding: 30px 0; border-bottom: 1px solid #2a3050; margin-bottom: 40px; }
+        .page-header h1 { font-size: 2.5em; color: #00d4ff; margin-bottom: 10px; }
+        .page-header p { color: #8b95b0; font-size: 1.1em; }
+
+        .tabs { display: flex; gap: 10px; margin-bottom: 30px; border-bottom: 1px solid #2a3050; padding-bottom: 5px; }
+        .tab {
+            padding: 14px 28px; background: transparent; border: none; color: #8b95b0;
+            cursor: pointer; font-size: 1em; border-radius: 10px 10px 0 0; transition: all 0.3s;
+            font-family: 'Inter', sans-serif;
+        }
+        .tab:hover { color: #4a9eff; background: rgba(74, 158, 255, 0.05); }
+        .tab.active { color: #4a9eff; background: rgba(74, 158, 255, 0.1); box-shadow: 0 -2px 0 #4a9eff inset; }
+
+        .tab-content {
+            display: none; background: linear-gradient(145deg, #1a1f35, #131829);
+            border: 1px solid #2a3050; border-radius: 16px; padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        .tab-content.active { display: block; }
+        .tab-content h2 { color: #4a9eff; margin-bottom: 15px; }
+        .tab-content p { color: #8b95b0; margin-bottom: 25px; }
+
+        form { display: flex; gap: 15px; flex-wrap: wrap; }
+        input[type="text"], input[type="file"], select {
+            flex: 1; min-width: 200px; padding: 14px 18px;
+            background: #0a0e1a; border: 1px solid #2a3050; border-radius: 10px;
+            color: #e6edf3; font-size: 1em; transition: all 0.3s;
+            font-family: 'Inter', sans-serif;
+        }
+        input:focus, select:focus { outline: none; border-color: #4a9eff; box-shadow: 0 0 20px rgba(74, 158, 255, 0.3); }
+
+        .btn {
+            display: inline-block; padding: 14px 32px; border-radius: 10px;
+            text-decoration: none; font-weight: 600; cursor: pointer; transition: all 0.3s;
+            border: none; font-size: 1em; font-family: 'Inter', sans-serif;
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, #238636, #2ea043);
+            color: white; box-shadow: 0 4px 15px rgba(63, 185, 80, 0.3);
+        }
+        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(63, 185, 80, 0.5); }
+
+        .loading { text-align: center; padding: 60px 0; display: none; }
+        .loading.active { display: block; }
+        .spinner {
+            width: 60px; height: 60px; border: 4px solid #2a3050;
+            border-top-color: #4a9eff; border-radius: 50%;
+            animation: spin 1s linear infinite; margin: 0 auto 20px;
+        }
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        .results { margin-top: 30px; display: none; }
+        .results.active { display: block; }
+        .result-card {
+            background: linear-gradient(145deg, #1a1f35, #131829);
+            border: 1px solid #2a3050; border-radius: 16px; padding: 25px; margin-bottom: 20px;
+        }
+        .result-card h3 { color: #4a9eff; margin-bottom: 15px; }
+        .finding {
+            padding: 15px; border-left: 4px solid #f85149;
+            background: rgba(248, 81, 73, 0.05); margin-bottom: 12px; border-radius: 8px;
+        }
+        .finding.medium { border-left-color: #ff8c42; background: rgba(255, 140, 66, 0.05); }
+        .finding.low { border-left-color: #3fb950; background: rgba(63, 185, 80, 0.05); }
+
+        @media (max-width: 600px) {
+            .navbar { flex-direction: column; gap: 15px; padding: 15px 20px; }
+            .nav-links { flex-wrap: wrap; justify-content: center; }
+            .container { padding: 20px 15px; }
+            .tabs { flex-direction: column; }
+        }
+    </style>
 </head>
 <body>
     <nav class="navbar">
-        <div class="nav-brand">
-            <h1>🔐 CBOM Scanner</h1>
-        </div>
+        <div class="nav-brand"><h1>🔐 CBOM Scanner</h1></div>
         <div class="nav-links">
             <a href="/">Home</a>
-            <a href="/scan">Scan</a>
-            <a href="/docs" target="_blank">API Docs</a>
+            <a href="/scan" class="active">Scan</a>
+            <a href="/dashboard">Dashboard</a>
+            <a href="/login">Login</a>
         </div>
     </nav>
 
     <div class="container">
-        <h1>Start Scanning</h1>
-
-        <div class="tabs">
-            <button class="tab active" onclick="showTab('folder')">📁 Folder Scan</button>
-            <button class="tab" onclick="showTab('network')">🌐 Network Scan</button>
-            <button class="tab" onclick="showTab('multi')">📋 Multi-Host Scan</button>
+        <div class="page-header">
+            <h1>🔍 Start Scanning</h1>
+            <p>Apne systems aur networks ko quantum-vulnerable algorithms se protect karo</p>
         </div>
 
-        <!-- Folder Scan -->
+        <div class="tabs">
+            <button class="tab active" onclick="showTab('folder', event)">📁 Folder Scan</button>
+            <button class="tab" onclick="showTab('network', event)">🌐 Network Scan</button>
+            <button class="tab" onclick="showTab('multi', event)">📋 Multi-Host Scan</button>
+        </div>
+
         <div id="folder-tab" class="tab-content active">
             <h2>Folder Scan</h2>
             <p>Apne project ka folder path daalo. Code files scan honge.</p>
@@ -37,50 +133,230 @@
             </form>
         </div>
 
-        <!-- Network Scan -->
         <div id="network-tab" class="tab-content">
             <h2>Network Scan</h2>
             <p>Hostname ya IP daalo. TLS/SSH servers scan honge.</p>
             <form id="network-form">
                 <input type="text" id="network-host" placeholder="google.com" required>
                 <select id="port-option">
-                    <option value="1">Default (5 ports)</option>
-                    <option value="2">Top 1000 ports</option>
+                    <option value="quick">Quick Scan (7 ports)</option>
+                    <option value="standard">Standard Scan (1-1024)</option>
+                    <option value="full">Full Scan (all ports)</option>
                 </select>
                 <button type="submit" class="btn btn-primary">Scan Network</button>
             </form>
         </div>
 
-        <!-- Multi-Host Scan -->
         <div id="multi-tab" class="tab-content">
             <h2>Multi-Host Scan</h2>
-            <p>Hosts.txt file upload karo. Multiple hosts scan honge.</p>
+            <p>hosts.txt file upload karo. Multiple hosts scan honge.</p>
             <form id="multi-form">
                 <input type="file" id="hosts-file" accept=".txt" required>
                 <button type="submit" class="btn btn-primary">Upload & Scan</button>
             </form>
         </div>
 
-        <!-- Loading -->
-        <div id="loading" class="loading hidden">
+        <div id="loading" class="loading">
             <div class="spinner"></div>
             <p>Scanning... Please wait...</p>
         </div>
 
-        <!-- Results -->
-        <div id="results" class="results hidden">
-            <h2>Scan Results</h2>
+        <div id="results" class="results">
+            <h2 style="color: #00d4ff; margin-bottom: 20px;">Scan Results</h2>
             <div id="results-content"></div>
         </div>
     </div>
 
-    <footer class="footer">
-    <div class="footer-bottom">
-        <p>© 2026 CBOM Scanner. All rights reserved.</p>
-        <p>Licensed under <a href="https://opensource.org/licenses/MIT" target="_blank">MIT License</a></p>
-        <p>Aligned with India NQM Roadmap 2027-2028</p>
-    </div>
-</footer>
-    <script src="/static/script.js"></script>
+    <script>
+        // ============================================================
+        // CSRF TOKEN HELPER
+        // ============================================================
+        function getCsrfToken() {
+            const match = document.cookie.match(/csrf_token=([^;]+)/);
+            return match ? match[1] : '';
+        }
+
+        function showTab(tabName, event) {
+            document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+            event.target.classList.add('active');
+            document.getElementById(tabName + '-tab').classList.add('active');
+        }
+
+        function showLoading() {
+            document.getElementById('loading').classList.add('active');
+            document.getElementById('results').classList.remove('active');
+        }
+
+        function hideLoading() {
+            document.getElementById('loading').classList.remove('active');
+        }
+
+        function showResults(html) {
+            document.getElementById('results-content').innerHTML = html;
+            document.getElementById('results').classList.add('active');
+        }
+
+        // ============================================================
+        // FOLDER SCAN
+        // ============================================================
+        document.getElementById('folder-form')?.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const folderPath = document.getElementById('folder-path').value;
+            showLoading();
+
+            try {
+                const formData = new FormData();
+                formData.append('folder_path', folderPath);
+
+                const response = await fetch('/api/scan/folder', {
+                    method: 'POST',
+                    headers: {
+                        'X-CSRF-Token': getCsrfToken()
+                    },
+                    body: formData
+                });
+
+                const data = await response.json();
+                hideLoading();
+
+                if (data.error) {
+                    showResults(`<div class="result-card"><h3>❌ Error</h3><p>${data.error}</p></div>`);
+                    return;
+                }
+
+                let html = `<div class="result-card"><h3>📁 Folder Scan Results</h3>
+                    <p><strong>Folder:</strong> ${data.folder}</p>
+                    <p><strong>Files Scanned:</strong> ${data.files_scanned}</p>
+                    <p><strong>Total Findings:</strong> ${data.total_findings}</p></div>`;
+
+                if (data.findings && data.findings.length > 0) {
+                    html += '<div class="result-card"><h3>🔍 Findings</h3>';
+                    data.findings.forEach(f => {
+                        const cls = f.risk === 'HIGH' ? '' : f.risk === 'MEDIUM' ? 'medium' : 'low';
+                        html += `<div class="finding ${cls}"><strong>${f.algorithm}</strong> — ${f.risk}<br><small>${f.file}:${f.line}</small><br><small>${f.reason}</small></div>`;
+                    });
+                    html += '</div>';
+                }
+                showResults(html);
+            } catch (error) {
+                hideLoading();
+                showResults(`<div class="result-card"><h3>❌ Error</h3><p>${error.message}</p></div>`);
+            }
+        });
+
+        // ============================================================
+        // NETWORK SCAN
+        // ============================================================
+        document.getElementById('network-form')?.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const host = document.getElementById('network-host').value;
+            const portOption = document.getElementById('port-option').value;
+            showLoading();
+
+            try {
+                const formData = new FormData();
+                formData.append('host', host);
+                formData.append('port_option', portOption);
+
+                const response = await fetch('/api/scan/network', {
+                    method: 'POST',
+                    headers: {
+                        'X-CSRF-Token': getCsrfToken()
+                    },
+                    body: formData
+                });
+
+                const data = await response.json();
+                hideLoading();
+
+                if (data.error) {
+                    showResults(`<div class="result-card"><h3>❌ Error</h3><p>${data.error}</p></div>`);
+                    return;
+                }
+
+                let html = `<div class="result-card"><h3>🌐 Network Scan Results</h3>
+                    <p><strong>Host:</strong> ${data.host}</p>
+                    <p><strong>Open Ports:</strong> ${(data.open_ports || []).join(', ')}</p>
+                    <p><strong>Total Findings:</strong> ${data.total_findings}</p></div>`;
+
+                if (data.services) {
+                    data.services.forEach(service => {
+                        html += `<div class="result-card"><h3>📡 ${service.protocol} on ${service.target}</h3>
+                            <p><strong>TLS Version:</strong> ${service.tls_version || 'N/A'}</p>
+                            <p><strong>Cipher Suite:</strong> ${service.cipher_suite ? service.cipher_suite[0] : 'N/A'}</p>`;
+
+                        if (service.certificate) {
+                            const cert = service.certificate;
+                            html += `<h4>Certificate Details:</h4>
+                                <p><strong>Subject:</strong> ${cert.subject?.CN || 'N/A'}</p>
+                                <p><strong>Issuer:</strong> ${cert.issuer?.CN || 'N/A'}</p>
+                                <p><strong>Valid Until:</strong> ${cert.not_after || 'N/A'}</p>`;
+                        }
+
+                        if (service.findings) {
+                            html += '<h4>Findings:</h4>';
+                            service.findings.forEach(f => {
+                                const cls = f.risk === 'HIGH' ? '' : f.risk === 'MEDIUM' ? 'medium' : 'low';
+                                html += `<div class="finding ${cls}"><strong>${f.algorithm}</strong> — ${f.risk}<br><small>${f.reason}</small></div>`;
+                            });
+                        }
+                        html += '</div>';
+                    });
+                }
+                showResults(html);
+            } catch (error) {
+                hideLoading();
+                showResults(`<div class="result-card"><h3>❌ Error</h3><p>${error.message}</p></div>`);
+            }
+        });
+
+        // ============================================================
+        // MULTI-HOST SCAN
+        // ============================================================
+        document.getElementById('multi-form')?.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const fileInput = document.getElementById('hosts-file');
+            if (!fileInput.files.length) return;
+            showLoading();
+
+            try {
+                const formData = new FormData();
+                formData.append('file', fileInput.files[0]);
+
+                const response = await fetch('/api/scan/multi', {
+                    method: 'POST',
+                    headers: {
+                        'X-CSRF-Token': getCsrfToken()
+                    },
+                    body: formData
+                });
+
+                const data = await response.json();
+                hideLoading();
+
+                if (data.error) {
+                    showResults(`<div class="result-card"><h3>❌ Error</h3><p>${data.error}</p></div>`);
+                    return;
+                }
+
+                let html = `<div class="result-card"><h3>📋 Multi-Host Scan Results</h3><p><strong>Total Hosts:</strong> ${data.total_hosts}</p></div>`;
+
+                data.results.forEach(result => {
+                    html += `<div class="result-card"><h3>${result.host}</h3>`;
+                    if (result.error) {
+                        html += `<p>❌ ${result.error}</p>`;
+                    } else {
+                        html += `<p><strong>Open Ports:</strong> ${(result.open_ports || []).join(', ')}</p><p><strong>Services:</strong> ${(result.services || []).length}</p>`;
+                    }
+                    html += '</div>';
+                });
+                showResults(html);
+            } catch (error) {
+                hideLoading();
+                showResults(`<div class="result-card"><h3>❌ Error</h3><p>${error.message}</p></div>`);
+            }
+        });
+    </script>
 </body>
 </html>
