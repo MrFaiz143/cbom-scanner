@@ -2,20 +2,20 @@
   "version": 2,
   "builds": [
     {
-      "src": "web/app.py",
+      "src": "app.py",
       "use": "@vercel/python",
       "config": {
-        "includeFiles": ["src/**", "web/templates/**", "web/static/**"]
+        "includeFiles": [
+          "src/**",
+          "web/**"
+        ]
       }
     }
   ],
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "web/app.py"
+      "dest": "app.py"
     }
-  ],
-  "env": {
-    "PYTHONPATH": "src:web:."
-  }
+  ]
 }
