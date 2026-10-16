@@ -152,7 +152,7 @@
         }
         .scan-pro-icon { font-size: 2em; }
         .scan-pro-info { flex: 1; min-width: 0; }
-        .scan-pro-target { color: #e6edf3; font-weight: 600; margin-bottom: 4px; }
+        .scan-pro-target { color: #e6edf3; font-weight: 600; margin-bottom: 4px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
         .scan-pro-meta { color: #8b95b0; font-size: 0.8em; }
         .scan-pro-findings { text-align: center; padding: 0 20px; border-left: 1px solid #2a3050; border-right: 1px solid #2a3050; }
         .scan-pro-count { font-size: 1.6em; font-weight: 800; color: #ff8c42; line-height: 1; font-family: 'Poppins', sans-serif; }
@@ -318,7 +318,7 @@
                     <div class="export-icon">📄</div>
                     <div>
                         <h3>Export Full Report</h3>
-                        <p>Apna complete scan report PDF format mein download karo</p>
+                        <p>Apna latest scan report PDF format mein download karo</p>
                     </div>
                 </div>
                 <button onclick="downloadPDF()" class="btn btn-primary">📥 Download PDF</button>
@@ -341,10 +341,37 @@
         };
         const CHART_COLORS = [COLORS.blue, COLORS.purple, COLORS.cyan, COLORS.pink, COLORS.green, COLORS.yellow, COLORS.orange, COLORS.red];
 
+        // ---------- Helpers ----------
+        function escapeHtml(value) {
+            if (value === null || value === undefined) return '';
+            return String(value)
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;')
+                .replace(/'/g, '&#39;');
+        }
+
+        function formatDate(iso) {
+            if (!iso) return '';
+            const d = new Date(iso);
+            if (isNaN(d.getTime())) return escapeHtml(iso);
+            return d.toLocaleString('en-IN', { dateStyle: 'medium', timeStyle: 'short' });
+        }
+
+        async function apiGet(url) {
+            const response = await fetch(url, { credentials: 'same-origin' });
+            if (response.status === 401) {
+                window.location.href = '/login';
+                throw new Error('Session expired');
+            }
+            return response.json();
+        }
+
+        // ---------- Dashboard load ----------
         async function loadDashboard() {
             try {
-                const reportsResp = await fetch('/api/reports');
-                const reportsData = await reportsResp.json();
+                const reportsData = await apiGet('/api/reports');
                 const hasReports = reportsData.reports && reportsData.reports.length > 0;
                 if (!hasReports) {
                     document.getElementById('empty-state').classList.remove('hidden');
@@ -354,8 +381,8 @@
                 document.getElementById('empty-state').classList.add('hidden');
                 document.getElementById('dashboard-content').classList.remove('hidden');
                 renderRecentScans(reportsData.reports);
-                const response = await fetch('/api/charts/data');
-                const data = await response.json();
+
+                const data = await apiGet('/api/charts/data');
                 document.getElementById('total-hosts').textContent = data.total_hosts || 0;
                 document.getElementById('total-findings').textContent = data.total_findings || 0;
                 const expiry = data.expiry_status || {};
@@ -392,12 +419,13 @@
             expiryDiv.innerHTML = Object.entries(expiry).map(([status, count]) => `
                 <div class="expiry-pro">
                     <div class="expiry-pro-icon">${icons[status] || '❓'}</div>
-                    <div class="expiry-pro-value" style="color: ${colors[status] || '#8b95b0'};">${count}</div>
-                    <div class="expiry-pro-label">${status.replace('_', ' ')}</div>
+                    <div class="expiry-pro-value" style="color: ${colors[status] || '#8b95b0'};">${escapeHtml(count)}</div>
+                    <div class="expiry-pro-label">${escapeHtml(status.replace(/_/g, ' '))}</div>
                 </div>
             `).join('');
         }
 
+        // scan_id (r.id) se PDF link banta hai
         function renderRecentScans(reports) {
             const div = document.getElementById('recent-scans');
             if (!reports || reports.length === 0) { div.innerHTML = '<p style="color:#8b95b0;">Koi scan nahi</p>'; return; }
@@ -406,29 +434,29 @@
                 <div class="scan-pro">
                     <div class="scan-pro-icon">${typeIcons[r.scan_type] || '📄'}</div>
                     <div class="scan-pro-info">
-                        <div class="scan-pro-target">${r.target}</div>
-                        <div class="scan-pro-meta">${r.scan_type.toUpperCase()} • ${r.created_at}</div>
+                        <div class="scan-pro-target">${escapeHtml(r.target)}</div>
+                        <div class="scan-pro-meta">#${escapeHtml(r.id)} • ${escapeHtml((r.scan_type || '').toUpperCase())} • ${formatDate(r.created_at)}</div>
                     </div>
                     <div class="scan-pro-findings">
-                        <div class="scan-pro-count">${r.total_findings}</div>
+                        <div class="scan-pro-count">${escapeHtml(r.total_findings)}</div>
                         <div class="scan-pro-label">findings</div>
                     </div>
-                    <a href="/api/report/${r.name}/pdf" class="scan-pro-download" title="Download PDF">📥</a>
+                    <a href="/api/report/${encodeURIComponent(r.id)}/pdf" class="scan-pro-download" title="Download PDF">📥</a>
                 </div>
             `).join('');
         }
 
         async function downloadPDF() {
             try {
-                const response = await fetch('/api/reports');
-                const data = await response.json();
+                const data = await apiGet('/api/reports');
                 if (!data.reports || data.reports.length === 0) { alert('❌ Koi report nahi mili. Pehle scan karo.'); return; }
-                window.location.href = `/api/report/${data.reports[0].name}/pdf`;
+                // reports newest-first aate hain, to [0] latest scan hai
+                window.location.href = `/api/report/${encodeURIComponent(data.reports[0].id)}/pdf`;
             } catch (error) { alert('❌ Error: ' + error.message); }
         }
 
         async function logout() {
-            await fetch('/api/auth/logout');
+            await fetch('/api/auth/logout', { credentials: 'same-origin' });
             window.location.href = '/login';
         }
         loadDashboard();

@@ -1,31 +1,90 @@
-// Tab switching
+// ============================================================
+// CBOM Scanner - Scan page script
+// CSRF header + scan_id support + XSS-safe rendering
+// ============================================================
+
+// ---------- Helpers ----------
+function getCookie(name) {
+    const match = document.cookie.match(new RegExp('(?:^|; )' + name + '=([^;]*)'));
+    return match ? decodeURIComponent(match[1]) : null;
+}
+
+function escapeHtml(value) {
+    if (value === null || value === undefined) return '';
+    return String(value)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+}
+
+// Saare scan POST requests yahin se jayenge (CSRF header automatic)
+async function postScan(url, formData) {
+    const csrf = getCookie('csrf_token');
+    const headers = {};
+    if (csrf) headers['x-csrf-token'] = csrf;
+
+    const response = await fetch(url, {
+        method: 'POST',
+        headers: headers,
+        body: formData,
+        credentials: 'same-origin'
+    });
+
+    if (response.status === 401) {
+        window.location.href = '/login';
+        throw new Error('Session expired. Please login again.');
+    }
+    if (response.status === 403) {
+        throw new Error('Security token missing ya expire ho gaya. Logout karke dobara login karo.');
+    }
+
+    let data;
+    try {
+        data = await response.json();
+    } catch (e) {
+        throw new Error('Server se invalid response aaya (status ' + response.status + ')');
+    }
+    return data;
+}
+
+function scanSavedBanner(scanId) {
+    if (!scanId) return '';
+    return `
+        <div class="result-card">
+            <p>✅ Scan save ho gaya (ID: <strong>${escapeHtml(scanId)}</strong>).
+            <a href="/dashboard">Dashboard me dekho →</a></p>
+        </div>
+    `;
+}
+
+// ---------- Tab switching ----------
 function showTab(tabName) {
     document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
     document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
-    
-    event.target.classList.add('active');
-    document.getElementById(`${tabName}-tab`).classList.add('active');
+
+    if (typeof event !== 'undefined' && event && event.target) {
+        event.target.classList.add('active');
+    }
+    const content = document.getElementById(`${tabName}-tab`);
+    if (content) content.classList.add('active');
 }
 
-// Folder scan
+// ---------- Folder scan ----------
 document.getElementById('folder-form')?.addEventListener('submit', async (e) => {
     e.preventDefault();
     const folderPath = document.getElementById('folder-path').value;
-    
+
     showLoading();
-    
+
     try {
         const formData = new FormData();
         formData.append('folder_path', folderPath);
-        
-        const response = await fetch('/api/scan/folder', {
-            method: 'POST',
-            body: formData
-        });
-        
-        const data = await response.json();
+
+        const data = await postScan('/api/scan/folder', formData);
         hideLoading();
-        
+
         if (data.error) {
             showError(data.error);
         } else {
@@ -37,27 +96,22 @@ document.getElementById('folder-form')?.addEventListener('submit', async (e) => 
     }
 });
 
-// Network scan
+// ---------- Network scan ----------
 document.getElementById('network-form')?.addEventListener('submit', async (e) => {
     e.preventDefault();
     const host = document.getElementById('network-host').value;
     const portOption = document.getElementById('port-option').value;
-    
+
     showLoading();
-    
+
     try {
         const formData = new FormData();
         formData.append('host', host);
         formData.append('port_option', portOption);
-        
-        const response = await fetch('/api/scan/network', {
-            method: 'POST',
-            body: formData
-        });
-        
-        const data = await response.json();
+
+        const data = await postScan('/api/scan/network', formData);
         hideLoading();
-        
+
         if (data.error) {
             showError(data.error);
         } else {
@@ -69,30 +123,25 @@ document.getElementById('network-form')?.addEventListener('submit', async (e) =>
     }
 });
 
-// Multi-host scan
+// ---------- Multi-host scan ----------
 document.getElementById('multi-form')?.addEventListener('submit', async (e) => {
     e.preventDefault();
     const fileInput = document.getElementById('hosts-file');
-    
+
     if (!fileInput.files.length) {
         showError('Please select a file');
         return;
     }
-    
+
     showLoading();
-    
+
     try {
         const formData = new FormData();
         formData.append('file', fileInput.files[0]);
-        
-        const response = await fetch('/api/scan/multi', {
-            method: 'POST',
-            body: formData
-        });
-        
-        const data = await response.json();
+
+        const data = await postScan('/api/scan/multi', formData);
         hideLoading();
-        
+
         if (data.error) {
             showError(data.error);
         } else {
@@ -104,6 +153,7 @@ document.getElementById('multi-form')?.addEventListener('submit', async (e) => {
     }
 });
 
+// ---------- UI helpers ----------
 function showLoading() {
     document.getElementById('loading').classList.remove('hidden');
     document.getElementById('results').classList.add('hidden');
@@ -116,38 +166,42 @@ function hideLoading() {
 function showError(message) {
     const resultsDiv = document.getElementById('results');
     const contentDiv = document.getElementById('results-content');
-    contentDiv.innerHTML = `<div class="result-card"><h3>❌ Error</h3><p>${message}</p></div>`;
+    contentDiv.innerHTML = `<div class="result-card"><h3>❌ Error</h3><p>${escapeHtml(message)}</p></div>`;
     resultsDiv.classList.remove('hidden');
 }
 
+function riskClassFor(risk) {
+    return risk === 'HIGH' ? '' : risk === 'MEDIUM' ? 'medium' : 'low';
+}
+
+// ---------- Results ----------
 function showFolderResults(data) {
     const resultsDiv = document.getElementById('results');
     const contentDiv = document.getElementById('results-content');
-    
-    let html = `
+
+    let html = scanSavedBanner(data.scan_id) + `
         <div class="result-card">
             <h3>📁 Folder Scan Results</h3>
-            <p><strong>Folder:</strong> ${data.folder}</p>
-            <p><strong>Files Scanned:</strong> ${data.files_scanned}</p>
-            <p><strong>Total Findings:</strong> ${data.total_findings}</p>
+            <p><strong>Folder:</strong> ${escapeHtml(data.folder)}</p>
+            <p><strong>Files Scanned:</strong> ${escapeHtml(data.files_scanned)}</p>
+            <p><strong>Total Findings:</strong> ${escapeHtml(data.total_findings)}</p>
         </div>
     `;
-    
+
     if (data.findings && data.findings.length > 0) {
         html += '<div class="result-card"><h3>🔍 Findings</h3>';
         data.findings.forEach(f => {
-            const riskClass = f.risk === 'HIGH' ? '' : f.risk === 'MEDIUM' ? 'medium' : 'low';
             html += `
-                <div class="finding ${riskClass}">
-                    <strong>${f.algorithm}</strong> — ${f.risk}
-                    <br><small>${f.file}:${f.line}</small>
-                    <br><small>${f.reason}</small>
+                <div class="finding ${riskClassFor(f.risk)}">
+                    <strong>${escapeHtml(f.algorithm)}</strong> — ${escapeHtml(f.risk)}
+                    <br><small>${escapeHtml(f.file)}:${escapeHtml(f.line)}</small>
+                    <br><small>${escapeHtml(f.reason)}</small>
                 </div>
             `;
         });
         html += '</div>';
     }
-    
+
     contentDiv.innerHTML = html;
     resultsDiv.classList.remove('hidden');
 }
@@ -155,53 +209,58 @@ function showFolderResults(data) {
 function showNetworkResults(data) {
     const resultsDiv = document.getElementById('results');
     const contentDiv = document.getElementById('results-content');
-    
-    let html = `
+
+    const openPorts = (data.open_ports || []).map(escapeHtml).join(', ');
+
+    let html = scanSavedBanner(data.scan_id) + `
         <div class="result-card">
             <h3>🌐 Network Scan Results</h3>
-            <p><strong>Host:</strong> ${data.host}</p>
-            <p><strong>Open Ports:</strong> ${data.open_ports.join(', ')}</p>
-            <p><strong>Total Findings:</strong> ${data.total_findings}</p>
+            <p><strong>Host:</strong> ${escapeHtml(data.host)}</p>
+            <p><strong>Open Ports:</strong> ${openPorts || 'None'}</p>
+            <p><strong>Total Findings:</strong> ${escapeHtml(data.total_findings)}</p>
         </div>
     `;
-    
+
     if (data.services) {
         data.services.forEach(service => {
+            const cipher = Array.isArray(service.cipher_suite)
+                ? service.cipher_suite[0]
+                : service.cipher_suite;
+
             html += `
                 <div class="result-card">
-                    <h3>📡 ${service.protocol} on ${service.target}</h3>
-                    <p><strong>TLS Version:</strong> ${service.tls_version || 'N/A'}</p>
-                    <p><strong>Cipher Suite:</strong> ${service.cipher_suite ? service.cipher_suite[0] : 'N/A'}</p>
+                    <h3>📡 ${escapeHtml(service.protocol)} on ${escapeHtml(service.target)}</h3>
+                    <p><strong>TLS Version:</strong> ${escapeHtml(service.tls_version || 'N/A')}</p>
+                    <p><strong>Cipher Suite:</strong> ${escapeHtml(cipher || 'N/A')}</p>
             `;
-            
+
             if (service.certificate) {
                 const cert = service.certificate;
                 html += `
                     <h4>Certificate Details:</h4>
-                    <p><strong>Subject:</strong> ${cert.subject?.CN || 'N/A'}</p>
-                    <p><strong>Issuer:</strong> ${cert.issuer?.CN || 'N/A'}</p>
-                    <p><strong>Valid Until:</strong> ${cert.not_after || 'N/A'}</p>
-                    <p><strong>Status:</strong> ${cert.expiry_status || 'N/A'}</p>
+                    <p><strong>Subject:</strong> ${escapeHtml(cert.subject?.CN || 'N/A')}</p>
+                    <p><strong>Issuer:</strong> ${escapeHtml(cert.issuer?.CN || 'N/A')}</p>
+                    <p><strong>Valid Until:</strong> ${escapeHtml(cert.not_after || 'N/A')}</p>
+                    <p><strong>Status:</strong> ${escapeHtml(cert.expiry_status || 'N/A')}</p>
                 `;
             }
-            
-            if (service.findings) {
+
+            if (service.findings && service.findings.length > 0) {
                 html += '<h4>Findings:</h4>';
                 service.findings.forEach(f => {
-                    const riskClass = f.risk === 'HIGH' ? '' : f.risk === 'MEDIUM' ? 'medium' : 'low';
                     html += `
-                        <div class="finding ${riskClass}">
-                            <strong>${f.algorithm}</strong> — ${f.risk}
-                            <br><small>${f.reason}</small>
+                        <div class="finding ${riskClassFor(f.risk)}">
+                            <strong>${escapeHtml(f.algorithm)}</strong> — ${escapeHtml(f.risk)}
+                            <br><small>${escapeHtml(f.reason)}</small>
                         </div>
                     `;
                 });
             }
-            
+
             html += '</div>';
         });
     }
-    
+
     contentDiv.innerHTML = html;
     resultsDiv.classList.remove('hidden');
 }
@@ -209,32 +268,32 @@ function showNetworkResults(data) {
 function showMultiResults(data) {
     const resultsDiv = document.getElementById('results');
     const contentDiv = document.getElementById('results-content');
-    
-    let html = `
+
+    let html = scanSavedBanner(data.scan_id) + `
         <div class="result-card">
             <h3>📋 Multi-Host Scan Results</h3>
-            <p><strong>Total Hosts:</strong> ${data.total_hosts}</p>
+            <p><strong>Total Hosts:</strong> ${escapeHtml(data.total_hosts)}</p>
         </div>
     `;
-    
-    data.results.forEach(result => {
+
+    (data.results || []).forEach(result => {
         html += `
             <div class="result-card">
-                <h3>${result.host}</h3>
+                <h3>${escapeHtml(result.host)}</h3>
         `;
-        
+
         if (result.error) {
-            html += `<p>❌ ${result.error}</p>`;
+            html += `<p>❌ ${escapeHtml(result.error)}</p>`;
         } else {
             html += `
-                <p><strong>Open Ports:</strong> ${(result.open_ports || []).join(', ')}</p>
+                <p><strong>Open Ports:</strong> ${(result.open_ports || []).map(escapeHtml).join(', ')}</p>
                 <p><strong>Services:</strong> ${(result.services || []).length}</p>
             `;
         }
-        
+
         html += '</div>';
     });
-    
+
     contentDiv.innerHTML = html;
     resultsDiv.classList.remove('hidden');
 }
