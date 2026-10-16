@@ -1,27 +1,13 @@
-"""
-Vercel Entry Point
-Ye file Vercel ko batati hai ki FastAPI app kahan hai.
-Actual app: web/app.py
-"""
-
 import os
 import sys
 
-# ============================================================
-# VERCEL PATH SETUP
-# ============================================================
+# Path setup
 ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
-SRC_DIR = os.path.join(ROOT_DIR, 'src')
-WEB_DIR = os.path.join(ROOT_DIR, 'web')
+sys.path.insert(0, os.path.join(ROOT_DIR, 'src'))
+sys.path.insert(0, os.path.join(ROOT_DIR, 'web'))
+sys.path.insert(0, ROOT_DIR)
 
-# Saare paths add karo
-for path in [SRC_DIR, WEB_DIR, ROOT_DIR]:
-    if path not in sys.path:
-        sys.path.insert(0, path)
-
-# ============================================================
-# IMPORT FASTAPI APP FROM web/app.py
-# ============================================================
+# Import FastAPI app from web/app.py
 from web.app import app
 
 __all__ = ['app']
