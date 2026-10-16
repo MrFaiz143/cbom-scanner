@@ -1,11 +1,21 @@
 {
-  "services": {
-    "backend": {
-      "root": "web/",
-      "entrypoint": "app:app"
+  "version": 2,
+  "builds": [
+    {
+      "src": "web/app.py",
+      "use": "@vercel/python",
+      "config": {
+        "includeFiles": ["src/**", "web/templates/**", "web/static/**"]
+      }
     }
-  },
-  "rewrites": [
-    { "source": "/(.*)", "destination": { "service": "backend" } }
-  ]
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "web/app.py"
+    }
+  ],
+  "env": {
+    "PYTHONPATH": "src:web:."
+  }
 }

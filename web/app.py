@@ -18,6 +18,21 @@ v0.9.0 Security & Quality Changes:
 
 import os
 import sys
+
+# ============================================================
+# VERCEL PATH SETUP
+# ============================================================
+WEB_DIR = os.path.dirname(os.path.abspath(__file__))
+ROOT_DIR = os.path.dirname(WEB_DIR)
+SRC_DIR = os.path.join(ROOT_DIR, 'src')
+
+# Saare paths add karo
+for path in [SRC_DIR, WEB_DIR, ROOT_DIR]:
+    if path not in sys.path:
+        sys.path.insert(0, path)
+
+import os
+import sys
 import json
 import secrets
 import logging
