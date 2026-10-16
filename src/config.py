@@ -13,15 +13,23 @@ from pathlib import Path
 # Project root (jahan se app run ho raha hai)
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-# Reports folder
-REPORTS_DIR = Path(os.getenv("CBOM_REPORTS_DIR", BASE_DIR / "reports"))
-REPORTS_DIR.mkdir(parents=True, exist_ok=True)
+# Vercel serverless pe sirf /tmp writable hota hai
+IS_VERCEL = bool(os.getenv("VERCEL"))
+WRITABLE_DIR = Path("/tmp") if IS_VERCEL else BASE_DIR
 
-# Database path
-DB_PATH = os.getenv("CBOM_DB_PATH", str(BASE_DIR / "cbom_scanner.db"))
+# Reports folder
+REPORTS_DIR = Path(os.getenv("CBOM_REPORTS_DIR", WRITABLE_DIR / "reports"))
+try:
+    REPORTS_DIR.mkdir(parents=True, exist_ok=True)
+except OSError:
+    # Read-only filesystem pe import crash nahi hona chahiye
+    pass
+
+# Database path (legacy SQLite, ab PostgreSQL use hota hai)
+DB_PATH = os.getenv("CBOM_DB_PATH", str(WRITABLE_DIR / "cbom_scanner.db"))
 
 # Web directory
-WEB_DIR = Path(__file__).resolve().parent / "web"
+WEB_DIR = BASE_DIR / "web"
 TEMPLATES_DIR = WEB_DIR / "templates"
 STATIC_DIR = WEB_DIR / "static"
 
