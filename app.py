@@ -20,7 +20,7 @@ for path in [SRC_DIR, WEB_DIR, ROOT_DIR]:
         sys.path.insert(0, path)
 
 # ============================================================
-# IMPORT FASTAPI APP
+# IMPORT FASTAPI APP FROM web/app.py
 # ============================================================
 from web.app import app
 
