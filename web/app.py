@@ -9,10 +9,11 @@ v1.0.0 Changes:
 - Path setup for Vercel (src, web, root)
 - Reports stored in database (JSONB)
 - Environment-based configuration
+- Clean path setup (no duplicates)
 """
 
 # ============================================================
-# VERCEL PATH SETUP (IMPORTANT — SABSE PEHLE)
+# VERCEL PATH SETUP (SABSE PEHLE — duplicate nahi)
 # ============================================================
 import os
 import sys
@@ -52,7 +53,7 @@ from fastapi.templating import Jinja2Templates
 from fastapi.security import HTTPBasic, HTTPBasicCredentials
 
 # ============================================================
-# CONFIG IMPORTS (ab kaam karenge kyunki path add ho gaya)
+# CONFIG IMPORTS
 # ============================================================
 from config import (
     ADMIN_USERNAME, ADMIN_PASSWORD,
