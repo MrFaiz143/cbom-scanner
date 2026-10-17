@@ -1,11 +1,14 @@
 """
-CBOM Scanner - Web Dashboard (v1.1.0)
+CBOM Scanner - Web Dashboard (v1.0.1)
 FastAPI-based secure web interface for CBOM Scanner.
 Vercel + Neon (PostgreSQL) deployment ready.
 
-v1.1.0 Changes:
-- Replaced WeasyPrint with fpdf2 for Vercel compatibility (No system libs needed)
-- Added missing logging import
+v1.0.1 Changes:
+- passlib hata diya, bcrypt direct use (72-byte error fix)
+- is_strong_password wapas add kiya
+- Professional PDF report (fpdf2) - WeasyPrint hata diya
+- PDF me IST time, quantum-vulnerable vs weak algorithms alag
+- asyncpg pool: statement_cache_size=0 (Neon pooled connection ke liye)
 """
 
 # ============================================================
@@ -18,7 +21,7 @@ WEB_DIR = os.path.dirname(os.path.abspath(__file__))
 ROOT_DIR = os.path.dirname(WEB_DIR)
 SRC_DIR = os.path.join(ROOT_DIR, 'src')
 
-# Saare paths add karo
+# Saare paths add karo - config, scanner, network_scanner ke liye
 for path in [SRC_DIR, WEB_DIR, ROOT_DIR]:
     if path not in sys.path:
         sys.path.insert(0, path)
@@ -34,9 +37,7 @@ import time
 from datetime import datetime, timedelta
 from typing import Optional, List
 from collections import Counter, defaultdict
-from io import BytesIO
 from contextlib import asynccontextmanager
-from fpdf import FPDF # <-- New PDF Library
 
 from fastapi import (
     FastAPI, Request, Form, UploadFile, File, Depends,
@@ -48,6 +49,9 @@ from fastapi.responses import (
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from fastapi.security import HTTPBasic, HTTPBasicCredentials
+
+from fpdf import FPDF
+from fpdf.enums import XPos, YPos
 
 # ============================================================
 # CONFIG IMPORTS
@@ -78,6 +82,7 @@ DATABASE_URL = os.getenv("DATABASE_URL")
 if not DATABASE_URL:
     raise RuntimeError("DATABASE_URL environment variable required")
 
+# Reports dir (Vercel me /tmp)
 REPORTS_DIR = "/tmp/cbom_reports" if os.getenv("VERCEL") else os.path.join(ROOT_DIR, "reports")
 try:
     os.makedirs(REPORTS_DIR, exist_ok=True)
@@ -91,7 +96,7 @@ from scanner import scan_folder
 from network_scanner import scan_host
 
 # ============================================================
-# PASSWORD HASHING (bcrypt)
+# PASSWORD HASHING (bcrypt direct)
 # ============================================================
 import bcrypt
 
@@ -126,6 +131,7 @@ def is_strong_password(password: str) -> tuple:
     if not any(c.isdigit() for c in password):
         return False, "Password me kam se kam 1 number hona chahiye"
     return True, "OK"
+
 
 # ============================================================
 # CSRF
@@ -170,6 +176,8 @@ async def get_pool() -> asyncpg.Pool:
             min_size=1,
             max_size=5,
             command_timeout=30,
+            # Neon pooled (pgbouncer) connection ke liye zaroori
+            statement_cache_size=0,
         )
     return _pool
 
@@ -583,6 +591,7 @@ async def api_scan_network(
 
     user = await get_user_from_session(session_token)
 
+    # Vercel timeout ke liye sirf quick
     if os.getenv("VERCEL") and port_option != "quick":
         port_option = "quick"
 
@@ -800,8 +809,6 @@ async def get_report(scan_id: int, session_token: Optional[str] = Cookie(None)):
 # ============================================================
 # PDF EXPORT (fpdf2) - Professional report
 # ============================================================
-from fpdf.enums import XPos, YPos
-
 PDF_BLUE = (11, 60, 120)
 RISK_COLORS = {"HIGH": (207, 34, 46), "MEDIUM": (191, 100, 0), "LOW": (26, 127, 55)}
 RISK_ORDER = {"HIGH": 0, "MEDIUM": 1, "LOW": 2}
@@ -813,6 +820,13 @@ QUANTUM_VULN_PREFIXES = (
 )
 # Classically weak (quantum ki wajah se nahi)
 WEAK_ALGO_PREFIXES = ("MD5", "SHA-1", "SHA1", "3DES", "DES", "RC4")
+
+# Helvetica ye characters render nahi kar paata, isliye replace
+_PDF_CHAR_MAP = {
+    "\u2192": "->", "\u2190": "<-", "\u2013": "-", "\u2014": "-",
+    "\u2018": "'", "\u2019": "'", "\u201c": '"', "\u201d": '"',
+    "\u2022": "-", "\u2026": "...", "\u2265": ">=", "\u2264": "<=",
+}
 
 
 def _classify_algo(algo) -> str:
@@ -837,6 +851,8 @@ def _pqc_for(algo) -> dict:
 def _pdf_text(value, max_len: int = 300) -> str:
     """Latin-1 safe text, lambe words todke (fpdf2 width error se bachne ke liye)."""
     text = "" if value is None else str(value)
+    for src, dst in _PDF_CHAR_MAP.items():
+        text = text.replace(src, dst)
     text = text.replace("\r", " ").replace("\n", " ").replace("\t", " ")
     text = text.encode("latin-1", "replace").decode("latin-1")
     if len(text) > max_len:
@@ -885,8 +901,8 @@ def _pdf_line(pdf, text, size: int = 10, style: str = "", height: float = 6, ind
     )
 
 
-def _pdf_section(pdf, title):
-    if pdf.get_y() > pdf.h - 45:
+def _pdf_section(pdf, title, min_space: int = 45):
+    if pdf.get_y() > pdf.h - min_space:
         pdf.add_page()
     pdf.ln(4)
     pdf.set_x(pdf.l_margin)
@@ -1038,8 +1054,12 @@ def generate_pdf_bytes(data, scan=None) -> bytes:
     pdf.set_text_color(0, 0, 0)
     pdf.ln(5)
 
+    # DB me time UTC hai, report me IST dikhao
     created = scan.get("created_at")
-    created_text = created.strftime("%d %b %Y, %H:%M") if hasattr(created, "strftime") else "N/A"
+    created_text = (
+        (created + timedelta(hours=5, minutes=30)).strftime("%d %b %Y, %H:%M IST")
+        if hasattr(created, "strftime") else "N/A"
+    )
     if "hosts" in data:
         kind = "Multi-host scan"
     elif "services" in data:
@@ -1130,7 +1150,7 @@ def generate_pdf_bytes(data, scan=None) -> bytes:
         if algo and algo not in seen:
             seen.append(algo)
     if seen:
-        _pdf_section(pdf, "PQC Migration Recommendations")
+        _pdf_section(pdf, "PQC Migration Recommendations", min_space=70)
         for algo in seen:
             info = _pqc_for(algo)
             if not info:
@@ -1171,6 +1191,8 @@ async def export_report_pdf(scan_id: int, session_token: Optional[str] = Cookie(
     except Exception as e:
         logger.exception("PDF export failed")
         return JSONResponse({"error": f"PDF export failed: {str(e)[:150]}"}, status_code=500)
+
+
 # ============================================================
 # ADMIN DOCS
 # ============================================================

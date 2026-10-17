@@ -352,11 +352,13 @@
                 .replace(/'/g, '&#39;');
         }
 
+        // Server time UTC me aata hai (timezone ke bina), isliye Z lagake IST me dikhate hain
         function formatDate(iso) {
             if (!iso) return '';
-            const d = new Date(iso);
+            const hasTz = /(Z|[+-]\d\d:?\d\d)$/.test(String(iso));
+            const d = new Date(hasTz ? iso : iso + 'Z');
             if (isNaN(d.getTime())) return escapeHtml(iso);
-            return d.toLocaleString('en-IN', { dateStyle: 'medium', timeStyle: 'short' });
+            return d.toLocaleString('en-IN', { dateStyle: 'medium', timeStyle: 'short', timeZone: 'Asia/Kolkata' });
         }
 
         async function apiGet(url) {
