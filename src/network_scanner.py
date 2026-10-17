@@ -10,6 +10,14 @@ Supports:
 - MySQL, PostgreSQL, MSSQL, MongoDB, Redis
 - Certificate parsing with detailed info
 
+v1.0.0 Changes:
+- Har finding me 'category' field:
+    quantum_vulnerable -> RSA, ECDSA, ECDH, DH, DSA (Shor's algorithm)
+    weak_classical     -> SHA-1, MD5, 3DES, RC4, DES (classically weak)
+    configuration      -> expired cert, old TLS version, open DB/LDAP ports
+- Cipher suite matching ab tokens se hota hai (pehle ECDHE me 'DH' galat se
+  alag finding ban jaata tha)
+
 v0.9.0 Changes:
 - TOP_1000_PORTS removed (config se STANDARD_PORTS import)
 - Bare except clauses fixed (specific exceptions)
@@ -17,6 +25,7 @@ v0.9.0 Changes:
 - Timeout/max_workers parameters from config
 """
 
+import re
 import socket
 import ssl
 import logging
@@ -49,22 +58,105 @@ logger = logging.getLogger("cbom.network")
 
 
 # ============================================================
+# CATEGORIES
+# ============================================================
+
+CATEGORY_QUANTUM = 'quantum_vulnerable'
+CATEGORY_WEAK = 'weak_classical'
+CATEGORY_CONFIG = 'configuration'
+
+CATEGORY_LABELS = {
+    CATEGORY_QUANTUM: 'Quantum-vulnerable',
+    CATEGORY_WEAK: 'Weak / deprecated',
+    CATEGORY_CONFIG: 'Configuration',
+}
+
+
+# ============================================================
 # VULNERABLE ALGORITHMS
 # ============================================================
 
 VULNERABLE_NETWORK_ALGOS = {
-    'RSA': {'risk': 'HIGH', 'reason': "Shor's algorithm breaks RSA"},
-    'ECDSA': {'risk': 'HIGH', 'reason': "Shor's algorithm breaks ECDSA"},
-    'ECDH': {'risk': 'HIGH', 'reason': "Shor's algorithm breaks ECDH"},
-    'DHE': {'risk': 'HIGH', 'reason': "Shor's algorithm breaks Diffie-Hellman"},
-    'DH': {'risk': 'HIGH', 'reason': "Shor's algorithm breaks Diffie-Hellman"},
-    'DSA': {'risk': 'HIGH', 'reason': "Shor's algorithm breaks DSA"},
-    'SHA-1': {'risk': 'MEDIUM', 'reason': "Collision attacks, deprecated"},
-    'MD5': {'risk': 'HIGH', 'reason': "Broken hash function"},
-    '3DES': {'risk': 'HIGH', 'reason': "64-bit block cipher, vulnerable to Sweet32"},
-    'RC4': {'risk': 'HIGH', 'reason': "Broken stream cipher"},
-    'DES': {'risk': 'HIGH', 'reason': "56-bit key, easily broken"},
+    'RSA': {
+        'risk': 'HIGH', 'category': CATEGORY_QUANTUM,
+        'reason': "Shor's algorithm breaks RSA (quantum-vulnerable)",
+    },
+    'ECDSA': {
+        'risk': 'HIGH', 'category': CATEGORY_QUANTUM,
+        'reason': "Shor's algorithm breaks ECDSA (quantum-vulnerable)",
+    },
+    'ECDH': {
+        'risk': 'HIGH', 'category': CATEGORY_QUANTUM,
+        'reason': "Shor's algorithm breaks ECDH (quantum-vulnerable)",
+    },
+    'DH': {
+        'risk': 'HIGH', 'category': CATEGORY_QUANTUM,
+        'reason': "Shor's algorithm breaks Diffie-Hellman (quantum-vulnerable)",
+    },
+    'DSA': {
+        'risk': 'HIGH', 'category': CATEGORY_QUANTUM,
+        'reason': "Shor's algorithm breaks DSA (quantum-vulnerable)",
+    },
+    'SHA-1': {
+        'risk': 'MEDIUM', 'category': CATEGORY_WEAK,
+        'reason': "SHA-1 has practical collision attacks and is deprecated (classically weak, not a quantum issue)",
+    },
+    'MD5': {
+        'risk': 'HIGH', 'category': CATEGORY_WEAK,
+        'reason': "MD5 is a broken hash function with classical collisions (weak, not a quantum issue)",
+    },
+    '3DES': {
+        'risk': 'HIGH', 'category': CATEGORY_WEAK,
+        'reason': "64-bit block cipher, vulnerable to Sweet32 (classically weak)",
+    },
+    'RC4': {
+        'risk': 'HIGH', 'category': CATEGORY_WEAK,
+        'reason': "RC4 is a broken stream cipher (classically weak)",
+    },
+    'DES': {
+        'risk': 'HIGH', 'category': CATEGORY_WEAK,
+        'reason': "DES has a 56-bit key and is easily broken (classically weak)",
+    },
 }
+
+# Cipher suite ke tokens -> algorithm (ECDHE ko ECDH, DHE ko DH maanenge)
+CIPHER_TOKEN_MAP = {
+    'RSA': 'RSA',
+    'ECDSA': 'ECDSA',
+    'ECDH': 'ECDH',
+    'ECDHE': 'ECDH',
+    'DH': 'DH',
+    'DHE': 'DH',
+    'DSS': 'DSA',
+    'DSA': 'DSA',
+    '3DES': '3DES',
+    'DES': 'DES',
+    'RC4': 'RC4',
+    'MD5': 'MD5',
+}
+
+
+def _finding(algorithm, risk, reason, context, source, category=None):
+    """Ek standard finding dict banao (category ke saath)."""
+    if category is None:
+        category = VULNERABLE_NETWORK_ALGOS.get(algorithm, {}).get('category', CATEGORY_CONFIG)
+    return {
+        'algorithm': algorithm,
+        'category': category,
+        'risk': risk,
+        'reason': reason,
+        'context': context,
+        'source': source,
+    }
+
+
+def _algo_finding(algorithm, context, source, reason=None):
+    """Known algorithm ke liye finding (risk/category/reason table se)."""
+    info = VULNERABLE_NETWORK_ALGOS[algorithm]
+    return _finding(
+        algorithm, info['risk'], reason or info['reason'],
+        context, source, info['category'],
+    )
 
 
 # ============================================================
@@ -287,25 +379,31 @@ def scan_tls_server(host, port=443, timeout=10):
     return result
 
 
+def _cipher_algorithms(cipher_name):
+    """Cipher suite ke naam se algorithms nikalo (token-based, false match nahi)."""
+    tokens = re.split(r'[_\-\s]+', str(cipher_name).upper())
+    found = []
+    for token in tokens:
+        algo = CIPHER_TOKEN_MAP.get(token)
+        if algo and algo not in found:
+            found.append(algo)
+    return found
+
+
 def detect_algorithms_in_tls(tls_version, cipher_suite, certificate):
     """TLS handshake + certificate se vulnerable algorithms detect karo."""
     findings = []
     seen_algos = set()
 
     if cipher_suite:
-        cipher_name = cipher_suite[0] if isinstance(cipher_suite, tuple) else str(cipher_suite)
+        cipher_name = cipher_suite[0] if isinstance(cipher_suite, (tuple, list)) else str(cipher_suite)
 
-        for algo, info in VULNERABLE_NETWORK_ALGOS.items():
-            normalized = 'DH' if algo in ['DH', 'DHE'] else algo
-            if algo.lower() in cipher_name.lower() and normalized not in seen_algos:
-                seen_algos.add(normalized)
-                findings.append({
-                    'algorithm': normalized,
-                    'risk': info['risk'],
-                    'reason': info['reason'],
-                    'context': f"Cipher suite: {cipher_name}",
-                    'source': 'TLS cipher suite'
-                })
+        for algo in _cipher_algorithms(cipher_name):
+            if algo not in seen_algos:
+                seen_algos.add(algo)
+                findings.append(_algo_finding(
+                    algo, f"Cipher suite: {cipher_name}", 'TLS cipher suite'
+                ))
 
     if certificate and isinstance(certificate, dict):
         sig_algo = certificate.get('signature_algorithm', '')
@@ -313,33 +411,24 @@ def detect_algorithms_in_tls(tls_version, cipher_suite, certificate):
             sig_upper = sig_algo.upper()
             if ('SHA1' in sig_upper or 'SHA-1' in sig_upper) and 'SHA-1' not in seen_algos:
                 seen_algos.add('SHA-1')
-                findings.append({
-                    'algorithm': 'SHA-1',
-                    'risk': 'MEDIUM',
-                    'reason': 'SHA-1 certificate signature is deprecated',
-                    'context': f"Signature: {sig_algo}",
-                    'source': 'Certificate signature'
-                })
+                findings.append(_algo_finding(
+                    'SHA-1', f"Signature: {sig_algo}", 'Certificate signature',
+                    reason='SHA-1 certificate signature is deprecated (classically weak, not a quantum issue)',
+                ))
 
             if 'MD5' in sig_upper and 'MD5' not in seen_algos:
                 seen_algos.add('MD5')
-                findings.append({
-                    'algorithm': 'MD5',
-                    'risk': 'HIGH',
-                    'reason': 'MD5 certificate signature is broken',
-                    'context': f"Signature: {sig_algo}",
-                    'source': 'Certificate signature'
-                })
+                findings.append(_algo_finding(
+                    'MD5', f"Signature: {sig_algo}", 'Certificate signature',
+                    reason='MD5 certificate signature is broken (classically weak, not a quantum issue)',
+                ))
 
             if 'RSA' in sig_upper and 'RSA' not in seen_algos:
                 seen_algos.add('RSA')
-                findings.append({
-                    'algorithm': 'RSA',
-                    'risk': 'HIGH',
-                    'reason': "Shor's algorithm breaks RSA certificate signature",
-                    'context': f"Signature: {sig_algo}",
-                    'source': 'Certificate signature'
-                })
+                findings.append(_algo_finding(
+                    'RSA', f"Signature: {sig_algo}", 'Certificate signature',
+                    reason="Shor's algorithm breaks RSA certificate signature (quantum-vulnerable)",
+                ))
 
         pubkey = certificate.get('public_key', {})
         if pubkey:
@@ -348,51 +437,46 @@ def detect_algorithms_in_tls(tls_version, cipher_suite, certificate):
 
             if 'RSA' in key_type and 'RSA' not in seen_algos:
                 seen_algos.add('RSA')
-                findings.append({
-                    'algorithm': 'RSA',
-                    'risk': 'HIGH',
-                    'reason': f"RSA-{key_bits} public key is quantum-vulnerable",
-                    'context': f"Public key: RSA-{key_bits}",
-                    'source': 'Certificate public key'
-                })
+                findings.append(_algo_finding(
+                    'RSA', f"Public key: RSA-{key_bits}", 'Certificate public key',
+                    reason=f"RSA-{key_bits} public key is quantum-vulnerable",
+                ))
 
             if ('EC' in key_type or 'ECDSA' in key_type) and 'ECDSA' not in seen_algos:
                 seen_algos.add('ECDSA')
-                findings.append({
-                    'algorithm': 'ECDSA',
-                    'risk': 'HIGH',
-                    'reason': f"ECDSA-{key_bits} public key is quantum-vulnerable",
-                    'context': f"Public key: EC-{key_bits}",
-                    'source': 'Certificate public key'
-                })
+                findings.append(_algo_finding(
+                    'ECDSA', f"Public key: EC-{key_bits}", 'Certificate public key',
+                    reason=f"ECDSA-{key_bits} public key is quantum-vulnerable",
+                ))
+
+            if key_type == 'DSA' and 'DSA' not in seen_algos:
+                seen_algos.add('DSA')
+                findings.append(_algo_finding(
+                    'DSA', f"Public key: DSA-{key_bits}", 'Certificate public key',
+                    reason=f"DSA-{key_bits} public key is quantum-vulnerable",
+                ))
 
         expiry_status = certificate.get('expiry_status', '')
         if expiry_status == 'EXPIRED':
-            findings.append({
-                'algorithm': 'Certificate-Expired',
-                'risk': 'HIGH',
-                'reason': 'Certificate has expired',
-                'context': f"Expired: {certificate.get('not_after')}",
-                'source': 'Certificate validity'
-            })
+            findings.append(_finding(
+                'Certificate-Expired', 'HIGH', 'Certificate has expired',
+                f"Expired: {certificate.get('not_after')}", 'Certificate validity',
+                CATEGORY_CONFIG,
+            ))
         elif expiry_status == 'EXPIRING_SOON':
             days = certificate.get('days_until_expiry', 0)
-            findings.append({
-                'algorithm': 'Certificate-ExpiringSoon',
-                'risk': 'MEDIUM',
-                'reason': f'Certificate expires in {days} days',
-                'context': f"Expires: {certificate.get('not_after')}",
-                'source': 'Certificate validity'
-            })
+            findings.append(_finding(
+                'Certificate-ExpiringSoon', 'MEDIUM', f'Certificate expires in {days} days',
+                f"Expires: {certificate.get('not_after')}", 'Certificate validity',
+                CATEGORY_CONFIG,
+            ))
 
     if tls_version and tls_version in ['TLSv1.0', 'TLSv1.1']:
-        findings.append({
-            'algorithm': tls_version,
-            'risk': 'HIGH',
-            'reason': f'{tls_version} is deprecated',
-            'context': f"TLS version: {tls_version}",
-            'source': 'TLS version'
-        })
+        findings.append(_finding(
+            tls_version, 'HIGH', f'{tls_version} is deprecated',
+            f"TLS version: {tls_version}", 'TLS version',
+            CATEGORY_CONFIG,
+        ))
 
     return findings
 
@@ -464,68 +548,59 @@ def detect_algorithms_in_ssh(kex_algorithms, ciphers, host_key_algorithms):
     seen_algos = set()
 
     for kex in kex_algorithms:
-        for algo in ['DH', 'DHE', 'RSA', 'ECDH']:
-            if algo.lower() in kex.lower():
-                normalized = 'DH' if algo in ['DH', 'DHE'] else algo
-                if normalized not in seen_algos:
-                    seen_algos.add(normalized)
-                    findings.append({
-                        'algorithm': normalized,
-                        'risk': 'HIGH',
-                        'reason': f"{normalized} based key exchange is quantum-vulnerable",
-                        'context': f"KEX: {kex}",
-                        'source': 'SSH KEX'
-                    })
+        kex_lower = kex.lower()
 
-        if 'sha1' in kex.lower() and 'SHA-1' not in seen_algos:
+        # KEX naam se algorithm pehchano (ecdh pehle, taaki 'dh' galat match na ho)
+        if 'ecdh' in kex_lower:
+            kex_algo = 'ECDH'
+        elif 'diffie-hellman' in kex_lower or kex_lower.startswith('dh-'):
+            kex_algo = 'DH'
+        elif kex_lower.startswith('rsa'):
+            kex_algo = 'RSA'
+        else:
+            kex_algo = None
+
+        if kex_algo and kex_algo not in seen_algos:
+            seen_algos.add(kex_algo)
+            findings.append(_algo_finding(
+                kex_algo, f"KEX: {kex}", 'SSH KEX',
+                reason=f"{kex_algo} based key exchange is quantum-vulnerable",
+            ))
+
+        if 'sha1' in kex_lower and 'SHA-1' not in seen_algos:
             seen_algos.add('SHA-1')
-            findings.append({
-                'algorithm': 'SHA-1',
-                'risk': 'MEDIUM',
-                'reason': 'SHA-1 based KEX is deprecated',
-                'context': f"KEX: {kex}",
-                'source': 'SSH KEX'
-            })
+            findings.append(_algo_finding(
+                'SHA-1', f"KEX: {kex}", 'SSH KEX',
+                reason='SHA-1 based KEX is deprecated (classically weak, not a quantum issue)',
+            ))
 
     for cipher in ciphers:
         if '3des' in cipher.lower() and '3DES' not in seen_algos:
             seen_algos.add('3DES')
-            findings.append({
-                'algorithm': '3DES',
-                'risk': 'HIGH',
-                'reason': '3DES is vulnerable to Sweet32',
-                'context': f"Cipher: {cipher}",
-                'source': 'SSH cipher'
-            })
+            findings.append(_algo_finding(
+                '3DES', f"Cipher: {cipher}", 'SSH cipher',
+                reason='3DES is vulnerable to Sweet32 (classically weak)',
+            ))
         if 'rc4' in cipher.lower() and 'RC4' not in seen_algos:
             seen_algos.add('RC4')
-            findings.append({
-                'algorithm': 'RC4',
-                'risk': 'HIGH',
-                'reason': 'RC4 is broken',
-                'context': f"Cipher: {cipher}",
-                'source': 'SSH cipher'
-            })
+            findings.append(_algo_finding(
+                'RC4', f"Cipher: {cipher}", 'SSH cipher',
+                reason='RC4 is broken (classically weak)',
+            ))
 
     for key_algo in host_key_algorithms:
         if 'rsa' in key_algo.lower() and 'RSA' not in seen_algos:
             seen_algos.add('RSA')
-            findings.append({
-                'algorithm': 'RSA',
-                'risk': 'HIGH',
-                'reason': "Shor's algorithm breaks RSA host key",
-                'context': f"Host key: {key_algo}",
-                'source': 'SSH host key'
-            })
+            findings.append(_algo_finding(
+                'RSA', f"Host key: {key_algo}", 'SSH host key',
+                reason="Shor's algorithm breaks RSA host key (quantum-vulnerable)",
+            ))
         if 'ecdsa' in key_algo.lower() and 'ECDSA' not in seen_algos:
             seen_algos.add('ECDSA')
-            findings.append({
-                'algorithm': 'ECDSA',
-                'risk': 'HIGH',
-                'reason': "Shor's algorithm breaks ECDSA host key",
-                'context': f"Host key: {key_algo}",
-                'source': 'SSH host key'
-            })
+            findings.append(_algo_finding(
+                'ECDSA', f"Host key: {key_algo}", 'SSH host key',
+                reason="Shor's algorithm breaks ECDSA host key (quantum-vulnerable)",
+            ))
 
     return findings
 
@@ -548,21 +623,17 @@ def scan_ldap_server(host, port=389, timeout=5):
         with socket.create_connection((host, port), timeout=timeout):
             result['status'] = 'open'
             if port == 389:
-                result['findings'].append({
-                    'algorithm': 'LDAP-Plaintext',
-                    'risk': 'MEDIUM',
-                    'reason': 'LDAP port 389 open - plaintext authentication possible',
-                    'context': 'Check StartTLS configuration',
-                    'source': 'LDAP'
-                })
+                result['findings'].append(_finding(
+                    'LDAP-Plaintext', 'MEDIUM',
+                    'LDAP port 389 open - plaintext authentication possible',
+                    'Check StartTLS configuration', 'LDAP', CATEGORY_CONFIG,
+                ))
             elif port == 636:
-                result['findings'].append({
-                    'algorithm': 'LDAPS',
-                    'risk': 'LOW',
-                    'reason': 'LDAPS port 636 open - secure LDAP',
-                    'context': 'TLS-based LDAP',
-                    'source': 'LDAP'
-                })
+                result['findings'].append(_finding(
+                    'LDAPS', 'LOW',
+                    'LDAPS port 636 open - secure LDAP',
+                    'TLS-based LDAP', 'LDAP', CATEGORY_CONFIG,
+                ))
     except (socket.timeout, ConnectionRefusedError, OSError):
         result['status'] = 'closed'
 
@@ -594,13 +665,11 @@ def scan_database_server(host, port, timeout=5):
     try:
         with socket.create_connection((host, port), timeout=timeout):
             result['status'] = 'open'
-            result['findings'].append({
-                'algorithm': f'{db_name}-Auth',
-                'risk': 'MEDIUM',
-                'reason': f'{db_name} port open - check authentication and TLS',
-                'context': f'Port {port} open',
-                'source': db_name
-            })
+            result['findings'].append(_finding(
+                f'{db_name}-Auth', 'MEDIUM',
+                f'{db_name} port open - check authentication and TLS',
+                f'Port {port} open', db_name, CATEGORY_CONFIG,
+            ))
     except (socket.timeout, ConnectionRefusedError, OSError):
         result['status'] = 'closed'
 

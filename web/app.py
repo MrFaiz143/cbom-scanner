@@ -706,7 +706,7 @@ async def api_charts_data(session_token: Optional[str] = Cookie(None)):
     if not user:
         return JSONResponse({
             'total_hosts': 0, 'total_findings': 0,
-            'tls_versions': {}, 'algorithms': {},
+            'tls_versions': {}, 'algorithms': {}, 'weak_algorithms': {},
             'issuers': {}, 'public_key_types': {}, 'expiry_status': {},
         })
 
@@ -714,7 +714,8 @@ async def api_charts_data(session_token: Optional[str] = Cookie(None)):
         'total_hosts': 0,
         'total_findings': 0,
         'tls_versions': Counter(),
-        'algorithms': Counter(),
+        'algorithms': Counter(),        # sirf quantum-vulnerable
+        'weak_algorithms': Counter(),   # MD5, SHA-1, 3DES, RC4, DES
         'issuers': Counter(),
         'public_key_types': Counter(),
         'expiry_status': Counter(),
@@ -753,19 +754,24 @@ async def api_charts_data(session_token: Optional[str] = Cookie(None)):
                     if cert.get('expiry_status'):
                         stats['expiry_status'][cert['expiry_status']] += 1
                 for finding in service.get('findings', []):
-                    stats['algorithms'][finding.get('algorithm', 'Unknown')] += 1
+                    algo = finding.get('algorithm', 'Unknown')
                     stats['total_findings'] += 1
+                    category = _classify_algo(algo)
+                    if category == "Quantum-vulnerable":
+                        stats['algorithms'][algo] += 1
+                    elif category == "Weak / deprecated":
+                        stats['weak_algorithms'][algo] += 1
 
     return JSONResponse({
         'total_hosts': stats['total_hosts'],
         'total_findings': stats['total_findings'],
         'tls_versions': dict(stats['tls_versions']),
         'algorithms': dict(stats['algorithms'].most_common(10)),
+        'weak_algorithms': dict(stats['weak_algorithms'].most_common(10)),
         'issuers': dict(stats['issuers'].most_common(10)),
         'public_key_types': dict(stats['public_key_types']),
         'expiry_status': dict(stats['expiry_status']),
     })
-
 
 # ============================================================
 # REPORTS API
