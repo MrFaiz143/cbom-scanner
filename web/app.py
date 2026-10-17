@@ -93,33 +93,27 @@ from network_scanner import scan_host
 # ============================================================
 # PASSWORD HASHING (bcrypt)
 # ============================================================
-from passlib.context import CryptContext
-pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
+import bcrypt
+
+
+def _password_bytes(password: str) -> bytes:
+    # bcrypt sirf pehle 72 bytes use karta hai
+    return password.encode("utf-8")[:72]
 
 
 def hash_password(password: str) -> str:
-    return pwd_context.hash(password)
+    return bcrypt.hashpw(_password_bytes(password), bcrypt.gensalt()).decode("utf-8")
 
 
 def verify_password(plain_password: str, hashed_password: str) -> bool:
     try:
-        return pwd_context.verify(plain_password, hashed_password)
+        return bcrypt.checkpw(
+            _password_bytes(plain_password),
+            hashed_password.encode("utf-8"),
+        )
     except Exception as e:
         logger.warning(f"Password verify failed: {e}")
         return False
-
-
-def is_strong_password(password: str) -> tuple:
-    if len(password) < MIN_PASSWORD_LENGTH:
-        return False, f"Password kam se kam {MIN_PASSWORD_LENGTH} characters ka hona chahiye"
-    if not any(c.isupper() for c in password):
-        return False, "Password me kam se kam 1 uppercase letter hona chahiye"
-    if not any(c.islower() for c in password):
-        return False, "Password me kam se kam 1 lowercase letter hona chahiye"
-    if not any(c.isdigit() for c in password):
-        return False, "Password me kam se kam 1 number hona chahiye"
-    return True, "OK"
-
 
 # ============================================================
 # CSRF
