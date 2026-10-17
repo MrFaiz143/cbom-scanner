@@ -115,6 +115,18 @@ def verify_password(plain_password: str, hashed_password: str) -> bool:
         logger.warning(f"Password verify failed: {e}")
         return False
 
+
+def is_strong_password(password: str) -> tuple:
+    if len(password) < MIN_PASSWORD_LENGTH:
+        return False, f"Password kam se kam {MIN_PASSWORD_LENGTH} characters ka hona chahiye"
+    if not any(c.isupper() for c in password):
+        return False, "Password me kam se kam 1 uppercase letter hona chahiye"
+    if not any(c.islower() for c in password):
+        return False, "Password me kam se kam 1 lowercase letter hona chahiye"
+    if not any(c.isdigit() for c in password):
+        return False, "Password me kam se kam 1 number hona chahiye"
+    return True, "OK"
+
 # ============================================================
 # CSRF
 # ============================================================
