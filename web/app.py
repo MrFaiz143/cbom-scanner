@@ -798,9 +798,40 @@ async def get_report(scan_id: int, session_token: Optional[str] = Cookie(None)):
 
 
 # ============================================================
-# PDF EXPORT (fpdf2)
+# PDF EXPORT (fpdf2) - Professional report
 # ============================================================
 from fpdf.enums import XPos, YPos
+
+PDF_BLUE = (11, 60, 120)
+RISK_COLORS = {"HIGH": (207, 34, 46), "MEDIUM": (191, 100, 0), "LOW": (26, 127, 55)}
+RISK_ORDER = {"HIGH": 0, "MEDIUM": 1, "LOW": 2}
+
+# Shor's algorithm se tootne wale (quantum-vulnerable)
+QUANTUM_VULN_PREFIXES = (
+    "RSA", "ECDSA", "ECDH", "EC", "DH", "DSA", "DIFFIE",
+    "ED25519", "ED448", "X25519", "X448",
+)
+# Classically weak (quantum ki wajah se nahi)
+WEAK_ALGO_PREFIXES = ("MD5", "SHA-1", "SHA1", "3DES", "DES", "RC4")
+
+
+def _classify_algo(algo) -> str:
+    a = str(algo or "").upper().replace(" ", "")
+    if a.startswith(WEAK_ALGO_PREFIXES):
+        return "Weak / deprecated"
+    if a.startswith(QUANTUM_VULN_PREFIXES):
+        return "Quantum-vulnerable"
+    return "Other"
+
+
+def _pqc_for(algo) -> dict:
+    a = str(algo or "").upper()
+    if a in PQC_REPLACEMENTS:
+        return PQC_REPLACEMENTS[a]
+    for key, value in PQC_REPLACEMENTS.items():
+        if a.startswith(key.upper()):
+            return value
+    return {}
 
 
 def _pdf_text(value, max_len: int = 300) -> str:
@@ -819,100 +850,299 @@ def _pdf_text(value, max_len: int = 300) -> str:
     return " ".join(words)
 
 
-def _pdf_line(pdf, text, size: int = 10, style: str = "", height: float = 6):
+class CBOMReportPDF(FPDF):
+    def header(self):
+        self.set_fill_color(*PDF_BLUE)
+        self.rect(0, 0, self.w, 14, style="F")
+        self.set_xy(self.l_margin, 4)
+        self.set_text_color(255, 255, 255)
+        self.set_font("Helvetica", "B", 11)
+        self.cell(self.epw / 2, 6, "CBOM Scanner", new_x=XPos.RIGHT, new_y=YPos.TOP)
+        self.set_font("Helvetica", "", 9)
+        self.cell(self.epw / 2, 6, "Cryptographic Bill of Materials", align="R",
+                  new_x=XPos.LMARGIN, new_y=YPos.NEXT)
+        self.set_text_color(0, 0, 0)
+        self.set_y(22)
+
+    def footer(self):
+        self.set_y(-14)
+        self.set_draw_color(200, 200, 200)
+        self.line(self.l_margin, self.get_y(), self.w - self.r_margin, self.get_y())
+        self.set_font("Helvetica", "", 8)
+        self.set_text_color(110, 110, 110)
+        self.cell(self.epw * 0.75, 8, f"{APP_NAME} v{APP_VERSION} | Scan authorized targets only",
+                  new_x=XPos.RIGHT, new_y=YPos.TOP)
+        self.cell(self.epw * 0.25, 8, f"Page {self.page_no()}/{{nb}}", align="R")
+        self.set_text_color(0, 0, 0)
+
+
+def _pdf_line(pdf, text, size: int = 10, style: str = "", height: float = 6, indent: float = 0):
     pdf.set_font("Helvetica", style, size)
-    pdf.set_x(pdf.l_margin)
+    pdf.set_x(pdf.l_margin + indent)
     pdf.multi_cell(
-        pdf.epw, height, _pdf_text(text) or " ",
+        pdf.epw - indent, height, _pdf_text(text) or " ",
         new_x=XPos.LMARGIN, new_y=YPos.NEXT,
     )
 
 
-def _pdf_findings(pdf, findings):
-    if not findings:
-        _pdf_line(pdf, "No findings.", 10)
-        return
-    for f in list(findings)[:200]:
-        if not isinstance(f, dict):
-            continue
-        algo = f.get("algorithm", "Unknown")
-        _pdf_line(pdf, f"[{f.get('risk', '')}] {algo}", 10, "B")
-        if f.get("file"):
-            loc = str(f.get("file"))
-            if f.get("line"):
-                loc += f":{f.get('line')}"
-            _pdf_line(pdf, f"Location: {loc}", 9)
-        if f.get("reason"):
-            _pdf_line(pdf, f"Reason: {f.get('reason')}", 9)
-        pqc = PQC_REPLACEMENTS.get(str(algo), {}).get("replacement")
-        if pqc:
-            _pdf_line(pdf, f"PQC replacement: {pqc}", 9)
-        pdf.ln(2)
+def _pdf_section(pdf, title):
+    if pdf.get_y() > pdf.h - 45:
+        pdf.add_page()
+    pdf.ln(4)
+    pdf.set_x(pdf.l_margin)
+    pdf.set_font("Helvetica", "B", 13)
+    pdf.set_text_color(*PDF_BLUE)
+    pdf.cell(pdf.epw, 8, _pdf_text(title, 80), new_x=XPos.LMARGIN, new_y=YPos.NEXT)
+    pdf.set_draw_color(*PDF_BLUE)
+    pdf.line(pdf.l_margin, pdf.get_y(), pdf.l_margin + pdf.epw, pdf.get_y())
+    pdf.ln(3)
+    pdf.set_text_color(0, 0, 0)
+
+
+def _pdf_kv(pdf, label, value, label_w: float = 42):
+    pdf.set_x(pdf.l_margin)
+    pdf.set_font("Helvetica", "B", 10)
+    pdf.cell(label_w, 6, _pdf_text(label, 40), new_x=XPos.RIGHT, new_y=YPos.TOP)
+    pdf.set_font("Helvetica", "", 10)
+    pdf.multi_cell(pdf.epw - label_w, 6, _pdf_text(value) or "-",
+                   new_x=XPos.LMARGIN, new_y=YPos.NEXT)
+
+
+def _pdf_boxes(pdf, items):
+    """items = [(label, value, (r, g, b)), ...] - ek row me barabar boxes."""
+    gap = 4
+    w = (pdf.epw - gap * (len(items) - 1)) / len(items)
+    y0 = pdf.get_y()
+    for i, (label, value, color) in enumerate(items):
+        x = pdf.l_margin + i * (w + gap)
+        pdf.set_fill_color(246, 248, 250)
+        pdf.set_draw_color(208, 215, 222)
+        pdf.rect(x, y0, w, 22, style="DF")
+        pdf.set_xy(x, y0 + 3)
+        pdf.set_font("Helvetica", "B", 18)
+        pdf.set_text_color(*color)
+        pdf.cell(w, 9, _pdf_text(value, 12), align="C")
+        pdf.set_xy(x, y0 + 13)
+        pdf.set_font("Helvetica", "", 8)
+        pdf.set_text_color(90, 90, 90)
+        pdf.cell(w, 6, _pdf_text(label, 30), align="C")
+    pdf.set_text_color(0, 0, 0)
+    pdf.set_xy(pdf.l_margin, y0 + 26)
+
+
+def _sort_findings(findings):
+    items = [f for f in (findings or []) if isinstance(f, dict)]
+    return sorted(items, key=lambda f: RISK_ORDER.get(str(f.get("risk", "")).upper(), 3))
+
+
+def _all_findings(data):
+    out = []
+    if "hosts" in data:
+        for h in data.get("hosts", []) or []:
+            if isinstance(h, dict):
+                for s in h.get("services", []) or []:
+                    if isinstance(s, dict):
+                        out.extend(x for x in (s.get("findings") or []) if isinstance(x, dict))
+    elif "services" in data:
+        for s in data.get("services", []) or []:
+            if isinstance(s, dict):
+                out.extend(x for x in (s.get("findings") or []) if isinstance(x, dict))
+    else:
+        out.extend(x for x in (data.get("findings") or []) if isinstance(x, dict))
+    return out
+
+
+def _pdf_finding(pdf, f):
+    if pdf.get_y() > pdf.h - 55:
+        pdf.add_page()
+    risk = str(f.get("risk") or "INFO").upper()
+    color = RISK_COLORS.get(risk, (90, 90, 90))
+    algo = f.get("algorithm", "Unknown")
+
+    pdf.set_x(pdf.l_margin)
+    pdf.set_fill_color(*color)
+    pdf.set_text_color(255, 255, 255)
+    pdf.set_font("Helvetica", "B", 9)
+    pdf.cell(20, 6, _pdf_text(risk, 10), fill=True, align="C", new_x=XPos.RIGHT, new_y=YPos.TOP)
+    pdf.set_text_color(0, 0, 0)
+    pdf.set_font("Helvetica", "B", 11)
+    pdf.cell(pdf.epw - 20, 6, "  " + _pdf_text(algo, 40) + "  -  " + _classify_algo(algo),
+             new_x=XPos.LMARGIN, new_y=YPos.NEXT)
+
+    if f.get("file"):
+        loc = str(f.get("file"))
+        if f.get("line"):
+            loc += f":{f.get('line')}"
+        _pdf_line(pdf, f"Location: {loc}", 9, indent=4)
+    if f.get("reason"):
+        _pdf_line(pdf, f"Reason: {f.get('reason')}", 9, indent=4)
+    pqc = _pqc_for(algo).get("replacement")
+    if pqc:
+        _pdf_line(pdf, f"PQC replacement: {pqc}", 9, indent=4)
+    pdf.ln(2)
 
 
 def _pdf_services(pdf, services):
     for s in services or []:
         if not isinstance(s, dict):
             continue
-        _pdf_line(pdf, f"{s.get('protocol', '')} on {s.get('target', '')}", 11, "B")
+        if pdf.get_y() > pdf.h - 70:
+            pdf.add_page()
+        _pdf_line(pdf, f"{s.get('protocol', '')} on {s.get('target', '')}", 11, "B", 7)
         cipher = s.get("cipher_suite")
         if isinstance(cipher, (list, tuple)) and cipher:
             cipher = cipher[0]
-        _pdf_line(pdf, f"TLS version: {s.get('tls_version') or 'N/A'}", 10)
-        _pdf_line(pdf, f"Cipher suite: {cipher or 'N/A'}", 10)
+        _pdf_kv(pdf, "TLS version", s.get("tls_version") or "N/A")
+        _pdf_kv(pdf, "Cipher suite", cipher or "N/A")
         cert = s.get("certificate")
         if isinstance(cert, dict):
             subject = (cert.get("subject") or {}).get("CN", "N/A")
             issuer = (cert.get("issuer") or {}).get("CN", "N/A")
-            _pdf_line(pdf, f"Certificate subject: {subject}", 10)
-            _pdf_line(pdf, f"Issuer: {issuer}", 10)
-            _pdf_line(pdf, f"Valid until: {cert.get('not_after') or 'N/A'}", 10)
-            _pdf_line(pdf, f"Expiry status: {cert.get('expiry_status') or 'N/A'}", 10)
-        _pdf_findings(pdf, s.get("findings", []))
+            _pdf_kv(pdf, "Certificate subject", subject)
+            _pdf_kv(pdf, "Issuer", issuer)
+            pk = cert.get("public_key") or {}
+            if pk.get("type"):
+                _pdf_kv(pdf, "Public key", f"{pk.get('type')}-{pk.get('bits', '?')}")
+            _pdf_kv(pdf, "Valid until", cert.get("not_after") or "N/A")
+            _pdf_kv(pdf, "Expiry status", cert.get("expiry_status") or "N/A")
+        pdf.ln(2)
+        findings = _sort_findings(s.get("findings", []))
+        if findings:
+            for f in findings:
+                _pdf_finding(pdf, f)
+        else:
+            _pdf_line(pdf, "No findings for this service.", 9, indent=4)
         pdf.ln(3)
 
 
-def generate_pdf_bytes(data) -> bytes:
-    """Scan data se PDF banao (folder / network / multi teeno)."""
+def generate_pdf_bytes(data, scan=None) -> bytes:
+    """Professional CBOM report (folder / network / multi teeno)."""
     if not isinstance(data, dict):
         data = {}
+    scan = scan or {}
 
-    pdf = FPDF()
-    pdf.set_auto_page_break(auto=True, margin=15)
+    pdf = CBOMReportPDF()
+    pdf.alias_nb_pages()
+    pdf.set_auto_page_break(auto=True, margin=18)
     pdf.add_page()
 
-    _pdf_line(pdf, "CBOM Scanner Report", 18, "B", 10)
-    _pdf_line(pdf, f"Generated by {APP_NAME} v{APP_VERSION}", 9)
-    pdf.ln(4)
+    # ---------- Title + metadata ----------
+    pdf.set_x(pdf.l_margin)
+    pdf.set_font("Helvetica", "B", 22)
+    pdf.set_text_color(*PDF_BLUE)
+    pdf.cell(pdf.epw, 12, "Quantum-Readiness Report", new_x=XPos.LMARGIN, new_y=YPos.NEXT)
+    pdf.set_font("Helvetica", "", 11)
+    pdf.set_text_color(90, 90, 90)
+    pdf.cell(pdf.epw, 7, "Cryptographic inventory and PQC migration findings",
+             new_x=XPos.LMARGIN, new_y=YPos.NEXT)
+    pdf.set_text_color(0, 0, 0)
+    pdf.ln(5)
+
+    created = scan.get("created_at")
+    created_text = created.strftime("%d %b %Y, %H:%M") if hasattr(created, "strftime") else "N/A"
+    if "hosts" in data:
+        kind = "Multi-host scan"
+    elif "services" in data:
+        kind = "Network scan"
+    else:
+        kind = "Folder scan"
+    if scan.get("id") is not None:
+        _pdf_kv(pdf, "Report ID", f"#{scan.get('id')}")
+    _pdf_kv(pdf, "Scan type", kind)
+    _pdf_kv(pdf, "Target", scan.get("target") or "N/A")
+    _pdf_kv(pdf, "Scan date", created_text)
+    _pdf_kv(pdf, "Generated by", f"{APP_NAME} v{APP_VERSION}")
+
+    # ---------- Executive summary ----------
+    findings_all = _all_findings(data)[:500]
+    high = sum(1 for f in findings_all if str(f.get("risk", "")).upper() == "HIGH")
+    medium = sum(1 for f in findings_all if str(f.get("risk", "")).upper() == "MEDIUM")
+    low = sum(1 for f in findings_all if str(f.get("risk", "")).upper() == "LOW")
+    quantum = sum(1 for f in findings_all if _classify_algo(f.get("algorithm")) == "Quantum-vulnerable")
+    weak = sum(1 for f in findings_all if _classify_algo(f.get("algorithm")) == "Weak / deprecated")
 
     if "hosts" in data:
-        _pdf_line(pdf, "Multi-Host Scan", 13, "B", 8)
-        _pdf_line(pdf, f"Total hosts: {data.get('total_hosts', 0)}", 10)
-        _pdf_line(pdf, f"Total findings: {data.get('total_findings', 0)}", 10)
-        pdf.ln(3)
+        scope_label, scope_value = "Hosts scanned", len(data.get("hosts", []))
+    elif "services" in data:
+        scope_label, scope_value = "Services scanned", len(data.get("services", []))
+    else:
+        scope_label, scope_value = "Files scanned", data.get("files_scanned", 0)
+
+    _pdf_section(pdf, "Executive Summary")
+    _pdf_boxes(pdf, [
+        ("Total findings", len(findings_all), PDF_BLUE),
+        ("High risk", high, RISK_COLORS["HIGH"]),
+        ("Medium risk", medium, RISK_COLORS["MEDIUM"]),
+        ("Low risk", low, RISK_COLORS["LOW"]),
+    ])
+    _pdf_boxes(pdf, [
+        ("Quantum-vulnerable", quantum, (111, 66, 193)),
+        ("Weak / deprecated", weak, (191, 100, 0)),
+        (scope_label, scope_value, PDF_BLUE),
+    ])
+    pdf.ln(2)
+    pdf.set_text_color(90, 90, 90)
+    _pdf_line(
+        pdf,
+        "Quantum-vulnerable algorithms (RSA, ECDSA, ECDH, DH) can be broken by Shor's algorithm "
+        "on a large quantum computer. Weak / deprecated algorithms (MD5, SHA-1, 3DES, RC4) are "
+        "classically broken and are listed separately.",
+        9, height=5,
+    )
+    pdf.set_text_color(0, 0, 0)
+
+    # ---------- Detailed findings ----------
+    _pdf_section(pdf, "Detailed Findings")
+    if "hosts" in data:
         for h in data.get("hosts", []):
             if not isinstance(h, dict):
                 continue
+            if pdf.get_y() > pdf.h - 60:
+                pdf.add_page()
             _pdf_line(pdf, f"Host: {h.get('host', '')}", 12, "B", 8)
             if h.get("error"):
                 _pdf_line(pdf, f"Error: {h.get('error')}", 10)
             else:
                 ports = ", ".join(str(p) for p in h.get("open_ports", []))
-                _pdf_line(pdf, f"Open ports: {ports or 'None'}", 10)
+                _pdf_kv(pdf, "Open ports", ports or "None")
+                pdf.ln(1)
                 _pdf_services(pdf, h.get("services", []))
-            pdf.ln(3)
+            pdf.ln(2)
     elif "services" in data:
-        _pdf_line(pdf, "Network Scan", 13, "B", 8)
         ports = ", ".join(str(p) for p in data.get("open_ports", []))
-        _pdf_line(pdf, f"Open ports: {ports or 'None'}", 10)
-        pdf.ln(3)
+        _pdf_kv(pdf, "Open ports", ports or "None")
+        pdf.ln(2)
         _pdf_services(pdf, data.get("services", []))
     else:
-        _pdf_line(pdf, "Folder Scan", 13, "B", 8)
-        _pdf_line(pdf, f"Files scanned: {data.get('files_scanned', 0)}", 10)
-        _pdf_line(pdf, f"Total findings: {data.get('total_findings', 0)}", 10)
-        pdf.ln(3)
-        _pdf_findings(pdf, data.get("findings", []))
+        _pdf_kv(pdf, "Files scanned", data.get("files_scanned", 0))
+        pdf.ln(2)
+        folder_findings = _sort_findings(data.get("findings", []))[:300]
+        if folder_findings:
+            for f in folder_findings:
+                _pdf_finding(pdf, f)
+        else:
+            _pdf_line(pdf, "No findings.", 10)
+
+    # ---------- PQC migration recommendations ----------
+    seen = []
+    for f in findings_all:
+        algo = str(f.get("algorithm", "")).strip()
+        if algo and algo not in seen:
+            seen.append(algo)
+    if seen:
+        _pdf_section(pdf, "PQC Migration Recommendations")
+        for algo in seen:
+            info = _pqc_for(algo)
+            if not info:
+                continue
+            if pdf.get_y() > pdf.h - 45:
+                pdf.add_page()
+            _pdf_line(pdf, f"{algo}  ->  {info.get('replacement', '')}", 10, "B")
+            if info.get("standard"):
+                _pdf_line(pdf, f"Standard: {info.get('standard')}", 9, indent=4)
+            if info.get("note"):
+                _pdf_line(pdf, info.get("note"), 9, indent=4)
+            pdf.ln(2)
 
     return bytes(pdf.output())
 
@@ -932,7 +1162,7 @@ async def export_report_pdf(scan_id: int, session_token: Optional[str] = Cookie(
         data = json.loads(data)
 
     try:
-        pdf_bytes = generate_pdf_bytes(data)
+        pdf_bytes = generate_pdf_bytes(data, scan)
         return Response(
             content=pdf_bytes,
             media_type="application/pdf",
